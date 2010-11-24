@@ -21,7 +21,7 @@ class Artist(models.Model):
 		return '%s' % self.name
 	
 class Media(models.Model):
-	file = models.FileField(upload_to='%Y/%m/%d/%H')
+	content = models.FileField(upload_to='%Y/%m/%d/%H')
 	
 	def __unicode__(self):
 		return '%s' % self.file

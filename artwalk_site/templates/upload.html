@@ -1,1 +1,11 @@
 yosup
+
+<html>
+<body>
+	<form action='' enctype='multipart/form-data' method='post'>{% csrf_token %}
+		<input type ='file' name='file'>
+		<input type ='submit'>
+	</form>	
+	{{files}}
+</body>
+</html>

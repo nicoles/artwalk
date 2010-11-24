@@ -5,6 +5,7 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+	(r'^upload/$', 'main.views.upload'),
     # Example:
     # (r'^artwalk_site/', include('artwalk_site.foo.urls')),
 
