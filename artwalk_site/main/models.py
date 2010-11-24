@@ -21,10 +21,10 @@ class Artist(models.Model):
 		return '%s' % self.name
 	
 class Media(models.Model):
-	url = models.CharField(max_length=256)
+	file = models.FileField(upload_to='%Y/%m/%d/%H')
 	
 	def __unicode__(self):
-		return '%s' % self.url
+		return '%s' % self.file
 	
 class ArtPiece(models.Model):
 	title = models.CharField(max_length=256)
