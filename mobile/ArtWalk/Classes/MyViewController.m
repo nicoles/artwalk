@@ -102,7 +102,7 @@
 - (IBAction)getCameraPicture:(id)sender{
 	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
 	picker.delegate=self;
-	picker.allowsImageEditing = YES;
+	picker.allowsEditing = YES;
 	picker.sourceType = (sender == takePictureButton) ? UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypeSavedPhotosAlbum;
 	[self presentModalViewController:picker animated:YES];
 	[picker release];
@@ -124,10 +124,14 @@
 }
 
 #pragma mark -
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
-	imageview.image = image;
-	UIImageWriteToSavedPhotosAlbum(image,nil,nil,nil);
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	
 	[picker dismissModalViewControllerAnimated:YES];
+	[picker release];
+	imageview.image = [info objectForKey:UIImagePickerControllerEditedImage];
+	//imageview.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+	//UIImage *myImage = [info objectForKey:UIImagePickerControllerEditedImage];
+	//UIImageWriteToSavedPhotosAlbum([info objectForKey:UIImagePickerControllerOriginalImage], nil, nil, nil);
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
