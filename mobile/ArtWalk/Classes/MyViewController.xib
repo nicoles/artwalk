@@ -102,7 +102,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<object class="NSFont" key="IBUIFont" id="667500575">
+						<object class="NSFont" key="IBUIFont" id="614747445">
 							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
@@ -114,12 +114,12 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleShadowColor" id="777316477">
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="985607822">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
 					</object>
-					<object class="IBUIButton" id="338713883">
+					<object class="IBUIButton" id="101816698">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{65, 358}, {190, 37}}</string>
@@ -128,7 +128,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<reference key="IBUIFont" ref="667500575"/>
+						<reference key="IBUIFont" ref="614747445"/>
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Pick from Camera Roll</string>
 						<reference key="IBUIHighlightedTitleColor" ref="287794953"/>
@@ -136,9 +136,9 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="777316477"/>
+						<reference key="IBUINormalTitleShadowColor" ref="985607822"/>
 					</object>
-					<object class="IBUIButton" id="1001304821">
+					<object class="IBUIButton" id="982510298">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{65, 403}, {190, 37}}</string>
@@ -147,7 +147,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<reference key="IBUIFont" ref="667500575"/>
+						<reference key="IBUIFont" ref="614747445"/>
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Pick from Library</string>
 						<reference key="IBUIHighlightedTitleColor" ref="287794953"/>
@@ -155,9 +155,9 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="777316477"/>
+						<reference key="IBUINormalTitleShadowColor" ref="985607822"/>
 					</object>
-					<object class="IBUIImageView" id="473158827">
+					<object class="IBUIImageView" id="326825016">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{40, 59}, {240, 217}}</string>
@@ -224,7 +224,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">imageview</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="473158827"/>
+						<reference key="destination" ref="326825016"/>
 					</object>
 					<int key="connectionID">14</int>
 				</object>
@@ -240,7 +240,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">selectFromCameraRollButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="338713883"/>
+						<reference key="destination" ref="101816698"/>
 					</object>
 					<int key="connectionID">16</int>
 				</object>
@@ -256,11 +256,20 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">selectExistingPicture</string>
-						<reference key="source" ref="338713883"/>
+						<reference key="source" ref="101816698"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">18</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">getCameraPicture:</string>
+						<reference key="source" ref="982510298"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">20</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -278,11 +287,11 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="823651631"/>
-							<reference ref="338713883"/>
-							<reference ref="1001304821"/>
+							<reference ref="101816698"/>
+							<reference ref="982510298"/>
 							<reference ref="955096526"/>
 							<reference ref="416594047"/>
-							<reference ref="473158827"/>
+							<reference ref="326825016"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -314,17 +323,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">11</int>
-						<reference key="object" ref="338713883"/>
+						<reference key="object" ref="101816698"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">12</int>
-						<reference key="object" ref="1001304821"/>
+						<reference key="object" ref="982510298"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
-						<reference key="object" ref="473158827"/>
+						<reference key="object" ref="326825016"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
@@ -398,7 +407,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">18</int>
+			<int key="maxID">20</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

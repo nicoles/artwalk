@@ -126,10 +126,11 @@
 #pragma mark -
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
 	imageview.image = image;
+	UIImageWriteToSavedPhotosAlbum(image,nil,nil,nil);
 	[picker dismissModalViewControllerAnimated:YES];
 }
 
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
 	[picker dismissModalViewControllerAnimated:YES];
 }
 	
