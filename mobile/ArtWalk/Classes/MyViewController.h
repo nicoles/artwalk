@@ -15,14 +15,14 @@
 	UILabel *label;
 	
 	NSString *string;
-	UIImageView *imageview;
+	UIImageView *imageView;
 	UIButton *takePictureButton;
 	UIButton *selectFromCameraRollButton;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *textField;
 @property (nonatomic, retain) IBOutlet UILabel *label;
-@property (nonatomic, retain) IBOutlet UIImageView *imageview;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) IBOutlet UIButton *takePictureButton;
 @property (nonatomic, retain) IBOutlet UIButton *selectFromCameraRollButton;
 @property (nonatomic, copy) NSString *string;

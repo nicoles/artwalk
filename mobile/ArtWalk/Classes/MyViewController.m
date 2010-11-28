@@ -14,7 +14,7 @@
 @synthesize textField;
 @synthesize label;
 @synthesize string;
-@synthesize imageview;
+@synthesize imageView;
 @synthesize takePictureButton;
 @synthesize selectFromCameraRollButton;
 
@@ -79,7 +79,7 @@
 }
 
 - (void)viewDidUnload {
-	self.imageview = nil;
+	self.imageView = nil;
 	self.takePictureButton = nil;
 	self.selectFromCameraRollButton = nil;
     [super viewDidUnload];
@@ -92,7 +92,7 @@
 	[textField release];
 	[label release];
 	[string release];
-	[imageview release];
+	[imageView release];
 	[takePictureButton release];
 	[selectFromCameraRollButton release];
     [super dealloc];
@@ -102,7 +102,7 @@
 - (IBAction)getCameraPicture:(id)sender{
 	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
 	picker.delegate=self;
-	picker.allowsEditing = YES;
+	//picker.allowsEditing = YES;
 	picker.sourceType = (sender == takePictureButton) ? UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypeSavedPhotosAlbum;
 	[self presentModalViewController:picker animated:YES];
 	[picker release];
@@ -125,13 +125,42 @@
 
 #pragma mark -
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	//access original image
+	UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+	imageView.image = image;
+	//save image
+	UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 	
-	[picker dismissModalViewControllerAnimated:YES];
-	[picker release];
-	imageview.image = [info objectForKey:UIImagePickerControllerEditedImage];
+	//display edited image in view
+	//UIImage *image2 = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+	
+	
 	//imageview.image = [info objectForKey:UIImagePickerControllerOriginalImage];
 	//UIImage *myImage = [info objectForKey:UIImagePickerControllerEditedImage];
 	//UIImageWriteToSavedPhotosAlbum([info objectForKey:UIImagePickerControllerOriginalImage], nil, nil, nil);
+		
+	
+
+	[picker dismissModalViewControllerAnimated:YES];
+		
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+	UIAlertView *alert;
+	
+	// Unable to save the image  
+	if (error)
+		alert = [[UIAlertView alloc] initWithTitle:@"Error" 
+										   message:@"Unable to save image to Photo Album." 
+										  delegate:self cancelButtonTitle:@"Ok" 
+								 otherButtonTitles:nil];
+	else // All is well
+		alert = [[UIAlertView alloc] initWithTitle:@"Success" 
+										   message:@"Image saved to Photo Album." 
+										  delegate:self cancelButtonTitle:@"Ok" 
+								 otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

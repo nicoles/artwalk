@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="13"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -102,7 +102,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<object class="NSFont" key="IBUIFont" id="614747445">
+						<object class="NSFont" key="IBUIFont" id="610020464">
 							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
@@ -114,12 +114,12 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleShadowColor" id="985607822">
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="131820797">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
 					</object>
-					<object class="IBUIButton" id="101816698">
+					<object class="IBUIButton" id="130784440">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{65, 358}, {190, 37}}</string>
@@ -128,7 +128,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<reference key="IBUIFont" ref="614747445"/>
+						<reference key="IBUIFont" ref="610020464"/>
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Pick from Camera Roll</string>
 						<reference key="IBUIHighlightedTitleColor" ref="287794953"/>
@@ -136,9 +136,9 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="985607822"/>
+						<reference key="IBUINormalTitleShadowColor" ref="131820797"/>
 					</object>
-					<object class="IBUIButton" id="982510298">
+					<object class="IBUIButton" id="481815993">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{65, 403}, {190, 37}}</string>
@@ -147,7 +147,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<reference key="IBUIFont" ref="614747445"/>
+						<reference key="IBUIFont" ref="610020464"/>
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Pick from Library</string>
 						<reference key="IBUIHighlightedTitleColor" ref="287794953"/>
@@ -155,9 +155,9 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="985607822"/>
+						<reference key="IBUINormalTitleShadowColor" ref="131820797"/>
 					</object>
-					<object class="IBUIImageView" id="326825016">
+					<object class="IBUIImageView" id="405646556">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{40, 59}, {240, 217}}</string>
@@ -222,14 +222,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">imageview</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="326825016"/>
-					</object>
-					<int key="connectionID">14</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">takePictureButton</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="823651631"/>
@@ -240,7 +232,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">selectFromCameraRollButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="101816698"/>
+						<reference key="destination" ref="130784440"/>
 					</object>
 					<int key="connectionID">16</int>
 				</object>
@@ -256,7 +248,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">selectExistingPicture</string>
-						<reference key="source" ref="101816698"/>
+						<reference key="source" ref="130784440"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -265,11 +257,19 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">getCameraPicture:</string>
-						<reference key="source" ref="982510298"/>
+						<reference key="source" ref="481815993"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">20</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">imageView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="405646556"/>
+					</object>
+					<int key="connectionID">23</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -287,11 +287,11 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="823651631"/>
-							<reference ref="101816698"/>
-							<reference ref="982510298"/>
+							<reference ref="130784440"/>
+							<reference ref="481815993"/>
 							<reference ref="955096526"/>
 							<reference ref="416594047"/>
-							<reference ref="326825016"/>
+							<reference ref="405646556"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -323,17 +323,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">11</int>
-						<reference key="object" ref="101816698"/>
+						<reference key="object" ref="130784440"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">12</int>
-						<reference key="object" ref="982510298"/>
+						<reference key="object" ref="481815993"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
-						<reference key="object" ref="326825016"/>
+						<reference key="object" ref="405646556"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
@@ -407,7 +407,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">20</int>
+			<int key="maxID">23</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -458,7 +458,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>imageview</string>
+							<string>imageView</string>
 							<string>label</string>
 							<string>selectFromCameraRollButton</string>
 							<string>takePictureButton</string>
@@ -477,7 +477,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>imageview</string>
+							<string>imageView</string>
 							<string>label</string>
 							<string>selectFromCameraRollButton</string>
 							<string>takePictureButton</string>
@@ -486,7 +486,7 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
-								<string key="name">imageview</string>
+								<string key="name">imageView</string>
 								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
