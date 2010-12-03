@@ -1,0 +1,157 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* TTCSSStyleSheets */ = {
+		activeExec = 0;
+		executables = (
+			BBBB8CAF12A2036100F90285 /* TTCSSStyleSheets */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = BBBB8CAF12A2036100F90285 /* TTCSSStyleSheets */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* TTCSSStyleSheets */;
+		codeSenseManager = BBBB8CDF12A2036500F90285 /* Code sense */;
+		executables = (
+			BBBB8CAF12A2036100F90285 /* TTCSSStyleSheets */,
+			BBBB8CB012A2036100F90285 /* TTCSSStyleSheets-Xcode3.2.5 */,
+			BBBB8CB112A2036100F90285 /* TTCSSStyleSheets-Xcode3.2.2 */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					364,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 312607585;
+			PBXWorkspaceStateSaveDate = 312607585;
+		};
+		sourceControlManager = BBBB8CDE12A2036500F90285 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	66C34D7012662A2C00489E9A /* TTCSSStyleSheets-Xcode3.2.5 */ = {
+		activeExec = 0;
+		executables = (
+			BBBB8CB012A2036100F90285 /* TTCSSStyleSheets-Xcode3.2.5 */,
+		);
+	};
+	66D4356512662B56004C5F38 /* TTCSSStyleSheets-Xcode3.2.2 */ = {
+		activeExec = 0;
+		executables = (
+			BBBB8CB112A2036100F90285 /* TTCSSStyleSheets-Xcode3.2.2 */,
+		);
+	};
+	BBBB8CAF12A2036100F90285 /* TTCSSStyleSheets */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = TTCSSStyleSheets;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	BBBB8CB012A2036100F90285 /* TTCSSStyleSheets-Xcode3.2.5 */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "TTCSSStyleSheets-Xcode3.2.5";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	BBBB8CB112A2036100F90285 /* TTCSSStyleSheets-Xcode3.2.2 */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "TTCSSStyleSheets-Xcode3.2.2";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	BBBB8CDE12A2036500F90285 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	BBBB8CDF12A2036500F90285 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}

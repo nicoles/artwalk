@@ -1,0 +1,69 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeTarget = BEF31F390F352DF5000DE5D2 /* Three20UINavigator */;
+		codeSenseManager = BB09602612A8BD2500525BF4 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					364,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 313048327;
+			PBXWorkspaceStateSaveDate = 313048327;
+		};
+		sourceControlManager = BB09602512A8BD2500525BF4 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	665A541D1264DAF70032D0BE /* Three20UINavigator-Xcode3.2.5 */ = {
+		activeExec = 0;
+	};
+	665A54531264DAF70032D0BE /* Three20UINavigatorUnitTests-Xcode3.2.5 */ = {
+		activeExec = 0;
+	};
+	66FE8BC51264DBC3001E0674 /* Three20UINavigator-Xcode3.2.2 */ = {
+		activeExec = 0;
+	};
+	66FE8BFB1264DBC3001E0674 /* Three20UINavigatorUnitTests-Xcode3.2.2 */ = {
+		activeExec = 0;
+	};
+	BB09602512A8BD2500525BF4 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	BB09602612A8BD2500525BF4 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	BEF31F390F352DF5000DE5D2 /* Three20UINavigator */ = {
+		activeExec = 0;
+	};
+	EB9E6C6110B6A8F800DE563C /* Three20UINavigatorUnitTests */ = {
+		activeExec = 0;
+	};
+}
