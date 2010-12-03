@@ -140,6 +140,27 @@
 	//UIImageWriteToSavedPhotosAlbum([info objectForKey:UIImagePickerControllerOriginalImage], nil, nil, nil);
 		
 	
+    // Prep. the request
+    TTURLRequest* request = [TTURLRequest requestWithURL: @"http://127.0.0.1:8000/upload/" delegate: self];
+    request.httpMethod = @"POST";
+    request.cachePolicy = TTURLRequestCachePolicyNoCache; 
+	
+    // Response will be JSON ... BUT WHY DO I NEED TO DO THIS HERE???
+	//request.response = [[[TTURLDataResponse alloc] init] autorelease];
+	
+    // Set a header value
+    [request setValue:[[UIDevice currentDevice] uniqueIdentifier] forHTTPHeaderField:@"Device-UID"];
+	
+    // Post a string
+    //[request.parameters setObject:self.entity_title forKey:@"entity_title"];
+	
+	// Add the image to the request
+	[request addFile:UIImageJPEGRepresentation(image,0.0) 
+                mimeType:@"image/jpeg" 
+                fileName:@"photo_test.jpeg"];
+	
+	// Send the request
+    [request sendSynchronously];
 
 	[picker dismissModalViewControllerAnimated:YES];
 		
