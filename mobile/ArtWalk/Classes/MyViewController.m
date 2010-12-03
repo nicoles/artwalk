@@ -7,7 +7,7 @@
 //
 
 #import "MyViewController.h"
-
+#import "extThree20JSON/extThree20JSON.h"
 
 @implementation MyViewController
 
@@ -146,7 +146,7 @@
     request.cachePolicy = TTURLRequestCachePolicyNoCache; 
 	
     // Response will be JSON ... BUT WHY DO I NEED TO DO THIS HERE???
-	//request.response = [[[TTURLDataResponse alloc] init] autorelease];
+	request.response = [[[TTURLJSONResponse alloc] init] autorelease];
 	
     // Set a header value
     [request setValue:[[UIDevice currentDevice] uniqueIdentifier] forHTTPHeaderField:@"Device-UID"];
