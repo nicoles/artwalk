@@ -11,7 +11,7 @@
 
 
 @interface MyViewController : UIViewController <CLLocationManagerDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-	UITextField *textField;
+	UITextField *artPieceTitle;
 	
 	UILabel *label;
 	
@@ -25,7 +25,7 @@
 	CLLocation *startingPoint;
 }
 
-@property (nonatomic, retain) IBOutlet UITextField *textField;
+@property (nonatomic, retain) IBOutlet UITextField *artPieceTitle;
 @property (nonatomic, retain) IBOutlet UILabel *label;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) IBOutlet UIButton *takePictureButton;

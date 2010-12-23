@@ -11,7 +11,7 @@
 
 @implementation MyViewController
 
-@synthesize textField;
+@synthesize artPieceTitle;
 @synthesize label;
 @synthesize string;
 @synthesize imageView;
@@ -34,7 +34,7 @@
 }
 
 - (IBAction)changeGreeting:(id)sender {
-	self.string = textField.text;
+	self.string = artPieceTitle.text;
 	
 	NSString *nameString = string;
 	if ([nameString length] == 0) {
@@ -47,8 +47,8 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-	if (theTextField == textField) {
-		[textField resignFirstResponder];
+	if (theTextField == artPieceTitle) {
+		[artPieceTitle resignFirstResponder];
 	}
 	
 	return YES;
@@ -98,7 +98,7 @@
 
 
 - (void)dealloc {
-	[textField release];
+	[artPieceTitle release];
 	[label release];
 	[string release];
 	[latitudeString release];
@@ -174,6 +174,7 @@
 	// Add the current location to the request
 	[request.parameters setObject:self.latitudeString forKey:@"latitude"];
 	[request.parameters setObject:self.longitudeString forKey:@"longitude"];
+	[request.parameters setObject:self.artPieceTitle.text forKey:@"title"];
 	
 	// Send the request
     [request sendSynchronously];

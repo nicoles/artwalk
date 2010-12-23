@@ -8,10 +8,12 @@
 
 #import "ArtWalkAppDelegate.h"
 #import "MyViewController.h"
+#import "SearchResultsView.h"
 
 @implementation ArtWalkAppDelegate
 
 @synthesize window;
+@synthesize tabBarController;
 @synthesize myViewController;
 
 #pragma mark -
@@ -19,16 +21,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-	MyViewController *aViewController = [[MyViewController alloc]
-										 initWithNibName:@"MyViewController" bundle:[NSBundle mainBundle]];
+	//MyViewController *aViewController = [[MyViewController alloc]
+	//									 initWithNibName:@"MyViewController" bundle:[NSBundle mainBundle]];
 	
-	[self setMyViewController:aViewController];
+//	[self setMyViewController:aViewController];
 	
-	[aViewController release];
+//	[aViewController release];
 	
-	UIView *controllersView = [myViewController view];
+//	UIView *controllersView = [myViewController view];
 	
-	[window addSubview:controllersView];
+	[window addSubview:tabBarController.view];
     
 	// Override point for customization after application launch.
     
@@ -88,6 +90,7 @@
 
 - (void)dealloc {
 	[myViewController release];
+	[tabBarController release];
     [window release];
     [super dealloc];
 }

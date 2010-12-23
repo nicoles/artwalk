@@ -20,6 +20,9 @@ def upload(request):
 		if 'latitude' in request.POST and 'longitude' in request.POST:
 			piece.lat = request.POST['latitude']
 			piece.lon = request.POST['longitude']
+			
+		if 'title' in request.POST:
+			piece.title = request.POST['title']
 
 		piece.save()
 

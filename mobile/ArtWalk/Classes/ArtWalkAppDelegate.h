@@ -10,12 +10,14 @@
 
 
 @class MyViewController;
-@interface ArtWalkAppDelegate : NSObject <UIApplicationDelegate> {
+@interface ArtWalkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
+	UITabBarController *tabBarController;
 	MyViewController *myViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 @property (nonatomic, retain) MyViewController *myViewController;
 
 
