@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+
+
 @class MyViewController;
 @interface ArtWalkAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
@@ -15,6 +17,7 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) MyViewController *myViewController;
+
 
 @end
 

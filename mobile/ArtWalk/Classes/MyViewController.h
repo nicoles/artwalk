@@ -7,18 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 
-
-@interface MyViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface MyViewController : UIViewController <CLLocationManagerDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
 	UITextField *textField;
 	
 	UILabel *label;
 	
 	NSString *string;
+	NSString *latitudeString;
+	NSString *longitudeString;
 	UIImageView *imageView;
 	UIButton *takePictureButton;
 	UIButton *selectFromCameraRollButton;
+	CLLocationManager *locationManager;
+	CLLocation *startingPoint;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *textField;
@@ -27,6 +31,10 @@
 @property (nonatomic, retain) IBOutlet UIButton *takePictureButton;
 @property (nonatomic, retain) IBOutlet UIButton *selectFromCameraRollButton;
 @property (nonatomic, copy) NSString *string;
+@property (nonatomic, retain) NSString *latitudeString;
+@property (nonatomic, retain) NSString *longitudeString;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) CLLocation *startingPoint;
 
 - (IBAction)getCameraPicture:(id)sender;
 - (IBAction)selectExistingPicture;

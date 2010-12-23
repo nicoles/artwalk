@@ -17,8 +17,16 @@
 @synthesize imageView;
 @synthesize takePictureButton;
 @synthesize selectFromCameraRollButton;
+@synthesize locationManager;
+@synthesize startingPoint;
+@synthesize latitudeString;
+@synthesize longitudeString;
 
 - (void)viewDidLoad {
+	self.locationManager = [[CLLocationManager alloc] init];
+	locationManager.delegate = self;
+	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+	[locationManager startUpdatingLocation];
 	if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 		takePictureButton.hidden = YES;
 		selectFromCameraRollButton.hidden = YES;
@@ -82,6 +90,7 @@
 	self.imageView = nil;
 	self.takePictureButton = nil;
 	self.selectFromCameraRollButton = nil;
+	self.locationManager = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -92,8 +101,11 @@
 	[textField release];
 	[label release];
 	[string release];
+	[latitudeString release];
+	[longitudeString release];
 	[imageView release];
 	[takePictureButton release];
+	[startingPoint release];
 	[selectFromCameraRollButton release];
     [super dealloc];
 }
@@ -159,6 +171,10 @@
                 mimeType:@"image/jpeg" 
                 fileName:@"photo_test.jpeg"];
 	
+	// Add the current location to the request
+	[request.parameters setObject:self.latitudeString forKey:@"latitude"];
+	[request.parameters setObject:self.longitudeString forKey:@"longitude"];
+	
 	// Send the request
     [request sendSynchronously];
 
@@ -187,6 +203,25 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
 	[picker dismissModalViewControllerAnimated:YES];
 }
+
+#pragma mark CLLocationManagerDelegate Methods
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+	if (startingPoint == nil) {
+		self.startingPoint = newLocation;
+	}
 	
+	[latitudeString autorelease];
+	[longitudeString autorelease];
+	latitudeString = [[NSString alloc] initWithFormat:@"%g", newLocation.coordinate.latitude];
+	longitudeString = [[NSString alloc] initWithFormat:@"%g", newLocation.coordinate.longitude];
+	
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+	NSString *errorType = (error.code == kCLErrorDenied) ? @"Access Denied" : @"Unknown Error";
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error getting Location" message:errorType delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+}
 
 @end
