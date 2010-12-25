@@ -1,0 +1,12 @@
+<html>
+  <body>
+    <head><title>Recent artwalk postings</title></head>
+    {% for art_piece in art_pieces %}
+      <h2>{{ art_piece.title }}</h2>
+      lat: {{ art_piece.lat }}, lon: {{ art_piece.lon }}<br />
+      {% for item in art_piece.media.all %}
+        <img src="http://127.0.0.1:8001/{{ item.content.url }}" />
+      {% endfor %}
+    {% endfor %}
+  </body>
+</html>

@@ -24,8 +24,8 @@ class Media(models.Model):
 	content = models.FileField(upload_to='%Y/%m/%d/%H')
 	
 	def __unicode__(self):
-		return '%s' % self.file
-	
+		return '%s' % self.content
+
 class ArtPiece(models.Model):
 	title = models.CharField(max_length=256)
 	note = models.TextField(null=True)
