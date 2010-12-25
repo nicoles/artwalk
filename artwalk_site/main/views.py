@@ -40,7 +40,7 @@ def recent(request):
 	if request.GET.get('mode') == 'json':
 		response = []
 		for art_piece in ArtPiece.objects.all():
-			media = [ { 'url': '%s/%s' % (settings.MEDIA_URL, medium.content.url) } for medium in art_piece.media.all() ]
+			media = [ { 'url': 'http://%s/%s' % (settings.MEDIA_URL, medium.content.url) } for medium in art_piece.media.all() ]
 
 			response.append( {
 				'title': art_piece.title,
