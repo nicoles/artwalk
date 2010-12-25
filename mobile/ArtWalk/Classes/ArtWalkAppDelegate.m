@@ -7,28 +7,29 @@
 //
 
 #import "ArtWalkAppDelegate.h"
-#import "MyViewController.h"
-#import "SearchResultsView.h"
+#import "SubmissionController.h"
+#import "SingleArtPiece.h"
 
 @implementation ArtWalkAppDelegate
 
 @synthesize window;
 @synthesize tabBarController;
-@synthesize myViewController;
+@synthesize submissionController;
+@synthesize singleArtPiece;
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-	//MyViewController *aViewController = [[MyViewController alloc]
-	//									 initWithNibName:@"MyViewController" bundle:[NSBundle mainBundle]];
+	//SubmissionController *aViewController = [[SubmissionController alloc]
+	//									 initWithNibName:@"SubmissionController" bundle:[NSBundle mainBundle]];
 	
-//	[self setMyViewController:aViewController];
+//	[self setSubmissionController:aViewController];
 	
 //	[aViewController release];
 	
-//	UIView *controllersView = [myViewController view];
+//	UIView *controllersView = [SubmissionController view];
 	
 	[window addSubview:tabBarController.view];
     
@@ -89,7 +90,8 @@
 
 
 - (void)dealloc {
-	[myViewController release];
+	[submissionController release];
+	[singleArtPiece release];
 	[tabBarController release];
     [window release];
     [super dealloc];

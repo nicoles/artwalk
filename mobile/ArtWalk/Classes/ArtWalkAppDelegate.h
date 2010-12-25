@@ -9,17 +9,19 @@
 #import <UIKit/UIKit.h>
 
 
-@class MyViewController;
+@class SubmissionController;
+@class SingleArtPiece;
 @interface ArtWalkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
 	UITabBarController *tabBarController;
-	MyViewController *myViewController;
+	SubmissionController *submissionController;
+	SingleArtPiece *singleArtPiece;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-@property (nonatomic, retain) MyViewController *myViewController;
-
+@property (nonatomic, retain) SubmissionController *submissionController;
+@property (nonatomic, retain) SingleArtPiece *singleArtPiece;
 
 @end
 

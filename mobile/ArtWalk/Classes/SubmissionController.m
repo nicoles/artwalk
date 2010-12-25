@@ -1,22 +1,21 @@
 //
-//  MyViewController.m
+//  SubmissionController.m
 //  ArtWalk
 //
 //  Created by Nicole Aptekar on 10/11/23.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "MyViewController.h"
+#import "SubmissionController.h"
 #import "extThree20JSON/extThree20JSON.h"
 
-@implementation MyViewController
+@implementation SubmissionController
 
 @synthesize artPieceTitle;
-@synthesize label;
+//@synthesize label;
 @synthesize string;
 @synthesize imageView;
 @synthesize takePictureButton;
-@synthesize selectFromCameraRollButton;
 @synthesize locationManager;
 @synthesize startingPoint;
 @synthesize latitudeString;
@@ -29,22 +28,26 @@
 	[locationManager startUpdatingLocation];
 	if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 		takePictureButton.hidden = YES;
-		selectFromCameraRollButton.hidden = YES;
 	}
 }
 
-- (IBAction)changeGreeting:(id)sender {
+/*- (IBAction)changeGreeting:(id)sender {
 	self.string = artPieceTitle.text;
 	
-	NSString *nameString = string;
+		/* bullshit to display the string.
+		 NSString *nameString = string;
 	if ([nameString length] == 0) {
 		nameString = @"World";
 	}
 	
-	NSString *greeting = [[NSString alloc] initWithFormat:@"Hello, %@!", nameString];
+
+	 NSString *greeting = [[NSString alloc] initWithFormat:@"Hello, %@!", nameString];
 	label.text = greeting;
 	[greeting release];
+	 
+	
 }
+*/
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
 	if (theTextField == artPieceTitle) {
@@ -89,7 +92,6 @@
 - (void)viewDidUnload {
 	self.imageView = nil;
 	self.takePictureButton = nil;
-	self.selectFromCameraRollButton = nil;
 	self.locationManager = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -99,18 +101,18 @@
 
 - (void)dealloc {
 	[artPieceTitle release];
-	[label release];
+//	[label release];
 	[string release];
 	[latitudeString release];
 	[longitudeString release];
 	[imageView release];
 	[takePictureButton release];
 	[startingPoint release];
-	[selectFromCameraRollButton release];
     [super dealloc];
 }
 
-#pragma mark -
+#pragma mark Get Camera/Select Existing
+
 - (IBAction)getCameraPicture:(id)sender{
 	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
 	picker.delegate=self;
@@ -141,7 +143,7 @@
 	UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 	imageView.image = image;
 	//save image
-	UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+	//UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 	
 	//display edited image in view
 	//UIImage *image2 = [info objectForKey:@"UIImagePickerControllerEditedImage"];
@@ -182,6 +184,8 @@
 	[picker dismissModalViewControllerAnimated:YES];
 		
 }
+
+//TODO: no longer have the save to library-- write a function to make some sort of notification happen when sending completes
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
 	UIAlertView *alert;
