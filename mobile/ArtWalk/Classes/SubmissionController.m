@@ -155,7 +155,7 @@
 		
 	
     // Prep. the request
-    TTURLRequest* request = [TTURLRequest requestWithURL: @"http://127.0.0.1:8000/upload/" delegate: self];
+    TTURLRequest* request = [TTURLRequest requestWithURL: @"http://75.101.166.190/upload/" delegate: self];
     request.httpMethod = @"POST";
     request.cachePolicy = TTURLRequestCachePolicyNoCache; 
 	

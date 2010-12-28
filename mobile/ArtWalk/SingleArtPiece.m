@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
 	
 	responseData = [[NSMutableData data] retain];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://127.0.0.1:8000/recent/?mode=json"]];
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];
 	
     [super viewDidLoad];
@@ -98,6 +98,7 @@
 	{
 		//TODO: make this a carousel of the available images, and have it click to embiggen
 		NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[medium objectForKey:@"url"]]];
+	
 		artPieceImageView.image = [UIImage imageWithData:imageData];
 
 	}
