@@ -12,14 +12,17 @@
 @implementation SubmissionController
 
 @synthesize artPieceTitle;
+@synthesize artPieceArtist;
 //@synthesize label;
 @synthesize string;
 @synthesize imageView;
 @synthesize takePictureButton;
+@synthesize sendArtPieceButton;
 @synthesize locationManager;
 @synthesize startingPoint;
 @synthesize latitudeString;
 @synthesize longitudeString;
+
 
 - (void)viewDidLoad {
 	self.locationManager = [[CLLocationManager alloc] init];
@@ -50,8 +53,9 @@
 */
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-	if (theTextField == artPieceTitle) {
+	if (theTextField == artPieceTitle || artPieceArtist) {
 		[artPieceTitle resignFirstResponder];
+		[artPieceArtist resignFirstResponder];
 	}
 	
 	return YES;
@@ -101,11 +105,13 @@
 
 - (void)dealloc {
 	[artPieceTitle release];
+	[artPieceArtist release];
 //	[label release];
 	[string release];
 	[latitudeString release];
 	[longitudeString release];
 	[imageView release];
+	
 	[takePictureButton release];
 	[startingPoint release];
     [super dealloc];
@@ -137,7 +143,6 @@
 	}
 }
 
-#pragma mark -
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	//access original image
 	UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
@@ -154,10 +159,22 @@
 	//UIImageWriteToSavedPhotosAlbum([info objectForKey:UIImagePickerControllerOriginalImage], nil, nil, nil);
 		
 	
-    // Prep. the request
+    
+	[picker dismissModalViewControllerAnimated:YES];
+		
+}
+
+#pragma mark send data to server
+
+- (IBAction)sendArtPiece{
+
+	// Prep. the request
+	
+	NSLog(@"totally button pressed");
     TTURLRequest* request = [TTURLRequest requestWithURL: @"http://75.101.166.190/upload/" delegate: self];
     request.httpMethod = @"POST";
     request.cachePolicy = TTURLRequestCachePolicyNoCache; 
+	NSLog(@"request: %@", request);
 	
     // Response will be JSON ... BUT WHY DO I NEED TO DO THIS HERE???
 	request.response = [[[TTURLJSONResponse alloc] init] autorelease];
@@ -169,9 +186,9 @@
     //[request.parameters setObject:self.entity_title forKey:@"entity_title"];
 	
 	// Add the image to the request
-	[request addFile:UIImageJPEGRepresentation(image,0.0) 
-                mimeType:@"image/jpeg" 
-                fileName:@"photo_test.jpeg"];
+	[request addFile:UIImageJPEGRepresentation(imageView.image,0.0) 
+			mimeType:@"image/jpeg" 
+			fileName:@"photo_test.jpeg"];
 	
 	// Add the current location to the request
 	[request.parameters setObject:self.latitudeString forKey:@"latitude"];
@@ -180,9 +197,17 @@
 	
 	// Send the request
     [request sendSynchronously];
-
-	[picker dismissModalViewControllerAnimated:YES];
-		
+	NSLog(@"request: %@", request);
+	UIAlertView *alert;
+	
+	alert = [[UIAlertView alloc] initWithTitle:@"Success" 
+										   message:@"Image sent to ArtWalk." 
+										  delegate:self cancelButtonTitle:@"Ok" 
+								 otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+	
+	
 }
 
 //TODO: no longer have the save to library-- write a function to make some sort of notification happen when sending completes

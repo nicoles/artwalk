@@ -12,7 +12,8 @@
 
 @interface SubmissionController : UIViewController <CLLocationManagerDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
 	UITextField *artPieceTitle;
-	
+	UITextField *artPieceArtist;
+
 	//UILabel *label;
 	
 	NSString *string;
@@ -20,14 +21,18 @@
 	NSString *longitudeString;
 	UIImageView *imageView;
 	UIButton *takePictureButton;
+	UIButton *sendArtPieceButton;
 	CLLocationManager *locationManager;
 	CLLocation *startingPoint;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *artPieceTitle;
+@property (nonatomic, retain) IBOutlet UITextField *artPieceArtist;
+
 //@property (nonatomic, retain) IBOutlet UILabel *label;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) IBOutlet UIButton *takePictureButton;
+@property (nonatomic, retain) IBOutlet UIButton *sendArtPieceButton;
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, retain) NSString *latitudeString;
 @property (nonatomic, retain) NSString *longitudeString;
@@ -36,6 +41,7 @@
 
 - (IBAction)getCameraPicture:(id)sender;
 - (IBAction)selectExistingPicture;
+- (IBAction)sendArtPiece;
 //- (IBAction)changeGreeting:(id)sender;
 
 @end
