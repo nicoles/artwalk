@@ -36,6 +36,8 @@
 		BBCB789112C5765300983D30 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB788C12C5765300983D30 /* SBJsonWriter.m */; };
 		BBDDCDE6129CD94B00E9DB9C /* SubmissionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */; };
 		BBDDCDE7129CD94B00E9DB9C /* SubmissionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDDCDE5129CD94B00E9DB9C /* SubmissionController.xib */; };
+		BBF0E84D12D13B9F00669B83 /* EditingController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF0E84B12D13B9F00669B83 /* EditingController.m */; };
+		BBF0E84E12D13B9F00669B83 /* EditingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF0E84C12D13B9F00669B83 /* EditingController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -498,6 +500,9 @@
 		BBDDCDE3129CD94B00E9DB9C /* SubmissionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionController.h; sourceTree = "<group>"; };
 		BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionController.m; sourceTree = "<group>"; };
 		BBDDCDE5129CD94B00E9DB9C /* SubmissionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmissionController.xib; sourceTree = "<group>"; };
+		BBF0E84A12D13B9F00669B83 /* EditingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingController.h; sourceTree = "<group>"; };
+		BBF0E84B12D13B9F00669B83 /* EditingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingController.m; sourceTree = "<group>"; };
+		BBF0E84C12D13B9F00669B83 /* EditingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditingController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,6 +545,9 @@
 				BB83D5F212C338E200C69C03 /* SearchResultsView.xib */,
 				BBCB77A212C5460C00983D30 /* SearchResultPhotoSource.h */,
 				BBCB77A312C5460C00983D30 /* SearchResultPhotoSource.m */,
+				BBF0E84A12D13B9F00669B83 /* EditingController.h */,
+				BBF0E84B12D13B9F00669B83 /* EditingController.m */,
+				BBF0E84C12D13B9F00669B83 /* EditingController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1186,6 +1194,7 @@
 				BBDDCDE7129CD94B00E9DB9C /* SubmissionController.xib in Resources */,
 				BB83D5F412C338E200C69C03 /* SearchResultsView.xib in Resources */,
 				BB0C7F3E12C5CAF8001EBE04 /* SingleArtPiece.xib in Resources */,
+				BBF0E84E12D13B9F00669B83 /* EditingController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1207,6 +1216,7 @@
 				BBCB789012C5765300983D30 /* SBJsonParser.m in Sources */,
 				BBCB789112C5765300983D30 /* SBJsonWriter.m in Sources */,
 				BB0C7F3D12C5CAF8001EBE04 /* SingleArtPiece.m in Sources */,
+				BBF0E84D12D13B9F00669B83 /* EditingController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

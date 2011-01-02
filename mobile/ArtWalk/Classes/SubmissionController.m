@@ -194,6 +194,7 @@
 	[request.parameters setObject:self.latitudeString forKey:@"latitude"];
 	[request.parameters setObject:self.longitudeString forKey:@"longitude"];
 	[request.parameters setObject:self.artPieceTitle.text forKey:@"title"];
+	[request.parameters setObject:self.artPieceArtist.text forKey:@"artist"];
 	
 	// Send the request
     [request sendSynchronously];
