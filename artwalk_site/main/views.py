@@ -4,7 +4,7 @@ from django.core.files.base import ContentFile
 
 import settings
 
-from models import Media, ArtPiece
+from models import Media, Artist, ArtPiece
 import json
 import sys
 
@@ -27,6 +27,13 @@ def upload(request):
 			
 		if 'title' in request.POST:
 			piece.title = request.POST['title']
+		
+		if 'artist' in request.POST:
+			artist = Artist.objects.create()
+			artist.name = request.POST['artist']
+			print >> sys.stderr, artist.name
+			artist.save()		
+			piece.artists.add(artist)	
 
 		piece.save()
 
@@ -40,13 +47,14 @@ def recent(request):
 	if request.GET.get('mode') == 'json':
 		response = []
 		for art_piece in ArtPiece.objects.all():
-			media = [ { 'url': 'http://%s/%s' % (settings.MEDIA_URL, medium.content.url) } for medium in art_piece.media.all() ]
-
+			media = [ { 'url': medium.content.url } for medium in art_piece.media.all() ]
+			artists = [ { 'name': artist.name } for artist in art_piece.artists.all() ]
 			response.append( {
 				'title': art_piece.title,
 				'lat': art_piece.lat,
 				'lon': art_piece.lon,
-				'media': media
+				'media': media,
+				'artist': artists
 			})
 
 		return HttpResponse(json.dumps(response, sort_keys=True, indent=4), mimetype='application/json')
