@@ -89,8 +89,8 @@
 	
 	NSDictionary *artPiece = [results objectAtIndex:results.count-1];
 	artPieceTitle.text = [artPiece objectForKey:@"title"];
-	latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"lat"]];
-	longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"lon"]];
+	latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"latitude"]];
+	longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"longitude"]];
 	
 	NSArray *media = [artPiece objectForKey:@"media"];
 	

@@ -532,6 +532,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BB83D5F112C338E200C69C03 /* SearchResultsView.m */,
 				BB0C7F3A12C5CAF8001EBE04 /* SingleArtPiece.h */,
 				BB0C7F3B12C5CAF8001EBE04 /* SingleArtPiece.m */,
 				BB0C7F3C12C5CAF8001EBE04 /* SingleArtPiece.xib */,
@@ -541,7 +542,6 @@
 				BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */,
 				BBDDCDE5129CD94B00E9DB9C /* SubmissionController.xib */,
 				BB83D5F012C338E200C69C03 /* SearchResultsView.h */,
-				BB83D5F112C338E200C69C03 /* SearchResultsView.m */,
 				BB83D5F212C338E200C69C03 /* SearchResultsView.xib */,
 				BBCB77A212C5460C00983D30 /* SearchResultPhotoSource.h */,
 				BBCB77A312C5460C00983D30 /* SearchResultPhotoSource.m */,

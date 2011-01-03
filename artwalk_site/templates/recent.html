@@ -6,7 +6,7 @@
       {% for artist in art_piece.artists.all %}
 	<h3>{{ artist.name }}</h3>
       {% endfor %}
-      lat: {{ art_piece.lat }}, lon: {{ art_piece.lon }}<br />
+      latitude: {{ art_piece.latitude }}, longitude: {{ art_piece.longitude }}<br />
       {% for item in art_piece.media.all %}
         <img src="{{ item.content.url }}" />
       {% endfor %}

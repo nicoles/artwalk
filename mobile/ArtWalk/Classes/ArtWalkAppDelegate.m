@@ -9,6 +9,7 @@
 #import "ArtWalkAppDelegate.h"
 #import "SubmissionController.h"
 #import "SingleArtPiece.h"
+#import "EditingController.h"
 
 @implementation ArtWalkAppDelegate
 
@@ -16,6 +17,7 @@
 @synthesize tabBarController;
 @synthesize submissionController;
 @synthesize singleArtPiece;
+@synthesize editingController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -93,6 +95,7 @@
 	[submissionController release];
 	[singleArtPiece release];
 	[tabBarController release];
+	[editingController release];
     [window release];
     [super dealloc];
 }

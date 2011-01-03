@@ -29,11 +29,11 @@ class Media(models.Model):
 class ArtPiece(models.Model):
 	title = models.CharField(max_length=256)
 	note = models.TextField(null=True)
-	lat = models.FloatField(null=True)
-	lon = models.FloatField(null=True)
+	latitude = models.FloatField(null=True)
+	longitude = models.FloatField(null=True)
 	artists = models.ManyToManyField(Artist)
 	tags = models.ManyToManyField(Tags)
 	media = models.ManyToManyField(Media)
 	
 	def __unicode__(self):
-		return '%s at %s,%s' % (self.title, self.lat, self.lon)
+		return '%s at %s,%s' % (self.title, self.latitude, self.longitude)

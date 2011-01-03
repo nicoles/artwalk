@@ -14,7 +14,7 @@
 	UITextField *artPieceArtist;
 	UITextView *artPieceNote;
 	UITextField *artPieceTags;
-	UIImageView *imageView;
+	UIImageView *artPieceImageView;
 	UIButton *takePictureButton;
 	UIButton *updateArtPieceButton;
 	NSString *latitudeString;
@@ -22,6 +22,7 @@
 	CLLocationManager *locationManager;
 	CLLocation *startingPoint;
 	NSString *artPieceId;
+	NSMutableData *responseData;
 	
 }
 
@@ -29,7 +30,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *artPieceArtist;
 @property (nonatomic, retain) IBOutlet UITextView *artPieceNote;
 @property (nonatomic, retain) IBOutlet UITextField *artPieceTags;
-@property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) IBOutlet UIImageView *artPieceImageView;
 @property (nonatomic, retain) IBOutlet UIButton *takePictureButton;
 @property (nonatomic, retain) IBOutlet UIButton *updateArtPieceButton;
 @property (nonatomic, retain) NSString *latitudeString;

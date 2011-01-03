@@ -22,8 +22,8 @@ def upload(request):
 			piece.media = media
 
 		if 'latitude' in request.POST and 'longitude' in request.POST:
-			piece.lat = request.POST['latitude']
-			piece.lon = request.POST['longitude']
+			piece.latitude = request.POST['latitude']
+			piece.longitude = request.POST['longitude']
 			
 		if 'title' in request.POST:
 			piece.title = request.POST['title']
@@ -43,6 +43,39 @@ def upload(request):
 	else:
 		return render_to_response('upload.html',{})
 
+def update_art_piece(request, id):
+	art_piece = get_object_or_404(ArtPiece, pk=int(id))
+	media = []
+	if request.method == 'POST':
+		for f in request.FILES:
+			medium = Media.objects.create()
+			medium.content.save(request.FILES[f].name, request.FILES[f])
+			media.append(medium)
+
+		for medium in media:
+			art_piece.media.add(medium) 
+
+		for attr in ['title', 'latitude']:
+			if not getattr(art_piece, attr, None) and attr in request.POST:
+				art_piece.setattr(art_piece, attr, request.POST[attr])
+				
+				if attr == 'latitude':
+					art_piece.setattr(art_piece, 'longitude', request.POST['longitude'])
+				
+		if 'artist' in request.POST:
+			artists = Artist.objects.filter(name=request.POST['artist']):
+			for artist in artists:
+				art_piece.artists.add(artist)
+			else:
+				art_piece.artists.create(name=request.POST['artist'])
+
+		art_piece.save()
+		
+		print >> sys.stderr, art_piece
+		return render_to_response('upload.html',{})
+	else:
+		return render_to_response('upload.html',{})
+		
 def recent(request):
 	if request.GET.get('mode') == 'json':
 		response = []
@@ -52,8 +85,8 @@ def recent(request):
 			response.append( {
 				'id': art_piece.id,
 				'title': art_piece.title,
-				'lat': art_piece.lat,
-				'lon': art_piece.lon,
+				'latitude': art_piece.latitude,
+				'longitude': art_piece.longitude,
 				'media': media,
 				'artists': artists
 			})
@@ -68,17 +101,19 @@ def recent(request):
 def art_piece(request, id):
 	art_piece = get_object_or_404(ArtPiece, pk=int(id))
 	if request.GET.get('mode') == 'json':
-		response = []
 		media = [ { 'url': medium.content.url } for medium in art_piece.media.all() ]
 		artists = [ { 'name': artist.name } for artist in art_piece.artists.all() ]
-		response.append( {
+		response = {
 			'id': art_piece.id,
 			'title': art_piece.title,
-			'lat': art_piece.lat,
-			'lon': art_piece.lon,
+			'latitude': art_piece.latitude,
+			'longitude': art_piece.longitude,
 			'media': media,
 			'artists': artists
-		})
+		}
 		return HttpResponse(json.dumps(response, sort_keys=True, indent=4), mimetype='application/json')
 	else:
 		return render_to_response('art_piece.html', {'art_piece': art_piece})
+		
+
+	
