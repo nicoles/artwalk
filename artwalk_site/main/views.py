@@ -64,8 +64,9 @@ def update_art_piece(request, id):
 				
 		if 'artist' in request.POST:
 			artists = Artist.objects.filter(name=request.POST['artist'])
-			for artist in artists:
-				art_piece.artists.add(artist)
+			if artists:
+				for artist in artists:
+					art_piece.artists.add(artist)
 			else:
 				art_piece.artists.create(name=request.POST['artist'])
 
