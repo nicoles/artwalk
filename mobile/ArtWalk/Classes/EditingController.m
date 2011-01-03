@@ -43,6 +43,14 @@
 	}
 }
 
+//populate fields with viewWillAppear
+- (void)viewWillAppear:(BOOL)animated {
+	artPieceArtist = 
+	artPieceTitle =
+	artPieceTags =
+	artPieceNote =
+	imageView =
+	[super viewWillAppear:animated];
 
 /*
 // Override to allow orientations other than the default portrait orientation.

@@ -7,6 +7,7 @@ from django.conf.urls.defaults import *
 urlpatterns = patterns('',
     (r'^recent/$', 'main.views.recent'),
 	(r'^upload/$', 'main.views.upload'),
+	(r'^art_piece/(\d+)/$', 'main.views.art_piece'),
     # Example:
     # (r'^artwalk_site/', include('artwalk_site.foo.urls')),
 

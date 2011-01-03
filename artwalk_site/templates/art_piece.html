@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <head><title>{{ art_piece.title }} : artwalk</title></head>
+      <h2>{{ art_piece.title }}</h2>
+      {% for artist in art_piece.artists.all %}
+		<h3>{{ artist.name }}</h3>
+      {% endfor %}
+      lat: {{ art_piece.lat }}, lon: {{ art_piece.lon }}<br />
+      {% for item in art_piece.media.all %}
+        <img src="{{ item.content.url }}" />
+      {% endfor %}
+  </body>
+</html>

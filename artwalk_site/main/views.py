@@ -1,5 +1,5 @@
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
+from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import render_to_response, get_object_or_404
 from django.core.files.base import ContentFile
 
 import settings
@@ -50,11 +50,12 @@ def recent(request):
 			media = [ { 'url': medium.content.url } for medium in art_piece.media.all() ]
 			artists = [ { 'name': artist.name } for artist in art_piece.artists.all() ]
 			response.append( {
+				'id': art_piece.id,
 				'title': art_piece.title,
 				'lat': art_piece.lat,
 				'lon': art_piece.lon,
 				'media': media,
-				'artist': artists
+				'artists': artists
 			})
 
 		return HttpResponse(json.dumps(response, sort_keys=True, indent=4), mimetype='application/json')
@@ -64,4 +65,20 @@ def recent(request):
 	    #print >> sys.stderr, media
 		return render_to_response('recent.html', {'art_pieces': art_pieces})
 
-	
+def art_piece(request, id):
+	art_piece = get_object_or_404(ArtPiece, pk=int(id))
+	if request.GET.get('mode') == 'json':
+		response = []
+		media = [ { 'url': medium.content.url } for medium in art_piece.media.all() ]
+		artists = [ { 'name': artist.name } for artist in art_piece.artists.all() ]
+		response.append( {
+			'id': art_piece.id,
+			'title': art_piece.title,
+			'lat': art_piece.lat,
+			'lon': art_piece.lon,
+			'media': media,
+			'artists': artists
+		})
+		return HttpResponse(json.dumps(response, sort_keys=True, indent=4), mimetype='application/json')
+	else:
+		return render_to_response('art_piece.html', {'art_piece': art_piece})
