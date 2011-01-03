@@ -63,7 +63,7 @@ def update_art_piece(request, id):
 					art_piece.setattr(art_piece, 'longitude', request.POST['longitude'])
 				
 		if 'artist' in request.POST:
-			artists = Artist.objects.filter(name=request.POST['artist']):
+			artists = Artist.objects.filter(name=request.POST['artist'])
 			for artist in artists:
 				art_piece.artists.add(artist)
 			else:
