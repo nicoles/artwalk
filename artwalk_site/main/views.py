@@ -57,7 +57,7 @@ def update_art_piece(request, id):
 
 		for attr in ['title', 'latitude']:
 			if not getattr(art_piece, attr, None) and attr in request.POST:
-				art_piece.setattr(art_piece, attr, request.POST[attr])
+				setattr(art_piece, attr, request.POST[attr])
 				
 				if attr == 'latitude':
 					art_piece.setattr(art_piece, 'longitude', request.POST['longitude'])
