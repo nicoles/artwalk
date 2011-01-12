@@ -85,7 +85,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection 
 {
 	
-	NSLog(@"DidFinishLoading: %@", responseData);
+	NSLog(@"DidFinishLoading: %@", *responseData);
 	// Store incoming data into a string
 	NSString *jsonString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 	

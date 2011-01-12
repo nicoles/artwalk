@@ -7,7 +7,7 @@
 //
 
 #import "MultipleArtPiece.h"
-#import "ArtPiece.h"
+#import "ArtPieceView.h"
 #import "JSON.h"
 
 @implementation MultipleArtPiece
@@ -30,7 +30,7 @@
 	
 	scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320, 460)];
 	[self.view addSubview:scrollView];
-	scrollView.contentSize= CGSizeMake(320, 400);
+	scrollView.contentSize = CGSizeMake(320, 600);
 	
 
 	
@@ -90,37 +90,30 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection 
 {
 	
-	NSLog(@"DidFinishLoading: %@", responseData);
+	NSLog(@"DidFinishLoading: %@", *responseData);
 	// Store incoming data into a string
 	NSString *jsonString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 	
 	// Create a dictionary from the JSON string
 	NSArray *results = [jsonString JSONValue];
-	NSMutableArray *subviews = [[NSMutableArray alloc] init];
 	
 	for (int i = 0; i < results.count; i++) {
+        CGFloat artPieceViewHeight = 200;
 		NSDictionary *data = [results objectAtIndex:i];
-		ArtPiece *artPiece = [[ArtPiece alloc] initWithTitle:[data objectForKey:@"title"]
+		ArtPieceView *artPieceView = [[ArtPieceView alloc] initWithTitle:[data objectForKey:@"title"]
 											  latitudeString:[NSString stringWithFormat:@"%@", [data objectForKey:@"latitude"]]
 											 longitudeString:[NSString stringWithFormat:@"%@", [data objectForKey:@"longitude"]]
-													   media:[data objectForKey:@"media"]
-							  ];
-
-		UIView *subview = [[UIView alloc] init];
-		[subview addSubview: artPiece.title];
-		[subview addSubview: artPiece.latitudeString];
-		[subview addSubview: artPiece.longitudeString];
-		[subviews addObject:subview];
+                                                       media:[data objectForKey:@"media"]
+                                                       frame:CGRectMake(0, i * artPieceViewHeight, self.view.frame.size.width, artPieceViewHeight)
+                                      ];
+		[scrollView addSubview:artPieceView];
 	}
-	NSLog(@"DidFinishLoading: created a bunch of ArtPieces");
+	NSLog(@"DidFinishLoading: created %d a bunch of ArtPieces", results.count);
 	
 	NSDictionary *artPiece = [results objectAtIndex:results.count-1];
 	
 	//UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
 	//label1.text = @"yexy";
-	for (int i = 0; i < subviews.count; i++) {
-		[scrollView addSubview:[subviews objectAtIndex:i]];
-	}
 	//[scrollView addSubview:label1];
 	
 	/*

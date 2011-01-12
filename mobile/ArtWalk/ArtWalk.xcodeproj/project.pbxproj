@@ -23,6 +23,7 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		A76A7AA412DD7C7A00FE4EE0 /* ArtPieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A76A7AA312DD7C7A00FE4EE0 /* ArtPieceView.m */; };
 		BB0C7F3D12C5CAF8001EBE04 /* SingleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0C7F3B12C5CAF8001EBE04 /* SingleArtPiece.m */; };
 		BB0C7F3E12C5CAF8001EBE04 /* SingleArtPiece.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0C7F3C12C5CAF8001EBE04 /* SingleArtPiece.xib */; };
 		BB7A415412DA7460002B69F8 /* MultipleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */; };
@@ -479,6 +480,8 @@
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		32CA4F630368D1EE00C91783 /* ArtWalk_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtWalk_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ArtWalk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ArtWalk-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A76A7AA212DD7C7A00FE4EE0 /* ArtPieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPieceView.h; sourceTree = "<group>"; };
+		A76A7AA312DD7C7A00FE4EE0 /* ArtPieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPieceView.m; sourceTree = "<group>"; };
 		BB0C7F3A12C5CAF8001EBE04 /* SingleArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingleArtPiece.h; path = ../SingleArtPiece.h; sourceTree = "<group>"; };
 		BB0C7F3B12C5CAF8001EBE04 /* SingleArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingleArtPiece.m; path = ../SingleArtPiece.m; sourceTree = "<group>"; };
 		BB0C7F3C12C5CAF8001EBE04 /* SingleArtPiece.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SingleArtPiece.xib; path = ../SingleArtPiece.xib; sourceTree = "<group>"; };
@@ -558,6 +561,8 @@
 				BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */,
 				BB7A41D112DA7CD1002B69F8 /* ArtPiece.h */,
 				BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */,
+				A76A7AA212DD7C7A00FE4EE0 /* ArtPieceView.h */,
+				A76A7AA312DD7C7A00FE4EE0 /* ArtPieceView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1229,6 +1234,7 @@
 				BBF0E84D12D13B9F00669B83 /* EditingController.m in Sources */,
 				BB7A415412DA7460002B69F8 /* MultipleArtPiece.m in Sources */,
 				BB7A41D312DA7CD1002B69F8 /* ArtPiece.m in Sources */,
+				A76A7AA412DD7C7A00FE4EE0 /* ArtPieceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
