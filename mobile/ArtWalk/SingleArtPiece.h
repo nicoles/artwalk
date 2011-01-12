@@ -15,12 +15,14 @@
 	UILabel *longitudeString;
 	UILabel *artPieceTitle;
 	NSMutableData *responseData;
-
+	UIScrollView *scrollView;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *latitudeString;
 @property (nonatomic, retain) IBOutlet UILabel *longitudeString;
 @property (nonatomic, retain) IBOutlet UIImageView *artPieceImageView;
 @property (nonatomic, retain) IBOutlet UILabel *artPieceTitle;
+@property (nonatomic,retain) IBOutlet UIScrollView *scrollView;
+	
 
 @end

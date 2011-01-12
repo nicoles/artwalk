@@ -25,6 +25,8 @@
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
 		BB0C7F3D12C5CAF8001EBE04 /* SingleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0C7F3B12C5CAF8001EBE04 /* SingleArtPiece.m */; };
 		BB0C7F3E12C5CAF8001EBE04 /* SingleArtPiece.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0C7F3C12C5CAF8001EBE04 /* SingleArtPiece.xib */; };
+		BB7A415412DA7460002B69F8 /* MultipleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */; };
+		BB7A41D312DA7CD1002B69F8 /* ArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */; };
 		BB83D21E12C3025300C69C03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB83D21D12C3025300C69C03 /* CoreLocation.framework */; };
 		BB83D5F312C338E200C69C03 /* SearchResultsView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB83D5F112C338E200C69C03 /* SearchResultsView.m */; };
 		BB83D5F412C338E200C69C03 /* SearchResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB83D5F212C338E200C69C03 /* SearchResultsView.xib */; };
@@ -480,6 +482,10 @@
 		BB0C7F3A12C5CAF8001EBE04 /* SingleArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingleArtPiece.h; path = ../SingleArtPiece.h; sourceTree = "<group>"; };
 		BB0C7F3B12C5CAF8001EBE04 /* SingleArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingleArtPiece.m; path = ../SingleArtPiece.m; sourceTree = "<group>"; };
 		BB0C7F3C12C5CAF8001EBE04 /* SingleArtPiece.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SingleArtPiece.xib; path = ../SingleArtPiece.xib; sourceTree = "<group>"; };
+		BB7A415212DA7460002B69F8 /* MultipleArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleArtPiece.h; sourceTree = "<group>"; };
+		BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleArtPiece.m; sourceTree = "<group>"; };
+		BB7A41D112DA7CD1002B69F8 /* ArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPiece.h; sourceTree = "<group>"; };
+		BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPiece.m; sourceTree = "<group>"; };
 		BB83D21D12C3025300C69C03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BB83D5F012C338E200C69C03 /* SearchResultsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsView.h; sourceTree = "<group>"; };
 		BB83D5F112C338E200C69C03 /* SearchResultsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsView.m; sourceTree = "<group>"; };
@@ -548,6 +554,10 @@
 				BBF0E84A12D13B9F00669B83 /* EditingController.h */,
 				BBF0E84B12D13B9F00669B83 /* EditingController.m */,
 				BBF0E84C12D13B9F00669B83 /* EditingController.xib */,
+				BB7A415212DA7460002B69F8 /* MultipleArtPiece.h */,
+				BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */,
+				BB7A41D112DA7CD1002B69F8 /* ArtPiece.h */,
+				BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1217,6 +1227,8 @@
 				BBCB789112C5765300983D30 /* SBJsonWriter.m in Sources */,
 				BB0C7F3D12C5CAF8001EBE04 /* SingleArtPiece.m in Sources */,
 				BBF0E84D12D13B9F00669B83 /* EditingController.m in Sources */,
+				BB7A415412DA7460002B69F8 /* MultipleArtPiece.m in Sources */,
+				BB7A41D312DA7CD1002B69F8 /* ArtPiece.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

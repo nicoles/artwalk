@@ -1,21 +1,16 @@
-//
-//  SingleArtPiece.m
+    //
+//  MultipleArtPiece.m
 //  ArtWalk
 //
-//  Created by Nicole Aptekar on 10/12/24.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Created by Nicole Aptekar on 11/01/09.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "SingleArtPiece.h"
+#import "MultipleArtPiece.h"
+#import "ArtPiece.h"
 #import "JSON.h"
 
-@implementation SingleArtPiece
-
-@synthesize artPieceImageView;
-@synthesize latitudeString;
-@synthesize longitudeString;
-@synthesize artPieceTitle;
-@synthesize scrollView;
+@implementation MultipleArtPiece
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -28,20 +23,30 @@
 */
 
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void)loadView {
+	[super loadView];
+	NSLog(@"done!");
 	
-	CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
+	scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320, 460)];
+	[self.view addSubview:scrollView];
+	scrollView.contentSize= CGSizeMake(320, 400);
 	
-	scrollView.contentSize = CGSizeMake(applicationFrame.size.width, applicationFrame.size.height + 216);
+
 	
 	responseData = [[NSMutableData data] retain];
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];
 	
-    [super viewDidLoad];
 }
 
+
+/*
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -91,54 +96,80 @@
 	
 	// Create a dictionary from the JSON string
 	NSArray *results = [jsonString JSONValue];
+	NSMutableArray *subviews = [[NSMutableArray alloc] init];
+	
+	for (int i = 0; i < results.count; i++) {
+		NSDictionary *data = [results objectAtIndex:i];
+		ArtPiece *artPiece = [[ArtPiece alloc] initWithTitle:[data objectForKey:@"title"]
+											  latitudeString:[NSString stringWithFormat:@"%@", [data objectForKey:@"latitude"]]
+											 longitudeString:[NSString stringWithFormat:@"%@", [data objectForKey:@"longitude"]]
+													   media:[data objectForKey:@"media"]
+							  ];
+
+		UIView *subview = [[UIView alloc] init];
+		[subview addSubview: artPiece.title];
+		[subview addSubview: artPiece.latitudeString];
+		[subview addSubview: artPiece.longitudeString];
+		[subviews addObject:subview];
+	}
+	NSLog(@"DidFinishLoading: created a bunch of ArtPieces");
 	
 	NSDictionary *artPiece = [results objectAtIndex:results.count-1];
+	
+	//UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+	//label1.text = @"yexy";
+	for (int i = 0; i < subviews.count; i++) {
+		[scrollView addSubview:[subviews objectAtIndex:i]];
+	}
+	//[scrollView addSubview:label1];
+	
+	/*
 	artPieceTitle.text = [artPiece objectForKey:@"title"];
 	latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"latitude"]];
 	longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"longitude"]];
-	
+	*/
 	NSArray *media = [artPiece objectForKey:@"media"];
 	
 	for (NSDictionary *medium in media)
 	{
 		//TODO: make this a carousel of the available images, and have it click to embiggen
 		NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[medium objectForKey:@"url"]]];
-	
-		artPieceImageView.image = [UIImage imageWithData:imageData];
-
+		
+		// artPieceImageView.image = [UIImage imageWithData:imageData];
+		
 	}
-
+	
 	
 	NSLog(@"objectforkey: %@", [artPiece objectForKey:@"title"]);
 	//[[results objectAtIndex:0] artPieceTitle.text = [NSString objectForKey:@"title"]];
 	
 	/*// Loop through each entry in the array...
-	for (NSDictionary *artPiece in results[0])
-	{
-		// Get title of the image
-		NSString *title = [artPiece	objectForKey:@"title"];
-		
-		// Save the title to the photo titles array
-		artPieceTitle.string = *title;
-		
-		//NSArray *media = [artPiece objectForKey:@"media"];
-		
-		/*for (NSDictionary *medium in media)
-		{
-			NSString *photoURLString = [medium objectForKey:@"url"];
-			[photoImage addObject:[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]]];
-			NSLog(@"photoURLString: %@", photoURLString);
-		}
-		
-	} */
+	 for (NSDictionary *artPiece in results[0])
+	 {
+	 // Get title of the image
+	 NSString *title = [artPiece	objectForKey:@"title"];
+	 
+	 // Save the title to the photo titles array
+	 artPieceTitle.string = *title;
+	 
+	 //NSArray *media = [artPiece objectForKey:@"media"];
+	 
+	 /*for (NSDictionary *medium in media)
+	 {
+	 NSString *photoURLString = [medium objectForKey:@"url"];
+	 [photoImage addObject:[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]]];
+	 NSLog(@"photoURLString: %@", photoURLString);
+	 }
+	 
+	 } */
 	[jsonString release];
-
-
-
-//TODO: this leaks memory. fix it.
-//	[results release];
-//	[imageData release];
-
+	
+	
+	
+	//TODO: this leaks memory. fix it.
+	//	[results release];
+	//	[imageData release];
+	
 	
 }
 
