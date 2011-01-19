@@ -98,7 +98,7 @@
 	NSArray *results = [jsonString JSONValue];
 	
 	for (int i = 0; i < results.count; i++) {
-        CGFloat artPieceViewHeight = 200;
+        CGFloat artPieceViewHeight = 290;
 		NSDictionary *data = [results objectAtIndex:i];
 		ArtPieceView *artPieceView = [[ArtPieceView alloc] initWithTitle:[data objectForKey:@"title"]
 											  latitudeString:[NSString stringWithFormat:@"%@", [data objectForKey:@"latitude"]]
@@ -107,8 +107,9 @@
                                                        frame:CGRectMake(0, i * artPieceViewHeight, self.view.frame.size.width, artPieceViewHeight)
                                       ];
 		[scrollView addSubview:artPieceView];
+		//scrollView.contentSize.height += 290;
 	}
-	NSLog(@"DidFinishLoading: created %d a bunch of ArtPieces", results.count);
+	NSLog(@"DidFinishLoading: created %d ArtPieces", results.count);
 	
 	NSDictionary *artPiece = [results objectAtIndex:results.count-1];
 	

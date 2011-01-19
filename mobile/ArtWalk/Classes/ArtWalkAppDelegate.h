@@ -11,13 +11,16 @@
 
 @class SubmissionController;
 @class SingleArtPiece;
+@class MultipleArtPiece;
 @class EditingController;
 @interface ArtWalkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
 	UITabBarController *tabBarController;
+	UINavigationController *navigationController;
 	SubmissionController *submissionController;
 	SingleArtPiece *singleArtPiece;
 	EditingController *editingController;
+	MultipleArtPiece *multipleArtPiece;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -25,6 +28,9 @@
 @property (nonatomic, retain) SubmissionController *submissionController;
 @property (nonatomic, retain) SingleArtPiece *singleArtPiece;
 @property (nonatomic, retain) EditingController *editingController;
+@property (nonatomic, retain) UINavigationController *navigationController;
+@property (nonatomic, retain) MultipleArtPiece *multipleArtPiece;
+
 
 @end
 

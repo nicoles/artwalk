@@ -10,6 +10,7 @@
 #import "SubmissionController.h"
 #import "SingleArtPiece.h"
 #import "EditingController.h"
+#import "MultipleArtPiece.h"
 
 @implementation ArtWalkAppDelegate
 
@@ -18,6 +19,8 @@
 @synthesize submissionController;
 @synthesize singleArtPiece;
 @synthesize editingController;
+@synthesize multipleArtPiece;
+@synthesize navigationController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -32,9 +35,20 @@
 //	[aViewController release];
 	
 //	UIView *controllersView = [SubmissionController view];
-	
+	//navigationController = [[UINavigationController alloc] init];
+	tabBarController = [[UITabBarController alloc] init];
+	navigationController = [[UINavigationController alloc] init];
+	multipleArtPiece = [[MultipleArtPiece alloc] init];
+	multipleArtPiece.title = @"Art Pieces";
+	submissionController = [[SubmissionController alloc] init];
+	submissionController.title = @"Submit New";
+	tabBarController.viewControllers = [NSArray arrayWithObjects:navigationController, submissionController, nil];
 	[window addSubview:tabBarController.view];
-    
+	[navigationController pushViewController:multipleArtPiece animated:NO];
+    //navigationController.navigationBar.barStyle = UIBarStyleDefault;
+	//[navigationController pushViewController:multipleArtPiece animated:NO];
+	//[window addSubview:navigationController.view];
+	
 	// Override point for customization after application launch.
     
     [window makeKeyAndVisible];
@@ -94,6 +108,8 @@
 - (void)dealloc {
 	[submissionController release];
 	[singleArtPiece release];
+	[multipleArtPiece release];
+	[navigationController release];
 	[tabBarController release];
 	[editingController release];
     [window release];
