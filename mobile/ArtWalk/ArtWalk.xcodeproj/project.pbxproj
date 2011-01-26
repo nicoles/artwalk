@@ -27,6 +27,9 @@
 		BB7A415412DA7460002B69F8 /* MultipleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */; };
 		BB7A41D312DA7CD1002B69F8 /* ArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */; };
 		BB83D21E12C3025300C69C03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB83D21D12C3025300C69C03 /* CoreLocation.framework */; };
+		BBB4386412EFE93A00D5A8A1 /* ArtPieceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB4386312EFE93A00D5A8A1 /* ArtPieceViewCell.m */; };
+		BBB4386612EFEA7400D5A8A1 /* ArtPieceViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB4386512EFEA7400D5A8A1 /* ArtPieceViewCell.xib */; };
+		BBC2B92D12EFEFC6001F5706 /* tab.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC2B92C12EFEFC6001F5706 /* tab.m */; };
 		BBCB788D12C5765300983D30 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB788412C5765300983D30 /* NSObject+SBJSON.m */; };
 		BBCB788E12C5765300983D30 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB788612C5765300983D30 /* NSString+SBJSON.m */; };
 		BBCB788F12C5765300983D30 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB788812C5765300983D30 /* SBJsonBase.m */; };
@@ -480,6 +483,10 @@
 		BB7A41D112DA7CD1002B69F8 /* ArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPiece.h; sourceTree = "<group>"; };
 		BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPiece.m; sourceTree = "<group>"; };
 		BB83D21D12C3025300C69C03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BBB4386212EFE93A00D5A8A1 /* ArtPieceViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPieceViewCell.h; sourceTree = "<group>"; };
+		BBB4386312EFE93A00D5A8A1 /* ArtPieceViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPieceViewCell.m; sourceTree = "<group>"; };
+		BBB4386512EFEA7400D5A8A1 /* ArtPieceViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtPieceViewCell.xib; sourceTree = "<group>"; };
+		BBC2B92C12EFEFC6001F5706 /* tab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tab.m; sourceTree = "<group>"; };
 		BBCB788212C5765300983D30 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		BBCB788312C5765300983D30 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		BBCB788412C5765300983D30 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -534,6 +541,9 @@
 				BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */,
 				A76A7AA212DD7C7A00FE4EE0 /* ArtPieceView.h */,
 				A76A7AA312DD7C7A00FE4EE0 /* ArtPieceView.m */,
+				BBB4386212EFE93A00D5A8A1 /* ArtPieceViewCell.h */,
+				BBB4386312EFE93A00D5A8A1 /* ArtPieceViewCell.m */,
+				BBB4386512EFEA7400D5A8A1 /* ArtPieceViewCell.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -554,6 +564,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				BBC2B92C12EFEFC6001F5706 /* tab.m */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -1178,6 +1189,7 @@
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				BBDDCDE7129CD94B00E9DB9C /* SubmissionController.xib in Resources */,
+				BBB4386612EFEA7400D5A8A1 /* ArtPieceViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1199,6 +1211,8 @@
 				BB7A415412DA7460002B69F8 /* MultipleArtPiece.m in Sources */,
 				BB7A41D312DA7CD1002B69F8 /* ArtPiece.m in Sources */,
 				A76A7AA412DD7C7A00FE4EE0 /* ArtPieceView.m in Sources */,
+				BBB4386412EFE93A00D5A8A1 /* ArtPieceViewCell.m in Sources */,
+				BBC2B92D12EFEFC6001F5706 /* tab.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
