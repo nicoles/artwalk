@@ -12,6 +12,8 @@
 
 @implementation MultipleArtPiece
 
+@synthesize artPieces;
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -28,10 +30,13 @@
 	[super loadView];
 	NSLog(@"done!");
 	
-	scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320, 460)];
-	[self.view addSubview:scrollView];
-	scrollView.contentSize = CGSizeMake(320, 600);
-	
+	// scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320, 460)];
+	// [self.view addSubview:scrollView];
+	// scrollView.contentSize = CGSizeMake(320, 600);
+    self.artPieces = [NSTimeZone knownTimeZoneNames];
+	myTableView = [[UITableView alloc] init];
+    myTableView.delegate = self;
+    [self.view addSubview:myTableView];
 
 	
 	responseData = [[NSMutableData data] retain];
@@ -67,6 +72,39 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+#pragma mark Table Methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // There is only one section.
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of art pieces.
+    return [artPieces count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *MyIdentifier = @"MyIdentifier";
+    
+    // Try to retrieve from the table view a now-unused cell with the given identifier.
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    // If no cell is available, create a new one using the given identifier.
+    if (cell == nil) {
+        // Use the default cell style.
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier] autorelease];
+    }
+    
+    // Set up the cell.
+    NSString *thing = [artPieces objectAtIndex:indexPath.row];
+    cell.textLabel.text = thing;
+    
+    return cell;
 }
 
 #pragma mark JSON UrlConnection
@@ -106,7 +144,7 @@
                                                        media:[data objectForKey:@"media"]
                                                        frame:CGRectMake(0, i * artPieceViewHeight, self.view.frame.size.width, artPieceViewHeight)
                                       ];
-		[scrollView addSubview:artPieceView];
+		// [scrollView addSubview:artPieceView];
 		//scrollView.contentSize.height += 290;
 	}
 	NSLog(@"DidFinishLoading: created %d ArtPieces", results.count);
