@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MultipleArtPiece : UIViewController {
+@interface MultipleArtPiece : UITableViewController {
 	NSMutableData *responseData;
 	UIScrollView *scrollView;
+    UITableView *myTableView;
+    NSArray *artPieces;
 }
 
-
+@property (nonatomic, retain) NSArray *artPieces;
 @end
