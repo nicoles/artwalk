@@ -24,14 +24,9 @@
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
 		A76A7AA412DD7C7A00FE4EE0 /* ArtPieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A76A7AA312DD7C7A00FE4EE0 /* ArtPieceView.m */; };
-		BB0C7F3D12C5CAF8001EBE04 /* SingleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0C7F3B12C5CAF8001EBE04 /* SingleArtPiece.m */; };
-		BB0C7F3E12C5CAF8001EBE04 /* SingleArtPiece.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0C7F3C12C5CAF8001EBE04 /* SingleArtPiece.xib */; };
 		BB7A415412DA7460002B69F8 /* MultipleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */; };
 		BB7A41D312DA7CD1002B69F8 /* ArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */; };
 		BB83D21E12C3025300C69C03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB83D21D12C3025300C69C03 /* CoreLocation.framework */; };
-		BB83D5F312C338E200C69C03 /* SearchResultsView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB83D5F112C338E200C69C03 /* SearchResultsView.m */; };
-		BB83D5F412C338E200C69C03 /* SearchResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB83D5F212C338E200C69C03 /* SearchResultsView.xib */; };
-		BBCB77A412C5460C00983D30 /* SearchResultPhotoSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB77A312C5460C00983D30 /* SearchResultPhotoSource.m */; };
 		BBCB788D12C5765300983D30 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB788412C5765300983D30 /* NSObject+SBJSON.m */; };
 		BBCB788E12C5765300983D30 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB788612C5765300983D30 /* NSString+SBJSON.m */; };
 		BBCB788F12C5765300983D30 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB788812C5765300983D30 /* SBJsonBase.m */; };
@@ -39,8 +34,6 @@
 		BBCB789112C5765300983D30 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB788C12C5765300983D30 /* SBJsonWriter.m */; };
 		BBDDCDE6129CD94B00E9DB9C /* SubmissionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */; };
 		BBDDCDE7129CD94B00E9DB9C /* SubmissionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDDCDE5129CD94B00E9DB9C /* SubmissionController.xib */; };
-		BBF0E84D12D13B9F00669B83 /* EditingController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF0E84B12D13B9F00669B83 /* EditingController.m */; };
-		BBF0E84E12D13B9F00669B83 /* EditingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF0E84C12D13B9F00669B83 /* EditingController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -482,19 +475,11 @@
 		8D1107310486CEB800E47090 /* ArtWalk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ArtWalk-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		A76A7AA212DD7C7A00FE4EE0 /* ArtPieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPieceView.h; sourceTree = "<group>"; };
 		A76A7AA312DD7C7A00FE4EE0 /* ArtPieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPieceView.m; sourceTree = "<group>"; };
-		BB0C7F3A12C5CAF8001EBE04 /* SingleArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingleArtPiece.h; path = ../SingleArtPiece.h; sourceTree = "<group>"; };
-		BB0C7F3B12C5CAF8001EBE04 /* SingleArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingleArtPiece.m; path = ../SingleArtPiece.m; sourceTree = "<group>"; };
-		BB0C7F3C12C5CAF8001EBE04 /* SingleArtPiece.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SingleArtPiece.xib; path = ../SingleArtPiece.xib; sourceTree = "<group>"; };
 		BB7A415212DA7460002B69F8 /* MultipleArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleArtPiece.h; sourceTree = "<group>"; };
 		BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleArtPiece.m; sourceTree = "<group>"; };
 		BB7A41D112DA7CD1002B69F8 /* ArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPiece.h; sourceTree = "<group>"; };
 		BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPiece.m; sourceTree = "<group>"; };
 		BB83D21D12C3025300C69C03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		BB83D5F012C338E200C69C03 /* SearchResultsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsView.h; sourceTree = "<group>"; };
-		BB83D5F112C338E200C69C03 /* SearchResultsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsView.m; sourceTree = "<group>"; };
-		BB83D5F212C338E200C69C03 /* SearchResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsView.xib; sourceTree = "<group>"; };
-		BBCB77A212C5460C00983D30 /* SearchResultPhotoSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultPhotoSource.h; sourceTree = "<group>"; };
-		BBCB77A312C5460C00983D30 /* SearchResultPhotoSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultPhotoSource.m; sourceTree = "<group>"; };
 		BBCB788212C5765300983D30 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		BBCB788312C5765300983D30 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		BBCB788412C5765300983D30 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -509,9 +494,6 @@
 		BBDDCDE3129CD94B00E9DB9C /* SubmissionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionController.h; sourceTree = "<group>"; };
 		BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionController.m; sourceTree = "<group>"; };
 		BBDDCDE5129CD94B00E9DB9C /* SubmissionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmissionController.xib; sourceTree = "<group>"; };
-		BBF0E84A12D13B9F00669B83 /* EditingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingController.h; sourceTree = "<group>"; };
-		BBF0E84B12D13B9F00669B83 /* EditingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingController.m; sourceTree = "<group>"; };
-		BBF0E84C12D13B9F00669B83 /* EditingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditingController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,22 +523,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BB83D5F112C338E200C69C03 /* SearchResultsView.m */,
-				BB0C7F3A12C5CAF8001EBE04 /* SingleArtPiece.h */,
-				BB0C7F3B12C5CAF8001EBE04 /* SingleArtPiece.m */,
-				BB0C7F3C12C5CAF8001EBE04 /* SingleArtPiece.xib */,
 				1D3623240D0F684500981E51 /* ArtWalkAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ArtWalkAppDelegate.m */,
 				BBDDCDE3129CD94B00E9DB9C /* SubmissionController.h */,
 				BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */,
 				BBDDCDE5129CD94B00E9DB9C /* SubmissionController.xib */,
-				BB83D5F012C338E200C69C03 /* SearchResultsView.h */,
-				BB83D5F212C338E200C69C03 /* SearchResultsView.xib */,
-				BBCB77A212C5460C00983D30 /* SearchResultPhotoSource.h */,
-				BBCB77A312C5460C00983D30 /* SearchResultPhotoSource.m */,
-				BBF0E84A12D13B9F00669B83 /* EditingController.h */,
-				BBF0E84B12D13B9F00669B83 /* EditingController.m */,
-				BBF0E84C12D13B9F00669B83 /* EditingController.xib */,
 				BB7A415212DA7460002B69F8 /* MultipleArtPiece.h */,
 				BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */,
 				BB7A41D112DA7CD1002B69F8 /* ArtPiece.h */,
@@ -1207,9 +1178,6 @@
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				BBDDCDE7129CD94B00E9DB9C /* SubmissionController.xib in Resources */,
-				BB83D5F412C338E200C69C03 /* SearchResultsView.xib in Resources */,
-				BB0C7F3E12C5CAF8001EBE04 /* SingleArtPiece.xib in Resources */,
-				BBF0E84E12D13B9F00669B83 /* EditingController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1223,15 +1191,11 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* ArtWalkAppDelegate.m in Sources */,
 				BBDDCDE6129CD94B00E9DB9C /* SubmissionController.m in Sources */,
-				BB83D5F312C338E200C69C03 /* SearchResultsView.m in Sources */,
-				BBCB77A412C5460C00983D30 /* SearchResultPhotoSource.m in Sources */,
 				BBCB788D12C5765300983D30 /* NSObject+SBJSON.m in Sources */,
 				BBCB788E12C5765300983D30 /* NSString+SBJSON.m in Sources */,
 				BBCB788F12C5765300983D30 /* SBJsonBase.m in Sources */,
 				BBCB789012C5765300983D30 /* SBJsonParser.m in Sources */,
 				BBCB789112C5765300983D30 /* SBJsonWriter.m in Sources */,
-				BB0C7F3D12C5CAF8001EBE04 /* SingleArtPiece.m in Sources */,
-				BBF0E84D12D13B9F00669B83 /* EditingController.m in Sources */,
 				BB7A415412DA7460002B69F8 /* MultipleArtPiece.m in Sources */,
 				BB7A41D312DA7CD1002B69F8 /* ArtPiece.m in Sources */,
 				A76A7AA412DD7C7A00FE4EE0 /* ArtPieceView.m in Sources */,
@@ -1368,7 +1332,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos4.2;
 			};
 			name = Debug;
 		};
@@ -1384,7 +1348,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos4.2;
 			};
 			name = Release;
 		};

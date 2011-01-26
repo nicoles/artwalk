@@ -13,7 +13,6 @@
 
 @synthesize artPieceTitle;
 @synthesize artPieceArtist;
-//@synthesize label;
 @synthesize string;
 @synthesize imageView;
 @synthesize takePictureButton;
@@ -34,23 +33,6 @@
 	}
 }
 
-/*- (IBAction)changeGreeting:(id)sender {
-	self.string = artPieceTitle.text;
-	
-		/* bullshit to display the string.
-		 NSString *nameString = string;
-	if ([nameString length] == 0) {
-		nameString = @"World";
-	}
-	
-
-	 NSString *greeting = [[NSString alloc] initWithFormat:@"Hello, %@!", nameString];
-	label.text = greeting;
-	[greeting release];
-	 
-	
-}
-*/
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
 	if (theTextField == artPieceTitle || artPieceArtist) {
@@ -71,12 +53,6 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -106,7 +82,6 @@
 - (void)dealloc {
 	[artPieceTitle release];
 	[artPieceArtist release];
-//	[label release];
 	[string release];
 	[latitudeString release];
 	[longitudeString release];
@@ -147,18 +122,8 @@
 	//access original image
 	UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 	imageView.image = image;
-	//save image
-	//UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 	
-	//display edited image in view
-	//UIImage *image2 = [info objectForKey:@"UIImagePickerControllerEditedImage"];
-	
-	
-	//imageview.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-	//UIImage *myImage = [info objectForKey:UIImagePickerControllerEditedImage];
-	//UIImageWriteToSavedPhotosAlbum([info objectForKey:UIImagePickerControllerOriginalImage], nil, nil, nil);
-		
-	
+	//TODO: save image	
     
 	[picker dismissModalViewControllerAnimated:YES];
 		
@@ -181,9 +146,6 @@
 	
     // Set a header value
     [request setValue:[[UIDevice currentDevice] uniqueIdentifier] forHTTPHeaderField:@"Device-UID"];
-	
-    // Post a string
-    //[request.parameters setObject:self.entity_title forKey:@"entity_title"];
 	
 	// Add the image to the request
 	[request addFile:UIImageJPEGRepresentation(imageView.image,0.0) 
@@ -211,7 +173,6 @@
 	
 }
 
-//TODO: no longer have the save to library-- write a function to make some sort of notification happen when sending completes
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
 	UIAlertView *alert;

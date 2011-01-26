@@ -8,7 +8,6 @@
 
 #import "ArtWalkAppDelegate.h"
 #import "SubmissionController.h"
-#import "SingleArtPiece.h"
 #import "EditingController.h"
 #import "MultipleArtPiece.h"
 
@@ -17,7 +16,6 @@
 @synthesize window;
 @synthesize tabBarController;
 @synthesize submissionController;
-@synthesize singleArtPiece;
 @synthesize editingController;
 @synthesize multipleArtPiece;
 @synthesize navigationController;
@@ -26,16 +24,7 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-	//SubmissionController *aViewController = [[SubmissionController alloc]
-	//									 initWithNibName:@"SubmissionController" bundle:[NSBundle mainBundle]];
 	
-//	[self setSubmissionController:aViewController];
-	
-//	[aViewController release];
-	
-//	UIView *controllersView = [SubmissionController view];
-	//navigationController = [[UINavigationController alloc] init];
 	tabBarController = [[UITabBarController alloc] init];
 	navigationController = [[UINavigationController alloc] init];
 	multipleArtPiece = [[MultipleArtPiece alloc] init];
@@ -45,9 +34,6 @@
 	tabBarController.viewControllers = [NSArray arrayWithObjects:navigationController, submissionController, nil];
 	[window addSubview:tabBarController.view];
 	[navigationController pushViewController:multipleArtPiece animated:NO];
-    //navigationController.navigationBar.barStyle = UIBarStyleDefault;
-	//[navigationController pushViewController:multipleArtPiece animated:NO];
-	//[window addSubview:navigationController.view];
 	
 	// Override point for customization after application launch.
     
@@ -107,7 +93,6 @@
 
 - (void)dealloc {
 	[submissionController release];
-	[singleArtPiece release];
 	[multipleArtPiece release];
 	[navigationController release];
 	[tabBarController release];
