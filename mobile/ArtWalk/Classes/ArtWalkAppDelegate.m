@@ -8,7 +8,6 @@
 
 #import "ArtWalkAppDelegate.h"
 #import "SubmissionController.h"
-#import "EditingController.h"
 #import "MultipleArtPiece.h"
 
 @implementation ArtWalkAppDelegate
