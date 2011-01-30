@@ -22,6 +22,13 @@
 @synthesize latitudeString;
 @synthesize longitudeString;
 
+- (id)init{
+	if (self = [super init]) {
+		self.title = @"Submit New";
+		self.tabBarItem.image = [UIImage imageNamed:@"168-upload-photo-2.png"];
+	}
+	return self;
+}
 
 - (void)viewDidLoad {
 	self.locationManager = [[CLLocationManager alloc] init];

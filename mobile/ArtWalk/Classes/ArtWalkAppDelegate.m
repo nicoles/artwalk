@@ -27,9 +27,9 @@
 	tabBarController = [[UITabBarController alloc] init];
 	navigationController = [[UINavigationController alloc] init];
 	multipleArtPiece = [[MultipleArtPiece alloc] init];
-	multipleArtPiece.title = @"Art Pieces";
+	
 	submissionController = [[SubmissionController alloc] init];
-	submissionController.title = @"Submit New";
+
 	tabBarController.viewControllers = [NSArray arrayWithObjects:navigationController, submissionController, nil];
 	[window addSubview:tabBarController.view];
 	[navigationController pushViewController:multipleArtPiece animated:NO];

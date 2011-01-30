@@ -8,6 +8,7 @@
 
 #import "MultipleArtPiece.h"
 #import "ArtPieceView.h"
+#import "ArtPieceViewCell.h"
 #import "JSON.h"
 
 @implementation MultipleArtPiece
@@ -24,6 +25,14 @@
 }
 */
 
+- (id)init{
+	if (self = [super init]) {
+		self.title = @"Art Pieces";
+		self.tabBarItem.image = [UIImage imageNamed:@"122-stats.png"];
+	}
+	
+	return self;
+}
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
@@ -92,17 +101,27 @@
     static NSString *MyIdentifier = @"MyIdentifier";
     
     // Try to retrieve from the table view a now-unused cell with the given identifier.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    ArtPieceViewCell *cell = (ArtPieceViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
     // If no cell is available, create a new one using the given identifier.
     if (cell == nil) {
-        // Use the default cell style.
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier] autorelease];
-    }
+		NSArray *topLevelObjects = [[NSBundle mainBundle] 
+									loadNibNamed:@"ArtPieceViewCell" 
+									owner:nil options:nil];
+        for (id currentObject in topLevelObjects){
+			if ([currentObject isKindOfClass:[UITableViewCell class]]) {
+				cell = (ArtPieceViewCell *) currentObject;
+				break;
+			}
+		// Use the default cell style.
+        //cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier] autorelease];
+		}
+
+	}
     
     // Set up the cell.
     NSString *thing = [artPieces objectAtIndex:indexPath.row];
-    cell.textLabel.text = thing;
+    cell.artPieceTitle.text = thing;
     
     return cell;
 }
