@@ -42,10 +42,13 @@
 	// scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320, 460)];
 	// [self.view addSubview:scrollView];
 	// scrollView.contentSize = CGSizeMake(320, 600);
-    self.artPieces = [NSTimeZone knownTimeZoneNames];
+	artPieces = [[NSMutableArray alloc] init];
+
 	myTableView = [[UITableView alloc] init];
     myTableView.delegate = self;
+	myTableView.dataSource = self;
     [self.view addSubview:myTableView];
+	self.tableView.rowHeight = 327;
 
 	
 	responseData = [[NSMutableData data] retain];
@@ -54,6 +57,16 @@
 	
 }
 
+- (void)viewWillAppear:(BOOL) animated
+{
+	responseData = [[NSMutableData data] retain];
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
+	[[NSURLConnection alloc] initWithRequest:request delegate:self];
+	
+	[super viewWillAppear:animated];
+	[self.tableView reloadData];
+	
+}
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -92,17 +105,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of art pieces.
-    return [artPieces count];
+    NSLog(@"ArtPieces.count%d", [artPieces count]);
+	return [artPieces count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *MyIdentifier = @"MyIdentifier";
-    
+    NSLog(@"yup!");
+	
     // Try to retrieve from the table view a now-unused cell with the given identifier.
     ArtPieceViewCell *cell = (ArtPieceViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
+	
+	
     // If no cell is available, create a new one using the given identifier.
     if (cell == nil) {
 		NSArray *topLevelObjects = [[NSBundle mainBundle] 
@@ -120,11 +137,22 @@
 	}
     
     // Set up the cell.
-    NSString *thing = [artPieces objectAtIndex:indexPath.row];
-    cell.artPieceTitle.text = thing;
-    
+	
+	NSDictionary *artPiece = [artPieces objectAtIndex:indexPath.row];
+	cell.artPieceTitle.text = [artPiece objectForKey:@"title"];
+	cell.latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"latitude"]];
+	cell.longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"longitude"]];
+	NSArray *media = [artPiece objectForKey:@"media"];
+	NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[media objectAtIndex:0] objectForKey:@"url"]]];
+	cell.artPieceImageView.image = [UIImage imageWithData:imageData];
+/*
+	NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[medium objectForKey:@"url"]]];
+	artPieceImageView.image = [UIImage imageWithData:imageData];
+*/	
     return cell;
 }
+
+
 
 #pragma mark JSON UrlConnection
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -144,6 +172,8 @@
 	
 }
 
+
+
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection 
 {
 	
@@ -152,9 +182,9 @@
 	NSString *jsonString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 	
 	// Create a dictionary from the JSON string
-	NSArray *results = [jsonString JSONValue];
+	self.artPieces = [jsonString JSONValue];
 	
-	for (int i = 0; i < results.count; i++) {
+	/*for (int i = 0; i < results.count; i++) {
         CGFloat artPieceViewHeight = 290;
 		NSDictionary *data = [results objectAtIndex:i];
 		ArtPieceView *artPieceView = [[ArtPieceView alloc] initWithTitle:[data objectForKey:@"title"]
@@ -169,7 +199,7 @@
 	NSLog(@"DidFinishLoading: created %d ArtPieces", results.count);
 	
 	NSDictionary *artPiece = [results objectAtIndex:results.count-1];
-	
+	*/
 	//UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
 	//label1.text = @"yexy";
 	//[scrollView addSubview:label1];
@@ -179,7 +209,7 @@
 	latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"latitude"]];
 	longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"longitude"]];
 	*/
-	NSArray *media = [artPiece objectForKey:@"media"];
+	/*NSArray *media = [artPiece objectForKey:@"media"];
 	
 	for (NSDictionary *medium in media)
 	{
@@ -191,7 +221,7 @@
 	}
 	
 	
-	NSLog(@"objectforkey: %@", [artPiece objectForKey:@"title"]);
+	NSLog(@"objectforkey: %@", [artPiece objectForKey:@"title"]);*/
 	//[[results objectAtIndex:0] artPieceTitle.text = [NSString objectForKey:@"title"]];
 	
 	/*// Loop through each entry in the array...
@@ -215,11 +245,12 @@
 	 } */
 	[jsonString release];
 	
-	
+	 [self.tableView reloadData];
 	
 	//TODO: this leaks memory. fix it.
 	//	[results release];
 	//	[imageData release];
+	
 	
 	
 }
@@ -231,3 +262,14 @@
 
 
 @end
+
+
+/*
+ - (void)connectionDidFinishLoading:(NSURLConnection *)connection
+ {
+ self.artPieces = [NSTimeZone knownTimeZoneNames];
+ //myTableView.dataSource = self.artPieces;
+ NSLog(@"connectionfinished");
+ [self.tableView reloadData];
+ }
+*/

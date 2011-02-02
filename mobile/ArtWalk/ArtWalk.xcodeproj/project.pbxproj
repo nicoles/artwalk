@@ -503,7 +503,7 @@
 		BBCB788B12C5765300983D30 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		BBCB788C12C5765300983D30 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		BBDDCDE3129CD94B00E9DB9C /* SubmissionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionController.h; sourceTree = "<group>"; };
-		BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubmissionController.m; path = Classes/SubmissionController.m; sourceTree = "<group>"; };
+		BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionController.m; sourceTree = "<group>"; };
 		BBDDCDE5129CD94B00E9DB9C /* SubmissionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmissionController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -537,6 +537,7 @@
 				1D3623240D0F684500981E51 /* ArtWalkAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ArtWalkAppDelegate.m */,
 				BBDDCDE3129CD94B00E9DB9C /* SubmissionController.h */,
+				BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */,
 				BBDDCDE5129CD94B00E9DB9C /* SubmissionController.xib */,
 				BB7A415212DA7460002B69F8 /* MultipleArtPiece.h */,
 				BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */,
@@ -563,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
-				BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,

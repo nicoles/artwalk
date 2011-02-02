@@ -26,8 +26,8 @@
 	
 	tabBarController = [[UITabBarController alloc] init];
 	navigationController = [[UINavigationController alloc] init];
-	multipleArtPiece = [[MultipleArtPiece alloc] init];
 	
+	multipleArtPiece = [[MultipleArtPiece alloc] init];
 	submissionController = [[SubmissionController alloc] init];
 
 	tabBarController.viewControllers = [NSArray arrayWithObjects:navigationController, submissionController, nil];
