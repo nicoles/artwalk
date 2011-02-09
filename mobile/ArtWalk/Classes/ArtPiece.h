@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
 
-@interface ArtPiece : NSObject {
+@interface ArtPiece : NSObject <MKAnnotation> {
 	// UIImageView *artPieceImageView;
 	UILabel *latitudeString;
 	UILabel *longitudeString;

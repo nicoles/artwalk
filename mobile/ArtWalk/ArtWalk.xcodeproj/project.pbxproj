@@ -27,6 +27,10 @@
 		BB3DF78012F53F780035C31F /* 168-upload-photo-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3DF77F12F53F780035C31F /* 168-upload-photo-2.png */; };
 		BB3DF78312F53F960035C31F /* 121-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3DF78112F53F960035C31F /* 121-landscape.png */; };
 		BB3DF78412F53F960035C31F /* 122-stats.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3DF78212F53F960035C31F /* 122-stats.png */; };
+		BB6039C413024CBD0064E046 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6039C313024CBD0064E046 /* MapView.m */; };
+		BB6039C613024D060064E046 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6039C513024D060064E046 /* 103-map.png */; };
+		BB6039D813024F4B0064E046 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6039D713024F4B0064E046 /* MapKit.framework */; };
+		BB603A9E13025C070064E046 /* ArtPieceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB603A9D13025C070064E046 /* ArtPieceAnnotation.m */; };
 		BB7A415412DA7460002B69F8 /* MultipleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */; };
 		BB7A41D312DA7CD1002B69F8 /* ArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */; };
 		BB83D21E12C3025300C69C03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB83D21D12C3025300C69C03 /* CoreLocation.framework */; };
@@ -39,6 +43,9 @@
 		BBCB789112C5765300983D30 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCB788C12C5765300983D30 /* SBJsonWriter.m */; };
 		BBDDCDE6129CD94B00E9DB9C /* SubmissionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */; };
 		BBDDCDE7129CD94B00E9DB9C /* SubmissionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDDCDE5129CD94B00E9DB9C /* SubmissionController.xib */; };
+		BBFAA4DB12F9658000358789 /* 11-x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBFAA4D912F9658000358789 /* 11-x.png */; };
+		BBFAA4DC12F9658000358789 /* 19-check.png in Resources */ = {isa = PBXBuildFile; fileRef = BBFAA4DA12F9658000358789 /* 19-check.png */; };
+		BBFAA4F212F96A8700358789 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFAA4F112F96A8700358789 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -483,6 +490,12 @@
 		BB3DF77F12F53F780035C31F /* 168-upload-photo-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "168-upload-photo-2.png"; sourceTree = "<group>"; };
 		BB3DF78112F53F960035C31F /* 121-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "121-landscape.png"; sourceTree = "<group>"; };
 		BB3DF78212F53F960035C31F /* 122-stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "122-stats.png"; sourceTree = "<group>"; };
+		BB6039C213024CBD0064E046 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		BB6039C313024CBD0064E046 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		BB6039C513024D060064E046 /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
+		BB6039D713024F4B0064E046 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BB603A9C13025C070064E046 /* ArtPieceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArtPieceAnnotation.h; path = ../ArtPieceAnnotation.h; sourceTree = "<group>"; };
+		BB603A9D13025C070064E046 /* ArtPieceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArtPieceAnnotation.m; path = ../ArtPieceAnnotation.m; sourceTree = "<group>"; };
 		BB7A415212DA7460002B69F8 /* MultipleArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleArtPiece.h; sourceTree = "<group>"; };
 		BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleArtPiece.m; sourceTree = "<group>"; };
 		BB7A41D112DA7CD1002B69F8 /* ArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPiece.h; sourceTree = "<group>"; };
@@ -505,6 +518,9 @@
 		BBDDCDE3129CD94B00E9DB9C /* SubmissionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionController.h; sourceTree = "<group>"; };
 		BBDDCDE4129CD94B00E9DB9C /* SubmissionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionController.m; sourceTree = "<group>"; };
 		BBDDCDE5129CD94B00E9DB9C /* SubmissionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmissionController.xib; sourceTree = "<group>"; };
+		BBFAA4D912F9658000358789 /* 11-x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-x.png"; sourceTree = "<group>"; };
+		BBFAA4DA12F9658000358789 /* 19-check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-check.png"; sourceTree = "<group>"; };
+		BBFAA4F112F96A8700358789 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,6 +541,8 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				BB83D21E12C3025300C69C03 /* CoreLocation.framework in Frameworks */,
+				BBFAA4F212F96A8700358789 /* AudioToolbox.framework in Frameworks */,
+				BB6039D813024F4B0064E046 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +552,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BB603A9C13025C070064E046 /* ArtPieceAnnotation.h */,
+				BB603A9D13025C070064E046 /* ArtPieceAnnotation.m */,
 				1D3623240D0F684500981E51 /* ArtWalkAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ArtWalkAppDelegate.m */,
 				BBDDCDE3129CD94B00E9DB9C /* SubmissionController.h */,
@@ -548,6 +568,8 @@
 				BBB4386212EFE93A00D5A8A1 /* ArtPieceViewCell.h */,
 				BBB4386312EFE93A00D5A8A1 /* ArtPieceViewCell.m */,
 				BBB4386512EFEA7400D5A8A1 /* ArtPieceViewCell.xib */,
+				BB6039C213024CBD0064E046 /* MapView.h */,
+				BB6039C313024CBD0064E046 /* MapView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -585,7 +607,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB6039C513024D060064E046 /* 103-map.png */,
 				BB3DF78112F53F960035C31F /* 121-landscape.png */,
+				BBFAA4D912F9658000358789 /* 11-x.png */,
+				BBFAA4DA12F9658000358789 /* 19-check.png */,
 				BB3DF78212F53F960035C31F /* 122-stats.png */,
 				BB3DF77F12F53F780035C31F /* 168-upload-photo-2.png */,
 				320B6C86F11D9990244A9730 /* Three20.bundle */,
@@ -611,6 +636,8 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				BB83D21D12C3025300C69C03 /* CoreLocation.framework */,
+				BBFAA4F112F96A8700358789 /* AudioToolbox.framework */,
+				BB6039D713024F4B0064E046 /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1199,6 +1226,9 @@
 				BB3DF78012F53F780035C31F /* 168-upload-photo-2.png in Resources */,
 				BB3DF78312F53F960035C31F /* 121-landscape.png in Resources */,
 				BB3DF78412F53F960035C31F /* 122-stats.png in Resources */,
+				BBFAA4DB12F9658000358789 /* 11-x.png in Resources */,
+				BBFAA4DC12F9658000358789 /* 19-check.png in Resources */,
+				BB6039C613024D060064E046 /* 103-map.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1221,6 +1251,8 @@
 				BB7A41D312DA7CD1002B69F8 /* ArtPiece.m in Sources */,
 				A76A7AA412DD7C7A00FE4EE0 /* ArtPieceView.m in Sources */,
 				BBB4386412EFE93A00D5A8A1 /* ArtPieceViewCell.m in Sources */,
+				BB6039C413024CBD0064E046 /* MapView.m in Sources */,
+				BB603A9E13025C070064E046 /* ArtPieceAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1285,6 +1317,11 @@
 					../../three20/Build/Products/three20,
 				);
 				INFOPLIST_FILE = "ArtWalk-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Downloads/atomHUD-111/Binaries/Debug-universal\"",
+				);
 				OTHER_LDFLAGS = (
 					"-force_load",
 					"../../three20/Build/Products/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libextThree20JSON+YAJL.a",
@@ -1320,6 +1357,11 @@
 					../../three20/Build/Products/three20,
 				);
 				INFOPLIST_FILE = "ArtWalk-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Downloads/atomHUD-111/Binaries/Debug-universal\"",
+				);
 				OTHER_LDFLAGS = (
 					"-force_load",
 					"../../three20/Build/Products/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libextThree20JSON+YAJL.a",

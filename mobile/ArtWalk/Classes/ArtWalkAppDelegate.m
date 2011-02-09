@@ -9,6 +9,7 @@
 #import "ArtWalkAppDelegate.h"
 #import "SubmissionController.h"
 #import "MultipleArtPiece.h"
+#import "MapView.h"
 
 @implementation ArtWalkAppDelegate
 
@@ -18,6 +19,7 @@
 @synthesize editingController;
 @synthesize multipleArtPiece;
 @synthesize navigationController;
+@synthesize mapView;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -26,11 +28,13 @@
 	
 	tabBarController = [[UITabBarController alloc] init];
 	navigationController = [[UINavigationController alloc] init];
+
 	
 	multipleArtPiece = [[MultipleArtPiece alloc] init];
 	submissionController = [[SubmissionController alloc] init];
-
-	tabBarController.viewControllers = [NSArray arrayWithObjects:navigationController, submissionController, nil];
+	mapView = [[MapView alloc] init];
+	
+	tabBarController.viewControllers = [NSArray arrayWithObjects:navigationController, mapView, submissionController, nil];
 	[window addSubview:tabBarController.view];
 	[navigationController pushViewController:multipleArtPiece animated:NO];
 	
@@ -93,6 +97,7 @@
 - (void)dealloc {
 	[submissionController release];
 	[multipleArtPiece release];
+	[mapView release];
 	[navigationController release];
 	[tabBarController release];
 	[editingController release];

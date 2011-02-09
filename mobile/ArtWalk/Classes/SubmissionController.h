@@ -22,6 +22,7 @@
 	UIButton *sendArtPieceButton;
 	CLLocationManager *locationManager;
 	CLLocation *startingPoint;
+
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *artPieceTitle;

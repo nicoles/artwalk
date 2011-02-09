@@ -9,6 +9,7 @@
 #import "SubmissionController.h"
 #import "extThree20JSON/extThree20JSON.h"
 
+
 @implementation SubmissionController
 
 @synthesize artPieceTitle;
@@ -93,7 +94,7 @@
 	[latitudeString release];
 	[longitudeString release];
 	[imageView release];
-	
+
 	[takePictureButton release];
 	[startingPoint release];
     [super dealloc];
@@ -166,9 +167,11 @@
 	[request.parameters setObject:self.artPieceArtist.text forKey:@"artist"];
 	
 	// Send the request
+
     [request sendSynchronously];
 	NSLog(@"request: %@", request);
 	UIAlertView *alert;
+	
 	
 	alert = [[UIAlertView alloc] initWithTitle:@"Success" 
 										   message:@"Image sent to ArtWalk." 
@@ -179,6 +182,7 @@
 	
 	
 }
+
 
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{

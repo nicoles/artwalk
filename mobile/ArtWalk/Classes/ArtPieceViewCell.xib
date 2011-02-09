@@ -50,7 +50,7 @@
 							<object class="IBUILabel" id="945452702">
 								<reference key="NSNextResponder" ref="94750804"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 0}, {42, 21}}</string>
+								<string key="NSFrame">{{20, 0}, {280, 21}}</string>
 								<reference key="NSSuperview" ref="94750804"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -72,7 +72,7 @@
 							<object class="IBUILabel" id="905720696">
 								<reference key="NSNextResponder" ref="94750804"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 302}, {42, 21}}</string>
+								<string key="NSFrame">{{20, 302}, {111, 21}}</string>
 								<reference key="NSSuperview" ref="94750804"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -93,7 +93,7 @@
 							<object class="IBUILabel" id="614210548">
 								<reference key="NSNextResponder" ref="94750804"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{139, 302}, {49, 21}}</string>
+								<string key="NSFrame">{{139, 302}, {161, 21}}</string>
 								<reference key="NSSuperview" ref="94750804"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -252,7 +252,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIResponder</string>
 					<string>ArtPieceViewCell</string>
-					<string>{{956, 477}, {320, 327}}</string>
+					<string>{{462, 246}, {320, 327}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">

@@ -113,7 +113,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *MyIdentifier = @"MyIdentifier";
-    NSLog(@"yup!");
+	
 	
     // Try to retrieve from the table view a now-unused cell with the given identifier.
     ArtPieceViewCell *cell = (ArtPieceViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
@@ -122,6 +122,7 @@
 	
     // If no cell is available, create a new one using the given identifier.
     if (cell == nil) {
+		NSLog(@"Nil!");
 		NSArray *topLevelObjects = [[NSBundle mainBundle] 
 									loadNibNamed:@"ArtPieceViewCell" 
 									owner:nil options:nil];
@@ -130,28 +131,33 @@
 				cell = (ArtPieceViewCell *) currentObject;
 				break;
 			}
-		// Use the default cell style.
-        //cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier] autorelease];
+			// Use the default cell style.
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier] autorelease];
+			
+			
 		}
+		
+		// Set up the cell.
+		NSDictionary *artPiece = [artPieces objectAtIndex:indexPath.row];
 
+		cell.artPieceTitle.text = [artPiece objectForKey:@"title"];
+		cell.latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"latitude"]];
+		cell.longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"longitude"]];
+		NSArray *media = [artPiece objectForKey:@"media"];
+		NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[media objectAtIndex:0] objectForKey:@"url"]]];
+		cell.artPieceImageView.image = [UIImage imageWithData:imageData];
+		
+		
 	}
     
-    // Set up the cell.
 	
-	NSDictionary *artPiece = [artPieces objectAtIndex:indexPath.row];
-	cell.artPieceTitle.text = [artPiece objectForKey:@"title"];
-	cell.latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"latitude"]];
-	cell.longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"longitude"]];
-	NSArray *media = [artPiece objectForKey:@"media"];
-	NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[media objectAtIndex:0] objectForKey:@"url"]]];
-	cell.artPieceImageView.image = [UIImage imageWithData:imageData];
-/*
-	NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[medium objectForKey:@"url"]]];
-	artPieceImageView.image = [UIImage imageWithData:imageData];
-*/	
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 
 #pragma mark JSON UrlConnection
