@@ -143,11 +143,11 @@
 
 	// Prep. the request
 	
-	NSLog(@"totally button pressed");
+	//NSLog(@"totally button pressed");
     TTURLRequest* request = [TTURLRequest requestWithURL: @"http://75.101.166.190/upload/" delegate: self];
     request.httpMethod = @"POST";
     request.cachePolicy = TTURLRequestCachePolicyNoCache; 
-	NSLog(@"request: %@", request);
+	//NSLog(@"request: %@", request);
 	
     // Response will be JSON ... BUT WHY DO I NEED TO DO THIS HERE???
 	request.response = [[[TTURLJSONResponse alloc] init] autorelease];

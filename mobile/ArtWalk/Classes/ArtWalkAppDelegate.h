@@ -13,6 +13,7 @@
 @class MultipleArtPiece;
 @class EditingController;
 @class MapView;
+
 @interface ArtWalkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
 	UITabBarController *tabBarController;

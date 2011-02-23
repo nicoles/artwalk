@@ -37,7 +37,7 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
 	[super loadView];
-	NSLog(@"done!");
+	// NSLog(@"done!");
 	
 	// scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320, 460)];
 	// [self.view addSubview:scrollView];
@@ -190,65 +190,7 @@
 	// Create a dictionary from the JSON string
 	self.artPieces = [jsonString JSONValue];
 	
-	/*for (int i = 0; i < results.count; i++) {
-        CGFloat artPieceViewHeight = 290;
-		NSDictionary *data = [results objectAtIndex:i];
-		ArtPieceView *artPieceView = [[ArtPieceView alloc] initWithTitle:[data objectForKey:@"title"]
-											  latitudeString:[NSString stringWithFormat:@"%@", [data objectForKey:@"latitude"]]
-											 longitudeString:[NSString stringWithFormat:@"%@", [data objectForKey:@"longitude"]]
-                                                       media:[data objectForKey:@"media"]
-                                                       frame:CGRectMake(0, i * artPieceViewHeight, self.view.frame.size.width, artPieceViewHeight)
-                                      ];
-		// [scrollView addSubview:artPieceView];
-		//scrollView.contentSize.height += 290;
-	}
-	NSLog(@"DidFinishLoading: created %d ArtPieces", results.count);
-	
-	NSDictionary *artPiece = [results objectAtIndex:results.count-1];
-	*/
-	//UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-	//label1.text = @"yexy";
-	//[scrollView addSubview:label1];
-	
-	/*
-	artPieceTitle.text = [artPiece objectForKey:@"title"];
-	latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"latitude"]];
-	longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"longitude"]];
-	*/
-	/*NSArray *media = [artPiece objectForKey:@"media"];
-	
-	for (NSDictionary *medium in media)
-	{
-		//TODO: make this a carousel of the available images, and have it click to embiggen
-		NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[medium objectForKey:@"url"]]];
-		
-		// artPieceImageView.image = [UIImage imageWithData:imageData];
-		
-	}
-	
-	
-	NSLog(@"objectforkey: %@", [artPiece objectForKey:@"title"]);*/
-	//[[results objectAtIndex:0] artPieceTitle.text = [NSString objectForKey:@"title"]];
-	
-	/*// Loop through each entry in the array...
-	 for (NSDictionary *artPiece in results[0])
-	 {
-	 // Get title of the image
-	 NSString *title = [artPiece	objectForKey:@"title"];
-	 
-	 // Save the title to the photo titles array
-	 artPieceTitle.string = *title;
-	 
-	 //NSArray *media = [artPiece objectForKey:@"media"];
-	 
-	 /*for (NSDictionary *medium in media)
-	 {
-	 NSString *photoURLString = [medium objectForKey:@"url"];
-	 [photoImage addObject:[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]]];
-	 NSLog(@"photoURLString: %@", photoURLString);
-	 }
-	 
-	 } */
+
 	[jsonString release];
 	
 	 [self.tableView reloadData];
@@ -269,13 +211,3 @@
 
 @end
 
-
-/*
- - (void)connectionDidFinishLoading:(NSURLConnection *)connection
- {
- self.artPieces = [NSTimeZone knownTimeZoneNames];
- //myTableView.dataSource = self.artPieces;
- NSLog(@"connectionfinished");
- [self.tableView reloadData];
- }
-*/
