@@ -31,6 +31,7 @@
 		BB6039C613024D060064E046 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6039C513024D060064E046 /* 103-map.png */; };
 		BB6039D813024F4B0064E046 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6039D713024F4B0064E046 /* MapKit.framework */; };
 		BB603A9E13025C070064E046 /* ArtPieceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB603A9D13025C070064E046 /* ArtPieceAnnotation.m */; };
+		BB6BC95D13244DE100FA3F45 /* SingleArtPieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6BC95C13244DE100FA3F45 /* SingleArtPieceView.m */; };
 		BB7A415412DA7460002B69F8 /* MultipleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */; };
 		BB7A41D312DA7CD1002B69F8 /* ArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A41D212DA7CD1002B69F8 /* ArtPiece.m */; };
 		BB83D21E12C3025300C69C03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB83D21D12C3025300C69C03 /* CoreLocation.framework */; };
@@ -496,6 +497,8 @@
 		BB6039D713024F4B0064E046 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BB603A9C13025C070064E046 /* ArtPieceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArtPieceAnnotation.h; path = ../ArtPieceAnnotation.h; sourceTree = "<group>"; };
 		BB603A9D13025C070064E046 /* ArtPieceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArtPieceAnnotation.m; path = ../ArtPieceAnnotation.m; sourceTree = "<group>"; };
+		BB6BC95B13244DE100FA3F45 /* SingleArtPieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleArtPieceView.h; sourceTree = "<group>"; };
+		BB6BC95C13244DE100FA3F45 /* SingleArtPieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleArtPieceView.m; sourceTree = "<group>"; };
 		BB7A415212DA7460002B69F8 /* MultipleArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleArtPiece.h; sourceTree = "<group>"; };
 		BB7A415312DA7460002B69F8 /* MultipleArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleArtPiece.m; sourceTree = "<group>"; };
 		BB7A41D112DA7CD1002B69F8 /* ArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPiece.h; sourceTree = "<group>"; };
@@ -570,6 +573,8 @@
 				BBB4386512EFEA7400D5A8A1 /* ArtPieceViewCell.xib */,
 				BB6039C213024CBD0064E046 /* MapView.h */,
 				BB6039C313024CBD0064E046 /* MapView.m */,
+				BB6BC95B13244DE100FA3F45 /* SingleArtPieceView.h */,
+				BB6BC95C13244DE100FA3F45 /* SingleArtPieceView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1253,6 +1258,7 @@
 				BBB4386412EFE93A00D5A8A1 /* ArtPieceViewCell.m in Sources */,
 				BB6039C413024CBD0064E046 /* MapView.m in Sources */,
 				BB603A9E13025C070064E046 /* ArtPieceAnnotation.m in Sources */,
+				BB6BC95D13244DE100FA3F45 /* SingleArtPieceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

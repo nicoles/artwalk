@@ -13,6 +13,7 @@
 @class MultipleArtPiece;
 @class EditingController;
 @class MapView;
+@class SingleArtPieceView;
 
 @interface ArtWalkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
@@ -21,6 +22,7 @@
 	SubmissionController *submissionController;
 	EditingController *editingController;
 	MultipleArtPiece *multipleArtPiece;
+	SingleArtPieceView *singleArtPieceView;
 	MapView *mapView;
 }
 
@@ -31,6 +33,7 @@
 @property (nonatomic, retain) UINavigationController *navigationController;
 @property (nonatomic, retain) MultipleArtPiece *multipleArtPiece;
 @property (nonatomic, retain) MapView *mapView;
+@property (nonatomic, retain) SingleArtPieceView *singleArtPieceView;
 
 
 @end

@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface ArtPieceViewCell : UITableViewCell {
+@interface ArtPieceViewCell : UIView {
+	NSDictionary *data;
 	IBOutlet UIImageView *artPieceImageView;
 	IBOutlet UILabel *latitudeString;
 	IBOutlet UILabel *longitudeString;
 	IBOutlet UILabel *artPieceTitle;
 }
 
+- (id)initWithData:(NSDictionary *)data;
+
+@property (nonatomic, retain) NSDictionary *data;
 @property (nonatomic, retain) IBOutlet UIImageView *artPieceImageView;
 @property (nonatomic, retain) IBOutlet UILabel *latitudeString;
 @property (nonatomic, retain) IBOutlet UILabel *longitudeString;
