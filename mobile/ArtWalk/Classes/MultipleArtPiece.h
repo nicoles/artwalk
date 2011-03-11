@@ -14,7 +14,10 @@
 	UIScrollView *scrollView;
     UITableView *myTableView;
     NSArray *artPieces;
+	NSMutableArray *artPieceViews;
+	
 }
 
 @property (nonatomic, retain) NSArray *artPieces;
+@property (nonatomic, retain) NSMutableArray *artPieceViews;
 @end

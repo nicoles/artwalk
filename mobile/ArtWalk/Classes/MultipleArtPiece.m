@@ -7,13 +7,14 @@
 //
 
 #import "MultipleArtPiece.h"
-#import "ArtPieceView.h"
 #import "ArtPieceViewCell.h"
 #import "JSON.h"
+#import "SingleArtPieceView.h"
 
 @implementation MultipleArtPiece
 
 @synthesize artPieces;
+@synthesize artPieceViews;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -49,12 +50,6 @@
 	myTableView.dataSource = self;
     [self.view addSubview:myTableView];
 	self.tableView.rowHeight = 327;
-
-	
-	responseData = [[NSMutableData data] retain];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
-	[[NSURLConnection alloc] initWithRequest:request delegate:self];
-	
 }
 
 - (void)viewWillAppear:(BOOL) animated
@@ -116,47 +111,32 @@
 	
 	
     // Try to retrieve from the table view a now-unused cell with the given identifier.
-    ArtPieceViewCell *cell = (ArtPieceViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    
-	
-	
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];	
+
     // If no cell is available, create a new one using the given identifier.
     if (cell == nil) {
-		NSLog(@"Nil!");
-		NSArray *topLevelObjects = [[NSBundle mainBundle] 
-									loadNibNamed:@"ArtPieceViewCell" 
-									owner:nil options:nil];
-        for (id currentObject in topLevelObjects){
-			if ([currentObject isKindOfClass:[UITableViewCell class]]) {
-				cell = (ArtPieceViewCell *) currentObject;
-				break;
-			}
-			// Use the default cell style.
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier] autorelease];
-			
-			
-		}
-		
-		// Set up the cell.
-		NSDictionary *artPiece = [artPieces objectAtIndex:indexPath.row];
-
-		cell.artPieceTitle.text = [artPiece objectForKey:@"title"];
-		cell.latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"latitude"]];
-		cell.longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"longitude"]];
-		NSArray *media = [artPiece objectForKey:@"media"];
-		NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[media objectAtIndex:0] objectForKey:@"url"]]];
-		cell.artPieceImageView.image = [UIImage imageWithData:imageData];
-		
-		
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier] autorelease];
+		[cell addSubview:((UIView *)[artPieceViews objectAtIndex:indexPath.row])];
 	}
-    
 	
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+	UIView *v;
+	for (v in [cell subviews]) {
+		if ([v isKindOfClass:[ArtPieceViewCell class]]) {
+			break;
+		}
+	}
+	
+	SingleArtPieceView *singleArtPieceView = [[SingleArtPieceView alloc] initWithData:((ArtPieceViewCell *)v).data];
+	
+	[self.navigationController pushViewController:singleArtPieceView animated:YES];
+	//[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
 }
 
 
@@ -186,21 +166,34 @@
 	NSLog(@"DidFinishLoading: %@", *responseData);
 	// Store incoming data into a string
 	NSString *jsonString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+	artPieceViews = [[NSMutableArray alloc] init];
 	
 	// Create a dictionary from the JSON string
 	self.artPieces = [jsonString JSONValue];
 	
-
 	[jsonString release];
 	
-	 [self.tableView reloadData];
+	for (NSDictionary *artPiece in artPieces) {
+		ArtPieceViewCell *v;
+		NSArray *topLevelObjects = [[NSBundle mainBundle] 
+									loadNibNamed:@"ArtPieceViewCell" 
+									owner:nil options:nil];
+		for (id currentObject in topLevelObjects){
+			if ([currentObject isKindOfClass:[UIView class]]) {
+				v = (ArtPieceViewCell *) currentObject;
+				break;
+			}			
+		}
+		
+		[v initWithData:artPiece];		
+		[artPieceViews addObject:v];
+	}
+	
+	[self.tableView reloadData];
 	
 	//TODO: this leaks memory. fix it.
 	//	[results release];
 	//	[imageData release];
-	
-	
-	
 }
 
 - (void)dealloc {

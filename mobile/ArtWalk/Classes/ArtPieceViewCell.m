@@ -11,26 +11,21 @@
 
 @implementation ArtPieceViewCell
 
+@synthesize data;
 @synthesize artPieceImageView;
 @synthesize latitudeString;
 @synthesize longitudeString;
 @synthesize artPieceTitle;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code.
-    }
-    return self;
-}
-
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    
-    [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state.
+- (id)initWithData:(NSDictionary *)data {
+	self.data = data;
+	
+	artPieceTitle.text = [data objectForKey:@"title"];
+	latitudeString.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"latitude"]];
+	longitudeString.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"longitude"]];
+	NSArray *media = [data objectForKey:@"media"];
+	NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[media objectAtIndex:0] objectForKey:@"url"]]];
+	artPieceImageView.image = [UIImage imageWithData:imageData];
 }
 
 
