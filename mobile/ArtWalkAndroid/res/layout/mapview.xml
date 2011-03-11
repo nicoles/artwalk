@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/maplayout"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent" >
 
-	<ListView  
-    	android:id="@+id/art_piece_list"
-    	android:layout_width="fill_parent" 
-    	android:layout_height="wrap_content" 
-    	android:layout_weight="5"
-    	/>
-    	
-    <LinearLayout
+    <com.google.android.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:clickable="true"
+        android:apiKey="0hLU2jTEOmC_9joQDKrsh_6PnlHuHpnCUhJIgJw"
+    />
+
+   <LinearLayout
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
+    	android:layout_weight="1"
     	android:orientation="horizontal"
     	style="@android:style/ButtonBar"
     	>
@@ -43,4 +46,5 @@
     		android:text="@string/submit_view_button"
     		></Button>
     </LinearLayout>
+
 </LinearLayout>

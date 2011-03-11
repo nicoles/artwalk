@@ -2,4 +2,7 @@
 <resources>
     <string name="hello">Hello World, ArtPiecesListView!</string>
     <string name="app_name">ArtWalk</string>
+    <string name="list_view_button">List</string>
+    <string name="map_view_button">Map</string>
+    <string name="submit_view_button">Submit</string>
 </resources>
