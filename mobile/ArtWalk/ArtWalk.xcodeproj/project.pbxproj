@@ -22,8 +22,6 @@
 		BB215BE7132D736A00C1A157 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB215BE5132D736A00C1A157 /* InfoPlist.strings */; };
 		BB215BEA132D736A00C1A157 /* ArtWalkTests.h in Resources */ = {isa = PBXBuildFile; fileRef = BB215BE9132D736A00C1A157 /* ArtWalkTests.h */; };
 		BB215BEC132D736A00C1A157 /* ArtWalkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215BEB132D736A00C1A157 /* ArtWalkTests.m */; };
-		BB215BF8132D77C700C1A157 /* SubmissionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215BF6132D77C700C1A157 /* SubmissionController.m */; };
-		BB215BF9132D77C700C1A157 /* SubmissionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB215BF7132D77C700C1A157 /* SubmissionController.xib */; };
 		BB215C09132D77F700C1A157 /* ArtPieceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215BFB132D77E200C1A157 /* ArtPieceAnnotation.m */; };
 		BB215C0A132D77F700C1A157 /* MultipleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215BFD132D77E200C1A157 /* MultipleArtPiece.m */; };
 		BB215C0B132D77F700C1A157 /* ArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215BFF132D77E300C1A157 /* ArtPiece.m */; };
@@ -71,6 +69,8 @@
 		BB215CD4132D7DC600C1A157 /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215C9B132D7DC600C1A157 /* ASIS3Request.m */; };
 		BB215CD5132D7DC600C1A157 /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215C9D132D7DC600C1A157 /* ASIS3ServiceRequest.m */; };
 		BB215CE5132D7DC600C1A157 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215CBF132D7DC600C1A157 /* Reachability.m */; };
+		BB339BAA132D831B0053AC3C /* SubmissionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB339BA7132D831B0053AC3C /* SubmissionController.m */; };
+		BB339BAB132D831B0053AC3C /* SubmissionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB339BA8132D831B0053AC3C /* SubmissionController.xib */; };
 		BB5F5BBE132D7E37004044E9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5F5BBD132D7E37004044E9 /* CFNetwork.framework */; };
 		BB5F5BC1132D7E49004044E9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5F5BC0132D7E49004044E9 /* SystemConfiguration.framework */; };
 		BB5F5BC3132D7E51004044E9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5F5BC2132D7E51004044E9 /* MobileCoreServices.framework */; };
@@ -108,9 +108,6 @@
 		BB215BE8132D736A00C1A157 /* ArtWalkTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArtWalkTests-Prefix.pch"; sourceTree = "<group>"; };
 		BB215BE9132D736A00C1A157 /* ArtWalkTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtWalkTests.h; sourceTree = "<group>"; };
 		BB215BEB132D736A00C1A157 /* ArtWalkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtWalkTests.m; sourceTree = "<group>"; };
-		BB215BF5132D77C700C1A157 /* SubmissionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubmissionController.h; path = ../SubmissionController.h; sourceTree = "<group>"; };
-		BB215BF6132D77C700C1A157 /* SubmissionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubmissionController.m; path = ../SubmissionController.m; sourceTree = "<group>"; };
-		BB215BF7132D77C700C1A157 /* SubmissionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubmissionController.xib; path = ../SubmissionController.xib; sourceTree = "<group>"; };
 		BB215BFA132D77E200C1A157 /* ArtPieceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPieceAnnotation.h; sourceTree = "<group>"; };
 		BB215BFB132D77E200C1A157 /* ArtPieceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPieceAnnotation.m; sourceTree = "<group>"; };
 		BB215BFC132D77E200C1A157 /* MultipleArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleArtPiece.h; sourceTree = "<group>"; };
@@ -202,6 +199,9 @@
 		BB215C9D132D7DC600C1A157 /* ASIS3ServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3ServiceRequest.m; sourceTree = "<group>"; };
 		BB215CBE132D7DC600C1A157 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		BB215CBF132D7DC600C1A157 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		BB339BA7132D831B0053AC3C /* SubmissionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmissionController.m; sourceTree = "<group>"; };
+		BB339BA8132D831B0053AC3C /* SubmissionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmissionController.xib; sourceTree = "<group>"; };
+		BB339BA9132D831B0053AC3C /* SubmissionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmissionController.h; sourceTree = "<group>"; };
 		BB5F5BBD132D7E37004044E9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BB5F5BC0132D7E49004044E9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BB5F5BC2132D7E51004044E9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -278,6 +278,9 @@
 		BB215BC2132D736A00C1A157 /* ArtWalk */ = {
 			isa = PBXGroup;
 			children = (
+				BB339BA7132D831B0053AC3C /* SubmissionController.m */,
+				BB339BA8132D831B0053AC3C /* SubmissionController.xib */,
+				BB339BA9132D831B0053AC3C /* SubmissionController.h */,
 				BB215BCB132D736A00C1A157 /* ArtWalkAppDelegate.h */,
 				BB215BCC132D736A00C1A157 /* ArtWalkAppDelegate.m */,
 				BB215BFA132D77E200C1A157 /* ArtPieceAnnotation.h */,
@@ -295,9 +298,6 @@
 				BB215C06132D77EE00C1A157 /* MapView.m */,
 				BB215C07132D77F100C1A157 /* SingleArtPieceView.h */,
 				BB215C08132D77F400C1A157 /* SingleArtPieceView.m */,
-				BB215BF5132D77C700C1A157 /* SubmissionController.h */,
-				BB215BF6132D77C700C1A157 /* SubmissionController.m */,
-				BB215BF7132D77C700C1A157 /* SubmissionController.xib */,
 				BB215BCE132D736A00C1A157 /* MainWindow.xib */,
 				BB215BD1132D736A00C1A157 /* RootViewController.h */,
 				BB215BD2132D736A00C1A157 /* RootViewController.m */,
@@ -538,7 +538,6 @@
 				BB215BC7132D736A00C1A157 /* InfoPlist.strings in Resources */,
 				BB215BD0132D736A00C1A157 /* MainWindow.xib in Resources */,
 				BB215BD6132D736A00C1A157 /* RootViewController.xib in Resources */,
-				BB215BF9132D77C700C1A157 /* SubmissionController.xib in Resources */,
 				BB215C0E132D77F700C1A157 /* ArtPieceViewCell.xib in Resources */,
 				BB215C17132D780600C1A157 /* 103-map.png in Resources */,
 				BB215C18132D780600C1A157 /* 121-landscape.png in Resources */,
@@ -546,6 +545,7 @@
 				BB215C1A132D780600C1A157 /* 19-check.png in Resources */,
 				BB215C1B132D780600C1A157 /* 122-stats.png in Resources */,
 				BB215C1C132D780600C1A157 /* 168-upload-photo-2.png in Resources */,
+				BB339BAB132D831B0053AC3C /* SubmissionController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,7 +584,6 @@
 				BB215BCA132D736A00C1A157 /* main.m in Sources */,
 				BB215BCD132D736A00C1A157 /* ArtWalkAppDelegate.m in Sources */,
 				BB215BD3132D736A00C1A157 /* RootViewController.m in Sources */,
-				BB215BF8132D77C700C1A157 /* SubmissionController.m in Sources */,
 				BB215C09132D77F700C1A157 /* ArtPieceAnnotation.m in Sources */,
 				BB215C0A132D77F700C1A157 /* MultipleArtPiece.m in Sources */,
 				BB215C0B132D77F700C1A157 /* ArtPiece.m in Sources */,
@@ -623,6 +622,7 @@
 				BB215CD4132D7DC600C1A157 /* ASIS3Request.m in Sources */,
 				BB215CD5132D7DC600C1A157 /* ASIS3ServiceRequest.m in Sources */,
 				BB215CE5132D7DC600C1A157 /* Reachability.m in Sources */,
+				BB339BAA132D831B0053AC3C /* SubmissionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
