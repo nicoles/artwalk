@@ -1,0 +1,9 @@
+build/
+*.xcworkspace/
+xcuserdata/
+*.pbxuser
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev*
