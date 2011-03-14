@@ -15,9 +15,14 @@
     UITableView *myTableView;
     NSArray *artPieces;
 	NSMutableArray *artPieceViews;
+    UIBarButtonItem *refreshButton;
 	
 }
 
 @property (nonatomic, retain) NSArray *artPieces;
 @property (nonatomic, retain) NSMutableArray *artPieceViews;
+@property (nonatomic, retain) UIBarButtonItem *refreshButton;
+
+- (void)refresh;
+
 @end

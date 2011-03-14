@@ -8,6 +8,7 @@
 
 #import "MapView.h"
 #import "ArtPieceAnnotation.h"
+#import "ASIHTTPRequest.h"
 
 @implementation MapView
 
@@ -61,9 +62,9 @@
 - (void)viewWillAppear:(BOOL) animated
 {
 	responseData = [[NSMutableData data] retain];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
-	[[NSURLConnection alloc] initWithRequest:request delegate:self];
-	
+	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
+	[request setDelegate:self];
+    [request startAsynchronous];
 	[super viewWillAppear:animated];
 }
 
@@ -94,13 +95,13 @@
 }
 
 
+#pragma mark ASIHTTPRequest
+- (void)requestFinished:(ASIHTTPRequest *)request { 
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection 
-{
 	
-	NSLog(@"DidFinishLoading: %@", *responseData);
+	//NSLog(@"DidFinishLoading: %@", *responseData);
 	// Store incoming data into a string
-	NSString *jsonString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+	NSString *jsonString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
 	
 	// Create a dictionary from the JSON string
 	self.artPieces = [jsonString JSONValue];

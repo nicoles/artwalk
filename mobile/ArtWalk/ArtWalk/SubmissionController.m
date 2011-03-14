@@ -7,7 +7,7 @@
 //
 
 #import "SubmissionController.h"
-
+#import "ASIFormDataRequest.h"
 
 @implementation SubmissionController
 
@@ -23,7 +23,7 @@
 @synthesize longitudeString;
 
 - (id)init{
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		self.title = @"Submit New";
 		self.tabBarItem.image = [UIImage imageNamed:@"168-upload-photo-2.png"];
 	}
@@ -137,7 +137,37 @@
 }
 
 #pragma mark send data to server
+- (IBAction)sendArtPiece{
+    ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/upload/"]];
+    [request addRequestHeader:@"Device-UID" value:[[UIDevice currentDevice] uniqueIdentifier]];
+    [request setPostValue:self.latitudeString forKey:@"latitude"];
+    [request setPostValue:self.longitudeString forKey:@"longitude"];
+    [request setPostValue:self.artPieceTitle.text forKey:@"title"];
+    [request setPostValue:self.artPieceArtist.text forKey:@"artist"];
+    [request setData:UIImageJPEGRepresentation(imageView.image, 0.0) withFileName:@"photo_test.jpg" andContentType:@"image/jpeg" forKey:@"media"];
+    [request setDelegate:self];
+    [request startAsynchronous];
+    
+}
 
+- (void)requestFinished:(ASIHTTPRequest *)request {
+    NSLog(@"request: %@", request);
+	UIAlertView *alert;
+	
+	
+	alert = [[UIAlertView alloc] initWithTitle:@"Success" 
+                                       message:@"Image sent to ArtWalk." 
+                                      delegate:self cancelButtonTitle:@"Ok" 
+                             otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request {
+    NSError *error = [request error];
+    NSLog(@"%@", [error localizedDescription]);
+}
 //Old Three20 
 /*
 - (IBAction)sendArtPiece{

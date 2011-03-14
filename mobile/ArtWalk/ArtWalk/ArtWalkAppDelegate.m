@@ -14,6 +14,7 @@
 @implementation ArtWalkAppDelegate
 
 
+
 @synthesize window=_window;
 
 @synthesize navigationController=_navigationController;

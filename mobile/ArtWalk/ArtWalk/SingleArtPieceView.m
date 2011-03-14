@@ -30,7 +30,7 @@
  }
  */
 
-- (id)initWithData:(NSDictionary *)data {
+- (id)initWithDictionary:(NSDictionary *)data {
 	self = [super init];
 	
 	if (self) {

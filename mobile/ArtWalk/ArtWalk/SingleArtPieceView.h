@@ -29,7 +29,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView *artPieceImageView;
 @property (nonatomic, retain) IBOutlet MKMapView *artPieceMapView;
 
-- (id)initWithData:(NSDictionary *)data;
+- (id)initWithDictionary:(NSDictionary *)data;
 
 
 @end

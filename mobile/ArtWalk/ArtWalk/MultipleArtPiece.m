@@ -9,12 +9,14 @@
 #import "MultipleArtPiece.h"
 #import "ArtPieceViewCell.h"
 #import "JSON.h"
+#import "ASIHTTPRequest.h"
 #import "SingleArtPieceView.h"
 
 @implementation MultipleArtPiece
 
 @synthesize artPieces;
 @synthesize artPieceViews;
+@synthesize refreshButton;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -27,7 +29,7 @@
 */
 
 - (id)init{
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		self.title = @"Art Pieces";
 		self.tabBarItem.image = [UIImage imageNamed:@"122-stats.png"];
 	}
@@ -43,6 +45,15 @@
 	// scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320, 460)];
 	// [self.view addSubview:scrollView];
 	// scrollView.contentSize = CGSizeMake(320, 600);
+   
+    refreshButton = [[UIBarButtonItem alloc]
+                               initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                               target:self
+                               action:@selector(refresh)];
+    
+    self.navigationItem.rightBarButtonItem = refreshButton;
+
+    
 	artPieces = [[NSMutableArray alloc] init];
 
 	myTableView = [[UITableView alloc] init];
@@ -50,13 +61,17 @@
 	myTableView.dataSource = self;
     [self.view addSubview:myTableView];
 	self.tableView.rowHeight = 327;
+    
+    responseData = [[NSMutableData data] retain];
+	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
+	[request setDelegate:self];
+    [request startAsynchronous];
 }
 
 - (void)viewWillAppear:(BOOL) animated
 {
-	responseData = [[NSMutableData data] retain];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
-	[[NSURLConnection alloc] initWithRequest:request delegate:self];
+	
+
 	
 	[super viewWillAppear:animated];
 	[self.tableView reloadData];
@@ -91,6 +106,13 @@
     // e.g. self.myOutlet = nil;
 }
 
+- (void)refresh {
+    //NSLog(@"Button!");
+    responseData = [[NSMutableData data] retain];
+	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
+	[request setDelegate:self];
+    [request startAsynchronous];
+}
 #pragma mark Table Methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // There is only one section.
@@ -106,16 +128,17 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *identifier = [NSString stringWithFormat:@"Identifier%d", indexPath.row];
     
-    static NSString *MyIdentifier = @"MyIdentifier";
+   // static NSString *MyIdentifier = @"MyIdentifier%d", indexPath.row;
 	
 	
     // Try to retrieve from the table view a now-unused cell with the given identifier.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];	
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];	
 
     // If no cell is available, create a new one using the given identifier.
     if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier] autorelease];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
 		[cell addSubview:((UIView *)[artPieceViews objectAtIndex:indexPath.row])];
 	}
 	
@@ -132,7 +155,7 @@
 		}
 	}
 	
-	SingleArtPieceView *singleArtPieceView = [[SingleArtPieceView alloc] initWithData:((ArtPieceViewCell *)v).data];
+	SingleArtPieceView *singleArtPieceView = [[SingleArtPieceView alloc] initWithDictionary:((ArtPieceViewCell *)v).data];
 	
 	[self.navigationController pushViewController:singleArtPieceView animated:YES];
 	//[tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -158,21 +181,21 @@
 	
 }
 
+#pragma mark ASIHTTPRequest 
 
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection 
-{
+- (void)requestFinished:(ASIHTTPRequest *)request {
 	
-	NSLog(@"DidFinishLoading: %@", *responseData);
+	//NSLog(@"DidFinishLoading: %@", *responseData);
 	// Store incoming data into a string
-	NSString *jsonString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+	NSString *jsonString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
+    
 	artPieceViews = [[NSMutableArray alloc] init];
 	
 	// Create a dictionary from the JSON string
 	self.artPieces = [jsonString JSONValue];
 	
 	[jsonString release];
-	
+
 	for (NSDictionary *artPiece in artPieces) {
 		ArtPieceViewCell *v;
 		NSArray *topLevelObjects = [[NSBundle mainBundle] 
@@ -188,7 +211,8 @@
 		[v initWithData:artPiece];		
 		[artPieceViews addObject:v];
 	}
-	
+    //NSLog(@"whee!");
+    //return;
 	[self.tableView reloadData];
 	
 	//TODO: this leaks memory. fix it.
@@ -196,8 +220,14 @@
 	//	[imageData release];
 }
 
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    NSError *error= [request error];
+    
+}
 - (void)dealloc {
 	[responseData release];
+    [refreshButton release];
     [super dealloc];
 }
 
