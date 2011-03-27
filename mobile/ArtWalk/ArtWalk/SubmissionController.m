@@ -167,6 +167,16 @@
 - (void)requestFailed:(ASIHTTPRequest *)request {
     NSError *error = [request error];
     NSLog(@"%@", [error localizedDescription]);
+    UIAlertView *alert;
+	
+	
+	alert = [[UIAlertView alloc] initWithTitle:@"Failure" 
+                                       message:@"Image failed to send to ArtWalk." 
+                                      delegate:self cancelButtonTitle:@"Ok" 
+                             otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+
 }
 //Old Three20 
 /*

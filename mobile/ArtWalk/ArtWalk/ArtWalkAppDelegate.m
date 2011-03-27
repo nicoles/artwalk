@@ -32,6 +32,7 @@
     
 	
 	multipleArtPiece = [[MultipleArtPiece alloc] init];
+
 	submissionController = [[SubmissionController alloc] init];
 	mapView = [[MapView alloc] init];
 	

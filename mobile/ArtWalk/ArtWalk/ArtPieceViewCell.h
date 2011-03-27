@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ArtPieceViewCell : UIView {
-	NSDictionary *data;
+	NSDictionary *_data;
 	IBOutlet UIImageView *artPieceImageView;
 	IBOutlet UILabel *latitudeString;
 	IBOutlet UILabel *longitudeString;
@@ -18,7 +18,7 @@
 
 - (id)initWithData:(NSDictionary *)data;
 
-@property (nonatomic, retain) NSDictionary *data;
+@property (nonatomic, retain) NSDictionary *_data;
 @property (nonatomic, retain) IBOutlet UIImageView *artPieceImageView;
 @property (nonatomic, retain) IBOutlet UILabel *latitudeString;
 @property (nonatomic, retain) IBOutlet UILabel *longitudeString;

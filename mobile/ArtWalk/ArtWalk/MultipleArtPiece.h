@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <dispatch/dispatch.h>
 
 @interface MultipleArtPiece : UITableViewController {
 	NSMutableData *responseData;
@@ -16,6 +16,7 @@
     NSArray *artPieces;
 	NSMutableArray *artPieceViews;
     UIBarButtonItem *refreshButton;
+    dispatch_queue_t loadingQueue;
 	
 }
 

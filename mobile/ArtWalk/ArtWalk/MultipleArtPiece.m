@@ -11,6 +11,7 @@
 #import "JSON.h"
 #import "ASIHTTPRequest.h"
 #import "SingleArtPieceView.h"
+#import <dispatch/dispatch.h>
 
 @implementation MultipleArtPiece
 
@@ -32,8 +33,9 @@
 	if ((self = [super init])) {
 		self.title = @"Art Pieces";
 		self.tabBarItem.image = [UIImage imageNamed:@"122-stats.png"];
-	}
-	
+    }
+	loadingQueue = dispatch_queue_create("com.artwalk.loadingqueue", NULL);
+    
 	return self;
 }
 
@@ -59,7 +61,10 @@
 	myTableView = [[UITableView alloc] init];
     myTableView.delegate = self;
 	myTableView.dataSource = self;
+
     [self.view addSubview:myTableView];
+
+
 	self.tableView.rowHeight = 327;
     
     responseData = [[NSMutableData data] retain];
@@ -155,7 +160,7 @@
 		}
 	}
 	
-	SingleArtPieceView *singleArtPieceView = [[SingleArtPieceView alloc] initWithDictionary:((ArtPieceViewCell *)v).data];
+	SingleArtPieceView *singleArtPieceView = [[SingleArtPieceView alloc] initWithDictionary:((ArtPieceViewCell *)v)._data];
 	
 	[self.navigationController pushViewController:singleArtPieceView animated:YES];
 	//[tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -197,23 +202,29 @@
 	[jsonString release];
 
 	for (NSDictionary *artPiece in artPieces) {
-		ArtPieceViewCell *v;
-		NSArray *topLevelObjects = [[NSBundle mainBundle] 
-									loadNibNamed:@"ArtPieceViewCell" 
-									owner:nil options:nil];
-		for (id currentObject in topLevelObjects){
-			if ([currentObject isKindOfClass:[UIView class]]) {
-				v = (ArtPieceViewCell *) currentObject;
-				break;
-			}			
-		}
+        dispatch_async(loadingQueue, ^{
+            ArtPieceViewCell *v;
+            NSArray *topLevelObjects = [[NSBundle mainBundle] 
+                                        loadNibNamed:@"ArtPieceViewCell" 
+                                        owner:nil options:nil];
+            for (id currentObject in topLevelObjects){
+                if ([currentObject isKindOfClass:[UIView class]]) {
+                    v = (ArtPieceViewCell *) currentObject;
+                    break;
+                }			
+            }
+            
+            [v initWithData:artPiece];		
+            [artPieceViews addObject:v];
+            
+        });
 		
-		[v initWithData:artPiece];		
-		[artPieceViews addObject:v];
 	}
     //NSLog(@"whee!");
     //return;
-	[self.tableView reloadData];
+	dispatch_async(loadingQueue, ^{
+        [self.tableView reloadData];
+    });
 	
 	//TODO: this leaks memory. fix it.
 	//	[results release];

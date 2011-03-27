@@ -11,14 +11,14 @@
 
 @implementation ArtPieceViewCell
 
-@synthesize data;
+@synthesize _data;
 @synthesize artPieceImageView;
 @synthesize latitudeString;
 @synthesize longitudeString;
 @synthesize artPieceTitle;
 
 - (id)initWithData:(NSDictionary *)data {
-	self.data = data;
+	_data = data;
 	
 	artPieceTitle.text = [data objectForKey:@"title"];
 	latitudeString.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"latitude"]];
