@@ -74,7 +74,7 @@ def update_art_piece(request, id):
 		return render_to_response('upload.html',{})
 		
 def recent(request):
-	art_pieces = ArtPiece.objects.order_by('mtime', 'id')[:10]
+	art_pieces = ArtPiece.objects.order_by('-mtime', '-id')[:10]
 
 	if request.GET.get('mode') == 'json':
 		response = []
