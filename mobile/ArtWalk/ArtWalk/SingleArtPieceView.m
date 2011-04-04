@@ -11,7 +11,7 @@
 
 @implementation SingleArtPieceView
 
-@synthesize data;
+@synthesize _data;
 @synthesize artPieceTitle;
 @synthesize	artPieceArtist;
 @synthesize artPieceImageView;
@@ -34,23 +34,61 @@
 	self = [super init];
 	
 	if (self) {
-		self.data = data;
-		self.artPieceTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 50)];
-		artPieceTitle.text = [data objectForKey:@"title"];
-		// latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"latitude"]];
-		// longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"longitude"]];
-		NSArray *media = [data objectForKey:@"media"];
-		NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[media objectAtIndex:0] objectForKey:@"url"]]];
-		// artPieceImageView.image = [UIImage imageWithData:imageData];
+		_data = data;
+        self.title = [_data objectForKey:@"title"];
 	}
 	
 	return self;
 }
 
 - (void) loadView{
-	[super loadView];
+    [super loadView];
+    
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320, 460)];
+	[self.view addSubview:scrollView];
+	scrollView.contentSize = CGSizeMake(320, 600);
+    
+    self.artPieceTitle = [[UILabel alloc] initWithFrame:CGRectMake(10,10, 300, 30)];
+    artPieceTitle.text = [_data objectForKey:@"title"];
 
-	[self.view addSubview:artPieceTitle];
+    
+    self.artPieceArtist = [[UILabel alloc] initWithFrame:CGRectMake(10 , 40, 300, 30)];
+    NSArray *artists = [_data objectForKey:@"artists"];
+    artPieceArtist.text = [[artists objectAtIndex:0] objectForKey:@"name"];
+    NSLog(@"%@", artPieceArtist.text);
+    
+    
+                          
+    
+    NSArray *media = [_data objectForKey:@"media"];
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[media objectAtIndex:0] objectForKey:@"url"]]];
+    artPieceImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 80, 300, 300)];
+    artPieceImageView.image = [UIImage imageWithData:imageData];
+    artPieceImageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    
+    NSNumber *foo = [_data objectForKey:@"latitude"];
+    NSNumber *bar = [_data objectForKey:@"longitude"]; 
+    CLLocationCoordinate2D artPieceLocation = CLLocationCoordinate2DMake([foo doubleValue], [bar doubleValue]);
+    MKCoordinateSpan artPieceSpan = MKCoordinateSpanMake(.001, .001);
+    artPieceMapView = [[MKMapView alloc] initWithFrame:CGRectMake(10, 390, 300, 100)];
+    artPieceMapView.region = MKCoordinateRegionMake(artPieceLocation, artPieceSpan);
+                
+    MKPointAnnotation *artPiecePoint = [[MKPointAnnotation alloc] init];
+    artPiecePoint.coordinate = artPieceLocation;
+    
+    [artPieceMapView addAnnotation:artPiecePoint];
+    
+
+    
+    // artPieceImageView.image = [UIImage imageWithData:imageData];
+    // latitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"latitude"]];
+    // longitudeString.text = [NSString stringWithFormat:@"%@", [artPiece objectForKey:@"longitude"]];    [scrollView addSubview:artPieceArtist];
+	
+    [scrollView addSubview:artPieceTitle];
+    [scrollView addSubview:artPieceArtist];
+    [scrollView addSubview:artPieceImageView];
+    [scrollView addSubview:artPieceMapView];
 }
 
 /*

@@ -178,53 +178,6 @@
 	[alert release];
 
 }
-//Old Three20 
-/*
-- (IBAction)sendArtPiece{
-
-	// Prep. the request
-	
-	//NSLog(@"totally button pressed");
-    TTURLRequest* request = [TTURLRequest requestWithURL: @"http://75.101.166.190/upload/" delegate: self];
-    request.httpMethod = @"POST";
-    request.cachePolicy = TTURLRequestCachePolicyNoCache; 
-	//NSLog(@"request: %@", request);
-	
-    // Response will be JSON ... BUT WHY DO I NEED TO DO THIS HERE???
-	request.response = [[[TTURLJSONResponse alloc] init] autorelease];
-	
-    // Set a header value
-    [request setValue:[[UIDevice currentDevice] uniqueIdentifier] forHTTPHeaderField:@"Device-UID"];
-	
-	// Add the image to the request
-	[request addFile:UIImageJPEGRepresentation(imageView.image,0.0) 
-			mimeType:@"image/jpeg" 
-			fileName:@"photo_test.jpeg"];
-	
-	// Add the current location to the request
-	[request.parameters setObject:self.latitudeString forKey:@"latitude"];
-	[request.parameters setObject:self.longitudeString forKey:@"longitude"];
-	[request.parameters setObject:self.artPieceTitle.text forKey:@"title"];
-	[request.parameters setObject:self.artPieceArtist.text forKey:@"artist"];
-	
-	// Send the request
-
-    [request sendSynchronously];
-	NSLog(@"request: %@", request);
-	UIAlertView *alert;
-	
-	
-	alert = [[UIAlertView alloc] initWithTitle:@"Success" 
-										   message:@"Image sent to ArtWalk." 
-										  delegate:self cancelButtonTitle:@"Ok" 
-								 otherButtonTitles:nil];
-	[alert show];
-	[alert release];
-	
-	
-}
-
-*/
 
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{

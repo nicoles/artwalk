@@ -12,22 +12,24 @@
 #import "ArtPieceViewCell.h"
 
 @interface SingleArtPieceView : UIViewController {
-	NSDictionary *data;
-	IBOutlet UIImageView *artPieceImageView;
-	IBOutlet UILabel *artPieceTitle;
-	IBOutlet UILabel *artPieceArtist;
-	IBOutlet MKMapView *artPieceMapView;
-	IBOutlet UITextView *artPieceDescription;
-	IBOutlet UILabel *artPieceTags;
+	NSDictionary *_data;
+	UIImageView *artPieceImageView;
+    UILabel *artPieceTitle;
+	UILabel *artPieceArtist;
+    MKMapView *artPieceMapView;
+    UITextView *artPieceDescription;
+    UILabel *artPieceTags;
+    UIScrollView *scrollView;
 }
 
-@property (nonatomic, retain) NSDictionary *data;
-@property (nonatomic, retain) IBOutlet UILabel *artPieceTitle;
-@property (nonatomic, retain) IBOutlet UILabel *artPieceArtist;
-@property (nonatomic, retain) IBOutlet UILabel *artPieceTags;
-@property (nonatomic, retain) IBOutlet UITextView *artPieceDescription;
-@property (nonatomic, retain) IBOutlet UIImageView *artPieceImageView;
-@property (nonatomic, retain) IBOutlet MKMapView *artPieceMapView;
+@property (nonatomic, retain) NSDictionary *_data;
+@property (nonatomic, retain) UILabel *artPieceTitle;
+@property (nonatomic, retain) UILabel *artPieceArtist;
+@property (nonatomic, retain) UILabel *artPieceTags;
+@property (nonatomic, retain) UITextView *artPieceDescription;
+@property (nonatomic, retain) UIImageView *artPieceImageView;
+@property (nonatomic, retain) MKMapView *artPieceMapView;
+@property (nonatomic, retain) UIScrollView *scrollView;
 
 - (id)initWithDictionary:(NSDictionary *)data;
 

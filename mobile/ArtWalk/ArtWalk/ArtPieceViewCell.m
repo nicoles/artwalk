@@ -26,6 +26,8 @@
 	NSArray *media = [data objectForKey:@"media"];
 	NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[media objectAtIndex:0] objectForKey:@"url"]]];
 	artPieceImageView.image = [UIImage imageWithData:imageData];
+
+    
 }
 
 
