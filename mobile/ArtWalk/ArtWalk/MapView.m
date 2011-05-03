@@ -28,7 +28,7 @@
 */
 
 - (id)init{
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		self.title = @"Nearby Pieces";
 		self.tabBarItem.image = [UIImage imageNamed:@"103-map.png"];
 	}
@@ -52,11 +52,28 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   
+    
 	mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
 	mapView.mapType = MKMapTypeStandard;
 	mapView.showsUserLocation = YES;
-	//mapView.frame = CGRectMake(0, 0, self.view.frame.size.width, 300);
+
+    
+
+    
+    mapView.delegate = self;
+    
+    CLLocationManager *locationManager=[[CLLocationManager alloc] init];
+    locationManager.delegate=self;
+    locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters;
+    
+    [locationManager startUpdatingLocation];
+    
+ 
+    //mapView.frame = CGRectMake(0, 0, self.view.frame.size.width, 300);
 	[self.view insertSubview:mapView atIndex:0];
+    
 }
 
 - (void)viewWillAppear:(BOOL) animated
@@ -65,6 +82,8 @@
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
 	[request setDelegate:self];
     [request startAsynchronous];
+    mapLocationUpdate = TRUE;
+    
 	[super viewWillAppear:animated];
 }
 
@@ -113,6 +132,35 @@
 	 
 	[jsonString release];
 	
+}
+
+#pragma mark CLLocationManager
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+
+    
+    span.latitudeDelta= 0.02 / 10; //zoom level
+    span.longitudeDelta= 0.02 / 10;
+    
+    location = newLocation.coordinate;
+    region.center = location;
+    
+   
+    
+    region.span = span;
+    region.center = location;
+    
+    NSLog(@"%f, %f", mapView.userLocation.location.coordinate.latitude,
+          mapView.userLocation.location.coordinate.longitude);
+    
+    if (mapLocationUpdate == TRUE) {
+        [mapView setCenterCoordinate:location animated:YES];
+        [mapView regionThatFits:region];
+        [mapView setRegion:region animated:TRUE];
+
+        mapLocationUpdate = FALSE;
+    }
+
+    
 }
 
 - (void)didReceiveMemoryWarning {

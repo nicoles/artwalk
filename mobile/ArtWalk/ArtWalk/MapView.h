@@ -8,13 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h> 
+
 #import <CoreLocation/CoreLocation.h>
 
 
 @interface MapView : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>{
 	MKMapView *mapView;
 	NSArray *artPieces;
+    CLLocationCoordinate2D location;
+//    CLLocationManager *locationManager;
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
 	NSMutableData *responseData;
+    Boolean mapLocationUpdate;
 }
 
 @property (nonatomic, retain) NSArray *artPieces;

@@ -152,15 +152,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-	UIView *v;
-	for (v in [cell subviews]) {
-		if ([v isKindOfClass:[ArtPieceViewCell class]]) {
-			break;
-		}
-	}
-	
-	SingleArtPieceView *singleArtPieceView = [[SingleArtPieceView alloc] initWithDictionary:((ArtPieceViewCell *)v)._data];
+	ArtPieceViewCell *selectedArtPieceView = [artPieceViews objectAtIndex:indexPath.row];
+    	
+	SingleArtPieceView *singleArtPieceView = [[SingleArtPieceView alloc] initWithDictionary:(selectedArtPieceView._data)];
 	
 	[self.navigationController pushViewController:singleArtPieceView animated:YES];
 	//[tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -194,7 +188,7 @@
 	// Store incoming data into a string
 	NSString *jsonString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
     
-	artPieceViews = [[NSMutableArray alloc] init];
+	self.artPieceViews = [[NSMutableArray alloc] init];
 	
 	// Create a dictionary from the JSON string
 	self.artPieces = [jsonString JSONValue];
@@ -203,19 +197,19 @@
 
 	for (NSDictionary *artPiece in artPieces) {
         dispatch_async(loadingQueue, ^{
-            ArtPieceViewCell *v;
+            ArtPieceViewCell *thisCell;
             NSArray *topLevelObjects = [[NSBundle mainBundle] 
                                         loadNibNamed:@"ArtPieceViewCell" 
                                         owner:nil options:nil];
             for (id currentObject in topLevelObjects){
                 if ([currentObject isKindOfClass:[UIView class]]) {
-                    v = (ArtPieceViewCell *) currentObject;
+                    thisCell = (ArtPieceViewCell *) currentObject;
                     break;
                 }			
             }
             
-            [v initWithData:artPiece];		
-            [artPieceViews addObject:v];
+            [thisCell initWithData:artPiece];		
+            [artPieceViews addObject:thisCell];
             
         });
 		

@@ -17,7 +17,7 @@
 
 - (id)initWithTitle:(NSString *)title latitudeString:(NSString *)lat longitudeString:(NSString *)lon media:(NSArray *)media
 {
-	if( self = [super init] )
+	if( (self = [super init]) )
 	{
 		self.title = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 50)];
 		self.title.text = title;

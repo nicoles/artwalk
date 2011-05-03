@@ -25,7 +25,6 @@
 		BB215C09132D77F700C1A157 /* ArtPieceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215BFB132D77E200C1A157 /* ArtPieceAnnotation.m */; };
 		BB215C0A132D77F700C1A157 /* MultipleArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215BFD132D77E200C1A157 /* MultipleArtPiece.m */; };
 		BB215C0B132D77F700C1A157 /* ArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215BFF132D77E300C1A157 /* ArtPiece.m */; };
-		BB215C0C132D77F700C1A157 /* ArtPieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215C01132D77E500C1A157 /* ArtPieceView.m */; };
 		BB215C0D132D77F700C1A157 /* ArtPieceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215C03132D77E800C1A157 /* ArtPieceViewCell.m */; };
 		BB215C0E132D77F700C1A157 /* ArtPieceViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB215C04132D77EA00C1A157 /* ArtPieceViewCell.xib */; };
 		BB215C0F132D77F700C1A157 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB215C06132D77EE00C1A157 /* MapView.m */; };
@@ -75,6 +74,8 @@
 		BB5F5BC1132D7E49004044E9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5F5BC0132D7E49004044E9 /* SystemConfiguration.framework */; };
 		BB5F5BC3132D7E51004044E9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5F5BC2132D7E51004044E9 /* MobileCoreServices.framework */; };
 		BB5F5BC5132D7E5C004044E9 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5F5BC4132D7E5C004044E9 /* libz.1.2.3.dylib */; };
+		BBBE008D13496AA7002FE49B /* provisionallogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BBBE008C13496AA7002FE49B /* provisionallogo.png */; };
+		BBBE008F13496AAE002FE49B /* provisionallogo_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = BBBE008E13496AAE002FE49B /* provisionallogo_retina.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,8 +115,6 @@
 		BB215BFD132D77E200C1A157 /* MultipleArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleArtPiece.m; sourceTree = "<group>"; };
 		BB215BFE132D77E300C1A157 /* ArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPiece.h; sourceTree = "<group>"; };
 		BB215BFF132D77E300C1A157 /* ArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPiece.m; sourceTree = "<group>"; };
-		BB215C00132D77E500C1A157 /* ArtPieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPieceView.h; sourceTree = "<group>"; };
-		BB215C01132D77E500C1A157 /* ArtPieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPieceView.m; sourceTree = "<group>"; };
 		BB215C02132D77E700C1A157 /* ArtPieceViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPieceViewCell.h; sourceTree = "<group>"; };
 		BB215C03132D77E800C1A157 /* ArtPieceViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPieceViewCell.m; sourceTree = "<group>"; };
 		BB215C04132D77EA00C1A157 /* ArtPieceViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtPieceViewCell.xib; sourceTree = "<group>"; };
@@ -206,6 +205,8 @@
 		BB5F5BC0132D7E49004044E9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BB5F5BC2132D7E51004044E9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		BB5F5BC4132D7E5C004044E9 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		BBBE008C13496AA7002FE49B /* provisionallogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = provisionallogo.png; sourceTree = "<group>"; };
+		BBBE008E13496AAE002FE49B /* provisionallogo_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = provisionallogo_retina.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +242,8 @@
 		BB215BAD132D736900C1A157 = {
 			isa = PBXGroup;
 			children = (
+				BBBE008E13496AAE002FE49B /* provisionallogo_retina.png */,
+				BBBE008C13496AA7002FE49B /* provisionallogo.png */,
 				BB215BC2132D736A00C1A157 /* ArtWalk */,
 				BB215BE2132D736A00C1A157 /* ArtWalkTests */,
 				BB215BBB132D736A00C1A157 /* Frameworks */,
@@ -289,8 +292,6 @@
 				BB215BFD132D77E200C1A157 /* MultipleArtPiece.m */,
 				BB215BFE132D77E300C1A157 /* ArtPiece.h */,
 				BB215BFF132D77E300C1A157 /* ArtPiece.m */,
-				BB215C00132D77E500C1A157 /* ArtPieceView.h */,
-				BB215C01132D77E500C1A157 /* ArtPieceView.m */,
 				BB215C02132D77E700C1A157 /* ArtPieceViewCell.h */,
 				BB215C03132D77E800C1A157 /* ArtPieceViewCell.m */,
 				BB215C04132D77EA00C1A157 /* ArtPieceViewCell.xib */,
@@ -546,6 +547,8 @@
 				BB215C1B132D780600C1A157 /* 122-stats.png in Resources */,
 				BB215C1C132D780600C1A157 /* 168-upload-photo-2.png in Resources */,
 				BB339BAB132D831B0053AC3C /* SubmissionController.xib in Resources */,
+				BBBE008D13496AA7002FE49B /* provisionallogo.png in Resources */,
+				BBBE008F13496AAE002FE49B /* provisionallogo_retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +590,6 @@
 				BB215C09132D77F700C1A157 /* ArtPieceAnnotation.m in Sources */,
 				BB215C0A132D77F700C1A157 /* MultipleArtPiece.m in Sources */,
 				BB215C0B132D77F700C1A157 /* ArtPiece.m in Sources */,
-				BB215C0C132D77F700C1A157 /* ArtPieceView.m in Sources */,
 				BB215C0D132D77F700C1A157 /* ArtPieceViewCell.m in Sources */,
 				BB215C0F132D77F700C1A157 /* MapView.m in Sources */,
 				BB215C10132D77F700C1A157 /* SingleArtPieceView.m in Sources */,
@@ -692,7 +694,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -706,7 +708,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};

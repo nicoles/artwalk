@@ -34,7 +34,7 @@
 	self = [super init];
 	
 	if (self) {
-		_data = data;
+		self._data = data;
         self.title = [_data objectForKey:@"title"];
 	}
 	
