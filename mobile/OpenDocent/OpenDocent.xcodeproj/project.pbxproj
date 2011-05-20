@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBC6EA501386E76D005ABA45 /* ArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC6EA4C1386E76D005ABA45 /* ArtPiece.m */; };
+		BBC6EA511386E76D005ABA45 /* ArtPiecesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC6EA4F1386E76D005ABA45 /* ArtPiecesViewController.m */; };
+		BBC6EA541386E78F005ABA45 /* ArtPieceDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC6EA531386E78F005ABA45 /* ArtPieceDetailController.m */; };
+		BBE057EA1386E2D60082D3BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE057E91386E2D60082D3BE /* UIKit.framework */; };
+		BBE057EC1386E2D60082D3BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE057EB1386E2D60082D3BE /* Foundation.framework */; };
+		BBE057EE1386E2D60082D3BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE057ED1386E2D60082D3BE /* CoreGraphics.framework */; };
+		BBE057F01386E2D60082D3BE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE057EF1386E2D60082D3BE /* CoreData.framework */; };
+		BBE057F61386E2D60082D3BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBE057F41386E2D60082D3BE /* InfoPlist.strings */; };
+		BBE057F91386E2D60082D3BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE057F81386E2D60082D3BE /* main.m */; };
+		BBE057FC1386E2D60082D3BE /* OpenDocentAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE057FB1386E2D60082D3BE /* OpenDocentAppDelegate.m */; };
+		BBE057FF1386E2D70082D3BE /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE057FD1386E2D70082D3BE /* MainWindow.xib */; };
+		BBE058021386E2D70082D3BE /* OpenDocent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBE058001386E2D70082D3BE /* OpenDocent.xcdatamodeld */; };
+		BBE058091386E2D70082D3BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE057E91386E2D60082D3BE /* UIKit.framework */; };
+		BBE0580A1386E2D70082D3BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE057EB1386E2D60082D3BE /* Foundation.framework */; };
+		BBE0580B1386E2D70082D3BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE057ED1386E2D60082D3BE /* CoreGraphics.framework */; };
+		BBE0580C1386E2D70082D3BE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE057EF1386E2D60082D3BE /* CoreData.framework */; };
+		BBE058141386E2D70082D3BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBE058121386E2D70082D3BE /* InfoPlist.strings */; };
+		BBE058171386E2D70082D3BE /* OpenDocentTests.h in Resources */ = {isa = PBXBuildFile; fileRef = BBE058161386E2D70082D3BE /* OpenDocentTests.h */; };
+		BBE058191386E2D70082D3BE /* OpenDocentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE058181386E2D70082D3BE /* OpenDocentTests.m */; };
+		BBE058351386E3750082D3BE /* 11-x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE0582B1386E3750082D3BE /* 11-x.png */; };
+		BBE058361386E3750082D3BE /* 19-check.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE0582C1386E3750082D3BE /* 19-check.png */; };
+		BBE058371386E3750082D3BE /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE0582D1386E3750082D3BE /* 103-map.png */; };
+		BBE058381386E3750082D3BE /* 121-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE0582E1386E3750082D3BE /* 121-landscape.png */; };
+		BBE058391386E3750082D3BE /* 122-stats.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE0582F1386E3750082D3BE /* 122-stats.png */; };
+		BBE0583A1386E3750082D3BE /* 168-upload-photo-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE058301386E3750082D3BE /* 168-upload-photo-2.png */; };
+		BBE0583B1386E3750082D3BE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE058311386E3750082D3BE /* Default@2x.png */; };
+		BBE0583C1386E3750082D3BE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE058321386E3750082D3BE /* Default.png */; };
+		BBE0583D1386E3750082D3BE /* provisionallogo_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE058331386E3750082D3BE /* provisionallogo_retina.png */; };
+		BBE0583E1386E3750082D3BE /* provisionallogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE058341386E3750082D3BE /* provisionallogo.png */; };
+		BBE058401386E3900082D3BE /* provisionallogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE0583F1386E3900082D3BE /* provisionallogo.png */; };
+		BBE058421386E3960082D3BE /* provisionallogo_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = BBE058411386E3960082D3BE /* provisionallogo_retina.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBE0580D1386E2D70082D3BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBE057DC1386E2D60082D3BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBE057E41386E2D60082D3BE;
+			remoteInfo = OpenDocent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BBC6EA4B1386E76D005ABA45 /* ArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPiece.h; sourceTree = "<group>"; };
+		BBC6EA4C1386E76D005ABA45 /* ArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPiece.m; sourceTree = "<group>"; };
+		BBC6EA4D1386E76D005ABA45 /* ArtPieceDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPieceDetailController.h; sourceTree = "<group>"; };
+		BBC6EA4E1386E76D005ABA45 /* ArtPiecesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPiecesViewController.h; sourceTree = "<group>"; };
+		BBC6EA4F1386E76D005ABA45 /* ArtPiecesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPiecesViewController.m; sourceTree = "<group>"; };
+		BBC6EA531386E78F005ABA45 /* ArtPieceDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPieceDetailController.m; sourceTree = "<group>"; };
+		BBE057E51386E2D60082D3BE /* OpenDocent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenDocent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE057E91386E2D60082D3BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BBE057EB1386E2D60082D3BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BBE057ED1386E2D60082D3BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BBE057EF1386E2D60082D3BE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BBE057F31386E2D60082D3BE /* OpenDocent-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenDocent-Info.plist"; sourceTree = "<group>"; };
+		BBE057F51386E2D60082D3BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BBE057F71386E2D60082D3BE /* OpenDocent-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenDocent-Prefix.pch"; sourceTree = "<group>"; };
+		BBE057F81386E2D60082D3BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BBE057FA1386E2D60082D3BE /* OpenDocentAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenDocentAppDelegate.h; sourceTree = "<group>"; };
+		BBE057FB1386E2D60082D3BE /* OpenDocentAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenDocentAppDelegate.m; sourceTree = "<group>"; };
+		BBE057FE1386E2D70082D3BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		BBE058011386E2D70082D3BE /* OpenDocent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OpenDocent.xcdatamodel; sourceTree = "<group>"; };
+		BBE058081386E2D70082D3BE /* OpenDocentTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenDocentTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE058111386E2D70082D3BE /* OpenDocentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenDocentTests-Info.plist"; sourceTree = "<group>"; };
+		BBE058131386E2D70082D3BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BBE058151386E2D70082D3BE /* OpenDocentTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenDocentTests-Prefix.pch"; sourceTree = "<group>"; };
+		BBE058161386E2D70082D3BE /* OpenDocentTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenDocentTests.h; sourceTree = "<group>"; };
+		BBE058181386E2D70082D3BE /* OpenDocentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenDocentTests.m; sourceTree = "<group>"; };
+		BBE0582B1386E3750082D3BE /* 11-x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-x.png"; sourceTree = "<group>"; };
+		BBE0582C1386E3750082D3BE /* 19-check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-check.png"; sourceTree = "<group>"; };
+		BBE0582D1386E3750082D3BE /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
+		BBE0582E1386E3750082D3BE /* 121-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "121-landscape.png"; sourceTree = "<group>"; };
+		BBE0582F1386E3750082D3BE /* 122-stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "122-stats.png"; sourceTree = "<group>"; };
+		BBE058301386E3750082D3BE /* 168-upload-photo-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "168-upload-photo-2.png"; sourceTree = "<group>"; };
+		BBE058311386E3750082D3BE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BBE058321386E3750082D3BE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BBE058331386E3750082D3BE /* provisionallogo_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = provisionallogo_retina.png; sourceTree = "<group>"; };
+		BBE058341386E3750082D3BE /* provisionallogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = provisionallogo.png; sourceTree = "<group>"; };
+		BBE0583F1386E3900082D3BE /* provisionallogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = provisionallogo.png; sourceTree = "<group>"; };
+		BBE058411386E3960082D3BE /* provisionallogo_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = provisionallogo_retina.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBE057E21386E2D60082D3BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE057EA1386E2D60082D3BE /* UIKit.framework in Frameworks */,
+				BBE057EC1386E2D60082D3BE /* Foundation.framework in Frameworks */,
+				BBE057EE1386E2D60082D3BE /* CoreGraphics.framework in Frameworks */,
+				BBE057F01386E2D60082D3BE /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE058041386E2D70082D3BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE058091386E2D70082D3BE /* UIKit.framework in Frameworks */,
+				BBE0580A1386E2D70082D3BE /* Foundation.framework in Frameworks */,
+				BBE0580B1386E2D70082D3BE /* CoreGraphics.framework in Frameworks */,
+				BBE0580C1386E2D70082D3BE /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBE057DA1386E2D60082D3BE = {
+			isa = PBXGroup;
+			children = (
+				BBE058411386E3960082D3BE /* provisionallogo_retina.png */,
+				BBE0583F1386E3900082D3BE /* provisionallogo.png */,
+				BBE057F11386E2D60082D3BE /* OpenDocent */,
+				BBE0580F1386E2D70082D3BE /* OpenDocentTests */,
+				BBE057E81386E2D60082D3BE /* Frameworks */,
+				BBE057E61386E2D60082D3BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBE057E61386E2D60082D3BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBE057E51386E2D60082D3BE /* OpenDocent.app */,
+				BBE058081386E2D70082D3BE /* OpenDocentTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBE057E81386E2D60082D3BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBE057E91386E2D60082D3BE /* UIKit.framework */,
+				BBE057EB1386E2D60082D3BE /* Foundation.framework */,
+				BBE057ED1386E2D60082D3BE /* CoreGraphics.framework */,
+				BBE057EF1386E2D60082D3BE /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBE057F11386E2D60082D3BE /* OpenDocent */ = {
+			isa = PBXGroup;
+			children = (
+				BBC6EA4B1386E76D005ABA45 /* ArtPiece.h */,
+				BBC6EA4C1386E76D005ABA45 /* ArtPiece.m */,
+				BBC6EA4D1386E76D005ABA45 /* ArtPieceDetailController.h */,
+				BBC6EA531386E78F005ABA45 /* ArtPieceDetailController.m */,
+				BBC6EA4E1386E76D005ABA45 /* ArtPiecesViewController.h */,
+				BBC6EA4F1386E76D005ABA45 /* ArtPiecesViewController.m */,
+				BBE057FA1386E2D60082D3BE /* OpenDocentAppDelegate.h */,
+				BBE057FB1386E2D60082D3BE /* OpenDocentAppDelegate.m */,
+				BBE057FD1386E2D70082D3BE /* MainWindow.xib */,
+				BBE058001386E2D70082D3BE /* OpenDocent.xcdatamodeld */,
+				BBE057F21386E2D60082D3BE /* Supporting Files */,
+			);
+			path = OpenDocent;
+			sourceTree = "<group>";
+		};
+		BBE057F21386E2D60082D3BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBE0582B1386E3750082D3BE /* 11-x.png */,
+				BBE0582C1386E3750082D3BE /* 19-check.png */,
+				BBE0582D1386E3750082D3BE /* 103-map.png */,
+				BBE0582E1386E3750082D3BE /* 121-landscape.png */,
+				BBE0582F1386E3750082D3BE /* 122-stats.png */,
+				BBE058301386E3750082D3BE /* 168-upload-photo-2.png */,
+				BBE058311386E3750082D3BE /* Default@2x.png */,
+				BBE058321386E3750082D3BE /* Default.png */,
+				BBE058331386E3750082D3BE /* provisionallogo_retina.png */,
+				BBE058341386E3750082D3BE /* provisionallogo.png */,
+				BBE057F31386E2D60082D3BE /* OpenDocent-Info.plist */,
+				BBE057F41386E2D60082D3BE /* InfoPlist.strings */,
+				BBE057F71386E2D60082D3BE /* OpenDocent-Prefix.pch */,
+				BBE057F81386E2D60082D3BE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBE0580F1386E2D70082D3BE /* OpenDocentTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBE058161386E2D70082D3BE /* OpenDocentTests.h */,
+				BBE058181386E2D70082D3BE /* OpenDocentTests.m */,
+				BBE058101386E2D70082D3BE /* Supporting Files */,
+			);
+			path = OpenDocentTests;
+			sourceTree = "<group>";
+		};
+		BBE058101386E2D70082D3BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBE058111386E2D70082D3BE /* OpenDocentTests-Info.plist */,
+				BBE058121386E2D70082D3BE /* InfoPlist.strings */,
+				BBE058151386E2D70082D3BE /* OpenDocentTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBE057E41386E2D60082D3BE /* OpenDocent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBE0581C1386E2D70082D3BE /* Build configuration list for PBXNativeTarget "OpenDocent" */;
+			buildPhases = (
+				BBE057E11386E2D60082D3BE /* Sources */,
+				BBE057E21386E2D60082D3BE /* Frameworks */,
+				BBE057E31386E2D60082D3BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenDocent;
+			productName = OpenDocent;
+			productReference = BBE057E51386E2D60082D3BE /* OpenDocent.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBE058071386E2D70082D3BE /* OpenDocentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBE0581F1386E2D70082D3BE /* Build configuration list for PBXNativeTarget "OpenDocentTests" */;
+			buildPhases = (
+				BBE058031386E2D70082D3BE /* Sources */,
+				BBE058041386E2D70082D3BE /* Frameworks */,
+				BBE058051386E2D70082D3BE /* Resources */,
+				BBE058061386E2D70082D3BE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBE0580E1386E2D70082D3BE /* PBXTargetDependency */,
+			);
+			name = OpenDocentTests;
+			productName = OpenDocentTests;
+			productReference = BBE058081386E2D70082D3BE /* OpenDocentTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBE057DC1386E2D60082D3BE /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = BBE057DF1386E2D60082D3BE /* Build configuration list for PBXProject "OpenDocent" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BBE057DA1386E2D60082D3BE;
+			productRefGroup = BBE057E61386E2D60082D3BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBE057E41386E2D60082D3BE /* OpenDocent */,
+				BBE058071386E2D70082D3BE /* OpenDocentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBE057E31386E2D60082D3BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE057F61386E2D60082D3BE /* InfoPlist.strings in Resources */,
+				BBE057FF1386E2D70082D3BE /* MainWindow.xib in Resources */,
+				BBE058351386E3750082D3BE /* 11-x.png in Resources */,
+				BBE058361386E3750082D3BE /* 19-check.png in Resources */,
+				BBE058371386E3750082D3BE /* 103-map.png in Resources */,
+				BBE058381386E3750082D3BE /* 121-landscape.png in Resources */,
+				BBE058391386E3750082D3BE /* 122-stats.png in Resources */,
+				BBE0583A1386E3750082D3BE /* 168-upload-photo-2.png in Resources */,
+				BBE0583B1386E3750082D3BE /* Default@2x.png in Resources */,
+				BBE0583C1386E3750082D3BE /* Default.png in Resources */,
+				BBE0583D1386E3750082D3BE /* provisionallogo_retina.png in Resources */,
+				BBE0583E1386E3750082D3BE /* provisionallogo.png in Resources */,
+				BBE058401386E3900082D3BE /* provisionallogo.png in Resources */,
+				BBE058421386E3960082D3BE /* provisionallogo_retina.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE058051386E2D70082D3BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE058141386E2D70082D3BE /* InfoPlist.strings in Resources */,
+				BBE058171386E2D70082D3BE /* OpenDocentTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BBE058061386E2D70082D3BE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBE057E11386E2D60082D3BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE057F91386E2D60082D3BE /* main.m in Sources */,
+				BBE057FC1386E2D60082D3BE /* OpenDocentAppDelegate.m in Sources */,
+				BBE058021386E2D70082D3BE /* OpenDocent.xcdatamodeld in Sources */,
+				BBC6EA501386E76D005ABA45 /* ArtPiece.m in Sources */,
+				BBC6EA511386E76D005ABA45 /* ArtPiecesViewController.m in Sources */,
+				BBC6EA541386E78F005ABA45 /* ArtPieceDetailController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE058031386E2D70082D3BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE058191386E2D70082D3BE /* OpenDocentTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBE0580E1386E2D70082D3BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBE057E41386E2D60082D3BE /* OpenDocent */;
+			targetProxy = BBE0580D1386E2D70082D3BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BBE057F41386E2D60082D3BE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBE057F51386E2D60082D3BE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BBE057FD1386E2D70082D3BE /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBE057FE1386E2D70082D3BE /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		BBE058121386E2D70082D3BE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBE058131386E2D70082D3BE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBE0581A1386E2D70082D3BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BBE0581B1386E2D70082D3BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		BBE0581D1386E2D70082D3BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenDocent/OpenDocent-Prefix.pch";
+				INFOPLIST_FILE = "OpenDocent/OpenDocent-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BBE0581E1386E2D70082D3BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenDocent/OpenDocent-Prefix.pch";
+				INFOPLIST_FILE = "OpenDocent/OpenDocent-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BBE058201386E2D70082D3BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OpenDocent.app/OpenDocent";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenDocentTests/OpenDocentTests-Prefix.pch";
+				INFOPLIST_FILE = "OpenDocentTests/OpenDocentTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		BBE058211386E2D70082D3BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OpenDocent.app/OpenDocent";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenDocentTests/OpenDocentTests-Prefix.pch";
+				INFOPLIST_FILE = "OpenDocentTests/OpenDocentTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBE057DF1386E2D60082D3BE /* Build configuration list for PBXProject "OpenDocent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBE0581A1386E2D70082D3BE /* Debug */,
+				BBE0581B1386E2D70082D3BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBE0581C1386E2D70082D3BE /* Build configuration list for PBXNativeTarget "OpenDocent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBE0581D1386E2D70082D3BE /* Debug */,
+				BBE0581E1386E2D70082D3BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBE0581F1386E2D70082D3BE /* Build configuration list for PBXNativeTarget "OpenDocentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBE058201386E2D70082D3BE /* Debug */,
+				BBE058211386E2D70082D3BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BBE058001386E2D70082D3BE /* OpenDocent.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BBE058011386E2D70082D3BE /* OpenDocent.xcdatamodel */,
+			);
+			currentVersion = BBE058011386E2D70082D3BE /* OpenDocent.xcdatamodel */;
+			path = OpenDocent.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BBE057DC1386E2D60082D3BE /* Project object */;
+}
