@@ -67,11 +67,19 @@
             case kArtistRowIndex:
                 theArt.artist = [tempValues objectForKey:key];
                 break;
+            case kDetailsRowIndex:
+                theArt.details = [tempValues objectForKey:key];
+                break;
+            case kHistoryRowIndex:
+                theArt.history = [tempValues objectForKey:key];
+                break;
             default:
                 break;
         }
     }
     
+    NSLog(@"New Art! Title: %@, %@, %@, %@", theArt.title, theArt.artist, theArt.details, theArt.history);
+    self.theArt.needsSync = [NSNumber numberWithBool:YES];
 
     //[request release];
     [thisArtPieceContext save:&error];
@@ -96,7 +104,7 @@
     NSIndexPath *textFieldIndexPath = [table indexPathForCell:cell];
     NSUInteger row = [textFieldIndexPath row];
     row++;
-    if (row >= kNumberOfEditableRows)
+    if (row >= kNumberOfTotalRows)
     {
         row = 0;
     }
@@ -120,7 +128,7 @@
     
     self.tableView.editing = NO;
     
-    NSArray *array = [[NSArray alloc] initWithObjects:@"Title:", @"Artist:", nil];
+    NSArray *array = [[NSArray alloc] initWithObjects:@"Title:", @"Artist:", @"Details", @"History", nil];
     self.fieldLabels = array;
     [array release];
     
@@ -152,7 +160,7 @@
 #pragma mark Table Data Source Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return kNumberOfEditableRows;
+    return kNumberOfMainRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

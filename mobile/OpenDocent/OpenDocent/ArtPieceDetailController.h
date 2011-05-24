@@ -8,18 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "ArtPiece.h"
-#define kNumberOfEditableRows   2
+#define kNumberOfTotalRows      4   
+#define kNumberOfMainRows       4
 #define kTitleRowIndex          0
 #define kArtistRowIndex         1
+#define kDetailsRowIndex        2
+#define kHistoryRowIndex        3
+
 
 #define kLabelTag               4096
 
 @interface ArtPieceDetailController : UITableViewController <UITextFieldDelegate> {
-    ArtPiece *theArt;
-    NSArray *fieldLabels;
-    NSMutableDictionary *tempValues;
-    UITextField *textFieldBeingEdited;
-    NSManagedObjectContext *thisArtPieceContext;
+
 }
 
 @property (nonatomic, retain) ArtPiece *theArt;
@@ -29,7 +29,6 @@
 @property (nonatomic, retain) NSManagedObjectContext *thisArtPieceContext;
 
 - (IBAction)edit:(id)sender;
-
 - (IBAction)cancel:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)textFieldDone:(id)sender;

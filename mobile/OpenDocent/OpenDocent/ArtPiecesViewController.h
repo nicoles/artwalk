@@ -11,11 +11,16 @@
 
 
 @interface ArtPiecesViewController : UITableViewController {
-    NSArray *artPiecesInStore;
+
+    //NSMutableData *responseData;
 }
 
-@property (nonatomic, retain) NSArray *artPiecesInStore;
+//the parade in this case, is the list of art pieces that are currently being displayed in the tableview.
+@property (nonatomic, retain) NSArray *artPiecesOnParade;
 
-- (void)refresh;
+@property (nonatomic, retain) NSManagedObjectContext *artPiecesContext;
+
+- (void)syncDatabase;
+- (void)refreshParade;
 
 @end
