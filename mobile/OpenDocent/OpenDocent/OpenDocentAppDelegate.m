@@ -9,6 +9,7 @@
 #import "OpenDocentAppDelegate.h"
 #import "ArtPieceDetailController.h"
 #import "ArtPiecesViewController.h"
+#import "OpenDocentCameraController.h"
 
 @implementation OpenDocentAppDelegate
 
@@ -40,10 +41,15 @@
     [browseNavController pushViewController:artPiecesViewController animated:YES];
     [artPiecesViewController release];
     
-    ArtPieceDetailController *createArtPiece = [[ArtPieceDetailController alloc] initWithStyle:UITableViewStyleGrouped];
+    OpenDocentCameraController *newArtPiece = [[OpenDocentCameraController alloc] init];
+    [createNavController pushViewController:newArtPiece animated:YES];
+    [newArtPiece release];
+    
+    /*ArtPieceDetailController *createArtPiece = [[ArtPieceDetailController alloc] initWithStyle:UITableViewStyleGrouped];
     createArtPiece.title = @"New Art";
     [createNavController pushViewController:createArtPiece animated:YES];
     [createArtPiece release];
+     */
                                                       
     
     [self.window makeKeyAndVisible];

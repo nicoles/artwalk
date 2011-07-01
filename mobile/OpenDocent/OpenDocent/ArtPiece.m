@@ -2,7 +2,7 @@
 //  ArtPiece.m
 //  OpenDocent
 //
-//  Created by Nicole Aptekar on 11/05/22.
+//  Created by Nicole Aptekar on 11/05/24.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @dynamic title;
 @dynamic needsSync;
 @dynamic latitude;
+@dynamic mainImageUrl;
 @dynamic images;
 
 - (void)addImagesObject:(PieceImage *)value {    

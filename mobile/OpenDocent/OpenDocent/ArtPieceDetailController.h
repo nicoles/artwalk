@@ -18,9 +18,7 @@
 
 #define kLabelTag               4096
 
-@interface ArtPieceDetailController : UITableViewController <UITextFieldDelegate> {
-
-}
+@interface ArtPieceDetailController : UITableViewController <UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, retain) ArtPiece *theArt;
 @property (nonatomic, retain) NSArray *fieldLabels;

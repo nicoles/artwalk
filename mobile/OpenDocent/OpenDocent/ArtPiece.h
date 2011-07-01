@@ -2,7 +2,7 @@
 //  ArtPiece.h
 //  OpenDocent
 //
-//  Created by Nicole Aptekar on 11/05/22.
+//  Created by Nicole Aptekar on 11/05/24.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSNumber * needsSync;
 @property (nonatomic, retain) NSNumber * latitude;
+@property (nonatomic, retain) NSString * mainImageUrl;
 @property (nonatomic, retain) NSSet* images;
 
 @end
