@@ -10,9 +10,8 @@
 
 @interface ArtPieceTableViewCell : UITableViewCell
 
-@property (nonatomic, retain) UIImageView *artImage;
-@property (nonatomic, retain) NSString *artist;
-@property (nonatomic, retain) NSString *title;
+@property (nonatomic, assign) NSOperation* imageLoader;
 
+- (void)prepareForReuse;
 
 @end

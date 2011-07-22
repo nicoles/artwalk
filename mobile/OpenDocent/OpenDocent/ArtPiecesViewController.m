@@ -15,6 +15,7 @@
 #import "JSON.h"
 #import "ArtPieceTableViewCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIImageView+WebCache.h"
 
 @implementation ArtPiecesViewController
 @synthesize artPiecesOnParade = artPiecesOnParade_;
@@ -60,8 +61,6 @@
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://75.101.166.190/recent/?mode=json"]];
 	[request setDelegate:self];
     [request startAsynchronous];
-    //reload the tableview. just fucking do it. it's probably too early, but whatever, do it.
-    //[self refreshParade];
 }
 
 - (void)refreshParade{
@@ -81,16 +80,7 @@
     NSLog(@"objects count: %u", [objects count]);
     self.artPiecesOnParade = objects;
     NSLog(@"objects count: %u", [self.artPiecesOnParade count]);
-    //this is apparently just for the sheer giddy thrill of logging. these variables.
-    //for (NSManagedObject *oneObject in self.artPiecesOnParade){
-        //NSString *artPieceTitle = [oneObject valueForKey:@"title"];
-        //NSString *artPieceArtist = [oneObject valueForKey:@"artist"];
-        
-        //NSLog(@"Title:%@ Artist:%@", artPieceTitle, artPieceArtist);
-        //
-        //[artPieceArtist release];
-        //[artPieceTitle release];
-    //}
+    
     [self.tableView reloadData];
 
 }
@@ -108,86 +98,51 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //count the number of objects in the array. 
-    //NSLog(@"Members of parade: %u", artPiecesOnParade.count);
     return [self.artPiecesOnParade count];  
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *ArtPieceListCellIdentifier = @"ArtPieceListCellIdentifier";
-    const NSInteger ARTIST_TAG = 1001;
-    const NSInteger TITLE_TAG = 1002;
-    const NSInteger IMAGE_TAG = 1003;
-    UIImageView *artImage;
-    UILabel *title;
-    UILabel *artist;
     
     //using a standard tableview cell here. wish me luck!
-    ArtPieceTableViewCell *cell = (ArtPieceTableViewCell *)[tableView dequeueReusableCellWithIdentifier:ArtPieceListCellIdentifier];
+    ArtPieceTableViewCell *cell = (ArtPieceTableViewCell*) [tableView dequeueReusableCellWithIdentifier:ArtPieceListCellIdentifier];
     if (cell == nil) {
         //make a new cell
-        cell = [[[ArtPieceTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ArtPieceListCellIdentifier] autorelease];
-        
-        //Drop artImage on the contentView
-        UIImageView *artImage = [[[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 50, 50)] autorelease];
-        artImage.layer.cornerRadius = 5.0;
-        artImage.layer.masksToBounds = YES;
-        artImage.tag = IMAGE_TAG;
-        artImage.image = [UIImage imageNamed:@"provisionalloading.png"];
-        NSLog(@"existing image size:%@",artImage.image);
-        [cell.contentView addSubview:artImage];
-
-        
-        //set up the text labels
-        UILabel *title = [[[UILabel alloc] initWithFrame:CGRectMake(60, 0, 260, 40 )]autorelease];
-        title.tag = TITLE_TAG;
-        title.font = [UIFont boldSystemFontOfSize:18];
-        title.adjustsFontSizeToFitWidth = YES;
-        title.minimumFontSize = 15;
-        title.backgroundColor = [UIColor clearColor];
-        [cell.contentView addSubview:title];
-        
-        UILabel *artist = [[[UILabel alloc] initWithFrame:CGRectMake(60, 30, 260, 20)]autorelease];
-        artist.tag = ARTIST_TAG;
-        artist.font = [UIFont systemFontOfSize:15];
-        artist.adjustsFontSizeToFitWidth = YES;
-        artist.minimumFontSize = 10;
-        artist.backgroundColor = [UIColor clearColor];
-        [cell.contentView addSubview:artist];
-
+        cell = [[[ArtPieceTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ArtPieceListCellIdentifier] autorelease];
 
     }
+    
     NSUInteger row = [indexPath row];
     //pull an art matching the indexpath #
     ArtPiece *theArt = [self.artPiecesOnParade objectAtIndex:row];
     
     //display the proper stuff in the cell
-    artImage = (UIImageView *)[cell viewWithTag:IMAGE_TAG];
-    title = (UILabel *)[cell viewWithTag:TITLE_TAG];
-    artist = (UILabel *)[cell viewWithTag:ARTIST_TAG];
+    cell.textLabel.text = theArt.title;
+    cell.detailTextLabel.text = theArt.artist;
     
-    artist.text = theArt.artist;
-    title.text = theArt.title;
-    
-    [cell setTitle:title.text];
-    [cell setArtist:artist.text];
-    [cell setArtImage:artImage];
-    //NSLog(@"existing image size:%@",cell.artImage.image.size.width);
-    
-
     //NSLog(@"=============> %@", cell.contentView.subviews);
     
-    if(cell.artImage.image == [UIImage imageNamed:@"provisionalloading.png"]){
-        NSLog(@"could load an image for %@", cell.title);
+    //drop a loading graphic on the image
+    cell.imageView.image = [UIImage imageNamed:@"provisionalloading.png"];
+
+    //check to see if the artpiece has an image online
+    if (theArt.mainImageUrl != nil) {
+        
+        //pick up the main image's url
         NSURL *mediaUrl = [[NSURL alloc] initWithString: theArt.mainImageUrl];
         NSLog(@"grabbed an imageurl: %@", mediaUrl);
+        
+        //tell the imageloader to load an image for that url
         ArtPieceImageLoader *imageLoader = [[ArtPieceImageLoader alloc] initWithTableViewCell:cell URL:mediaUrl];
         [self.imageLoadingQueue addOperation:imageLoader];
+        
         NSLog(@"Added an imageloader operation to the queue");
+        cell.imageLoader = imageLoader;
         [imageLoader release];
         [mediaUrl release];
+        
     }
-//    
     
     //NSLog(@"made a cell for row %u", row);
     return cell;
@@ -210,36 +165,10 @@
     
 }
 
-/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    //NSUInteger row = [indexPath row];
-    //ArtPieceTableViewCell *theCell = [self.artPiecesOnParade
-    
-    //NSLog(@"Height %@", theCell.contentView.frame.size);
-    CGFloat height = 50;
-    return height;
-}
-*/
+
 #pragma mark -
 #pragma mark NSURLConnection & ASIHTTPRequest
-//These next three may do nothing.
-/*- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    //clear out responsedata so that the data coming in is like, sensible and new and shit. no old data. fuck that old data.
-    [responseData setLength:0];
-    NSLog(@"motherfucking response happened");
-}
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-    //put that data on the cleared out responsedata
-    [responseData appendData:data];
-    NSLog(@"data acquired!");
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-    //TODO: Error handling or something.
-    NSLog(@"Whoa shit something broke. on the nsurlconnection. omg");
-}
-*/
 - (void)requestFinished:(ASIHTTPRequest *)request{
     //Make a json string full of the response data that asihttprequest so kindly provided
     NSString *jsonString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
@@ -264,34 +193,28 @@
         [localRequest setEntity:entityDescripton];
         
         //using a predicate! to filter my coredata
-        //NSLog(@"%@", [artPiece objectForKey:@"id"]);
         NSPredicate *idFilter = [NSPredicate predicateWithFormat:@"(serverId = %@)", [artPiece objectForKey:@"id"]];
         [localRequest setPredicate:idFilter];
-        //NSLog(@"Predicate: %@, %@", [artPiece objectForKey:@"title"], [artPiece objectForKey:@"id"]);
 
         NSArray *zeroOrMoreArtPieces = [self.artPiecesContext executeFetchRequest:localRequest error:&error];
-        //NSLog(@"objects in this fetch: %@", [zeroOrMoreArtPieces count]);
+  
 
         if ([zeroOrMoreArtPieces count] == 0) {
             //put a new thing in the core data store
             theArt = [[[ArtPiece alloc] initWithEntity:entityDescripton insertIntoManagedObjectContext:self.artPiecesContext]autorelease];
-            //NSLog(@"new: %@", [artPiece objectForKey:@"title"]);
-            //NSLog(@"count: %@", [zeroOrMoreArtPieces count]);
+            
             theArt.serverId = [artPiece objectForKey:@"id"];
-            //NSLog(@"serverID: %@, localID: %@", [artPiece objectForKey:@"id"], theArt.serverId);
+
         }else if (zeroOrMoreArtPieces == nil){
             NSLog(@"shit just got real (broken)");
             return;
         }else{
             //update the first entry in zeroOrMoreArtPieces, which is a stupid name.
             theArt = [zeroOrMoreArtPieces objectAtIndex:0];
-            //NSLog(@"object at index0: %@", [artPiece objectForKey:@"title"]);
-            //NSLog(@"replace: %@", [artPiece objectForKey:@"title"]);
-            //NSLog(@"serverID: %@, localID: %@", [artPiece objectForKey:@"id"], theArt.serverId);
+
             
         }
         
-        //
         theArt.title = [artPiece objectForKey:@"title"];
         theArt.latitude = [artPiece objectForKey:@"latitude"];
         theArt.longitude = [artPiece objectForKey:@"longitude"];
@@ -305,20 +228,7 @@
     }
     
     [self.artPiecesContext save:&error];
-    /*
-    - (id)initWithData:(NSDictionary *)data {
-        _data = data;
-        
-        artPieceTitle.text = [data objectForKey:@"title"];
-        latitudeString.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"latitude"]];
-        longitudeString.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"longitude"]];
-        NSArray *media = [data objectForKey:@"media"];
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[media objectAtIndex:0] objectForKey:@"url"]]];
-        artPieceImageView.image = [UIImage imageWithData:imageData];
-        
-        return self;
-    }
-    */
+
     [self refreshParade];
 }
 
