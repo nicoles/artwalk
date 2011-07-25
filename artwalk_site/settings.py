@@ -44,6 +44,8 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+WWW_URL = 'http://75.101.166.190/'
+
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = '/home/ubuntu/media/'

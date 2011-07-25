@@ -1,11 +1,18 @@
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import (
+    HttpResponse,
+    HttpResponseNotFound,
+    HttpResponsePermanentRedirect,
+)
 from django.shortcuts import render_to_response, get_object_or_404
 from django.core.files.base import ContentFile
+
+import Image
 
 import settings
 
 from models import Media, Artist, ArtPiece
 import json
+import cStringIO
 import sys
 
 
@@ -79,7 +86,13 @@ def recent(request):
 	if request.GET.get('mode') == 'json':
 		response = []
 		for art_piece in art_pieces:
-			media = [ { 'url': medium.content.url } for medium in art_piece.media.all() ]
+			media = [
+				{
+					'full': medium.content.url,
+					'thumb': settings.WWW_URL + 'resize/%s/thumb/' % medium.id
+				}
+				for medium in art_piece.media.all()
+			]
 			artists = [ { 'name': artist.name } for artist in art_piece.artists.all() ]
 			response.append( {
 				'id': art_piece.id,
@@ -97,7 +110,13 @@ def recent(request):
 def art_piece(request, id):
 	art_piece = get_object_or_404(ArtPiece, pk=int(id))
 	if request.GET.get('mode') == 'json':
-		media = [ { 'url': medium.content.url } for medium in art_piece.media.all() ]
+		media = [
+			{
+				'url': medium.content.url,
+				'thumb': settings.WWW_URL + 'resize/%s/thumb/' % medium.id
+			}
+			for medium in art_piece.media.all()
+		]
 		artists = [ { 'name': artist.name } for artist in art_piece.artists.all() ]
 		response = {
 			'id': art_piece.id,
@@ -111,5 +130,24 @@ def art_piece(request, id):
 	else:
 		return render_to_response('art_piece.html', {'art_piece': art_piece})
 		
+def resize(request, medium_id, size):
+	sizes = {
+		'full': None
+		'thumb': (100, 60)
+	}
+	
+	if size not in sizes:
+		return HttpResponseNotFound
 
+	medium = get_object_or_404(Media, pk=int(medium_id))
+	
+	if size == 'full':
+		return HttpResponsePermanentRedirect(medium.content.url)
+	else:
+		output = cStringIO.StringIO()
+		im = Image.open(medium.content.open())
+	    im.thumbnail(sizes[size])
+		im.save(output)
+		return HttpResponse(output.getvalue(), mimetype='image/jpeg')
+		
 	
