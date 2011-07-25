@@ -146,7 +146,7 @@ def resize(request, medium_id, size):
 	else:
 		output = cStringIO.StringIO()
 		im = Image.open(medium.content.open())
-	    im.thumbnail(sizes[size])
+		im.thumbnail(sizes[size])
 		im.save(output)
 		return HttpResponse(output.getvalue(), mimetype='image/jpeg')
 		
