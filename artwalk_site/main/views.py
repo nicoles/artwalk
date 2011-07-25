@@ -132,8 +132,8 @@ def art_piece(request, id):
 		
 def resize(request, medium_id, size):
 	sizes = {
-		'full': None
-		'thumb': (100, 60)
+		'full': None,
+		'thumb': (100, 60),
 	}
 	
 	if size not in sizes:
