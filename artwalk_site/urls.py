@@ -9,6 +9,7 @@ urlpatterns = patterns('',
 	(r'^upload/$', 'main.views.upload'),
 	(r'^update_art_piece/(\d+)/$', 'main.views.update_art_piece'),
 	(r'^art_piece/(\d+)/$', 'main.views.art_piece'),
+	(r'^resize/(\d+)/(.+)/$', 'main.views.resize'),
     # Example:
     # (r'^artwalk_site/', include('artwalk_site.foo.urls')),
 
