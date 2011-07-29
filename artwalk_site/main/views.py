@@ -145,10 +145,9 @@ def resize(request, medium_id, size):
 		return HttpResponsePermanentRedirect(medium.content.url)
 	else:
 		output = cStringIO.StringIO()
-		infile = open(medium.content.open(), "rb")
-		im = Image.open(infile)
+		im = Image.open(medium.content)
 		im.thumbnail(sizes[size])
-		im.save(output)
+		im.save(output, 'JPEG')
 		return HttpResponse(output.getvalue(), mimetype='image/jpeg')
 		
 	
