@@ -2,7 +2,7 @@
 //  ArtPiece.h
 //  OpenDocent
 //
-//  Created by Nicole Aptekar on 11/05/24.
+//  Created by Nicole Aptekar on 11/07/29.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -23,6 +23,15 @@
 @property (nonatomic, retain) NSNumber * needsSync;
 @property (nonatomic, retain) NSNumber * latitude;
 @property (nonatomic, retain) NSString * mainImageUrl;
-@property (nonatomic, retain) NSSet* images;
+@property (nonatomic, retain) NSString * thumbImageUrl;
+@property (nonatomic, retain) NSSet *images;
+@end
+
+@interface ArtPiece (CoreDataGeneratedAccessors)
+
+- (void)addImagesObject:(PieceImage *)value;
+- (void)removeImagesObject:(PieceImage *)value;
+- (void)addImages:(NSSet *)values;
+- (void)removeImages:(NSSet *)values;
 
 @end

@@ -26,7 +26,7 @@
     self = [super init];
     self.imageURL = url;
     self.relatedCell = cell;
-    NSLog(@"existing image size:%@",self.relatedCell.imageView.image);
+    //NSLog(@"existing image size:%@",self.relatedCell.imageView.image);
     return self;
 }
 

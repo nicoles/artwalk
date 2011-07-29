@@ -123,15 +123,26 @@
     
     //NSLog(@"=============> %@", cell.contentView.subviews);
     
+    
+    
     //drop a loading graphic on the image
     cell.imageView.image = [UIImage imageNamed:@"provisionalloading.png"];
 
     //check to see if the artpiece has an image online
     if (theArt.mainImageUrl != nil) {
         
+        //this is some library i found, it almost works.
+        [cell.imageView setImageWithURL:[NSURL URLWithString:theArt.thumbImageUrl]];
+        
+        
+        
+        //this is the way i've been writing with Adam, next up I need to write 
+        //an imageprovider to handle caching and stuff. i'll come back to this 
+        //in the future.
+        /*
         //pick up the main image's url
-        NSURL *mediaUrl = [[NSURL alloc] initWithString: theArt.mainImageUrl];
-        NSLog(@"grabbed an imageurl: %@", mediaUrl);
+        NSURL *mediaUrl = [[NSURL alloc] initWithString: theArt.thumbImageUrl];
+        //NSLog(@"grabbed an imageurl: %@", mediaUrl);
         
         //tell the imageloader to load an image for that url
         ArtPieceImageLoader *imageLoader = [[ArtPieceImageLoader alloc] initWithTableViewCell:cell URL:mediaUrl];
@@ -141,8 +152,10 @@
         cell.imageLoader = imageLoader;
         [imageLoader release];
         [mediaUrl release];
+         */
         
     }
+     
     
     //NSLog(@"made a cell for row %u", row);
     return cell;
@@ -221,7 +234,8 @@
         NSArray *artists = [artPiece objectForKey:@"artists"];
         theArt.artist = [[artists objectAtIndex:0] objectForKey:@"name"];
         NSArray *media = [artPiece objectForKey:@"media"];
-        theArt.mainImageUrl = [[media objectAtIndex:0] objectForKey:@"url"];
+        theArt.mainImageUrl = [[media objectAtIndex:0] objectForKey:@"full"];
+        theArt.thumbImageUrl = [[media objectAtIndex:0] objectForKey:@"thumb"];
         
         [localRequest release];
         

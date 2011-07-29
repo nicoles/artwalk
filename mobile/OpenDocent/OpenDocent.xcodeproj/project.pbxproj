@@ -11,10 +11,10 @@
 		BB3ACD0C138DCA8E00F238A3 /* OpenDocentCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3ACD0B138DCA8E00F238A3 /* OpenDocentCameraController.m */; };
 		BB3ACD0F138DCADA00F238A3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3ACD0E138DCADA00F238A3 /* MediaPlayer.framework */; };
 		BB4EC2BE13A2C86E0007DD24 /* ArtPieceImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4EC2BD13A2C86E0007DD24 /* ArtPieceImageLoader.m */; };
+		BB87F71513E3281000B32663 /* ArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87F71413E3281000B32663 /* ArtPiece.m */; };
+		BB87F71813E3281000B32663 /* PieceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87F71713E3281000B32663 /* PieceImage.m */; };
 		BB9A4A2A138C8B3500FF23DA /* SSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9A4A29138C8B3500FF23DA /* SSTableViewCell.m */; };
 		BB9A4A2D138C8BEF00FF23DA /* ArtPieceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9A4A2C138C8BEE00FF23DA /* ArtPieceTableViewCell.m */; };
-		BB9A4A36138CA0C600FF23DA /* ArtPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9A4A35138CA0C500FF23DA /* ArtPiece.m */; };
-		BBB9E0381387484B00567AD4 /* PieceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB9E0371387484B00567AD4 /* PieceImage.m */; };
 		BBB9E05B13874B0000567AD4 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB9E04813874B0000567AD4 /* ASIAuthenticationDialog.m */; };
 		BBB9E05C13874B0000567AD4 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB9E04B13874B0000567AD4 /* ASIDataCompressor.m */; };
 		BBB9E05D13874B0000567AD4 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB9E04D13874B0000567AD4 /* ASIDataDecompressor.m */; };
@@ -90,14 +90,14 @@
 		BB3ACD0E138DCADA00F238A3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		BB4EC2BC13A2C86E0007DD24 /* ArtPieceImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPieceImageLoader.h; sourceTree = "<group>"; };
 		BB4EC2BD13A2C86E0007DD24 /* ArtPieceImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPieceImageLoader.m; sourceTree = "<group>"; };
+		BB87F71313E3281000B32663 /* ArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPiece.h; sourceTree = "<group>"; };
+		BB87F71413E3281000B32663 /* ArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPiece.m; sourceTree = "<group>"; };
+		BB87F71613E3281000B32663 /* PieceImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieceImage.h; sourceTree = "<group>"; };
+		BB87F71713E3281000B32663 /* PieceImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceImage.m; sourceTree = "<group>"; };
 		BB9A4A28138C8B3500FF23DA /* SSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTableViewCell.h; sourceTree = "<group>"; };
 		BB9A4A29138C8B3500FF23DA /* SSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTableViewCell.m; sourceTree = "<group>"; };
 		BB9A4A2B138C8BEE00FF23DA /* ArtPieceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPieceTableViewCell.h; sourceTree = "<group>"; };
 		BB9A4A2C138C8BEE00FF23DA /* ArtPieceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPieceTableViewCell.m; sourceTree = "<group>"; };
-		BB9A4A34138CA0C500FF23DA /* ArtPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtPiece.h; sourceTree = "<group>"; };
-		BB9A4A35138CA0C500FF23DA /* ArtPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtPiece.m; sourceTree = "<group>"; };
-		BBB9E0361387484B00567AD4 /* PieceImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieceImage.h; sourceTree = "<group>"; };
-		BBB9E0371387484B00567AD4 /* PieceImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceImage.m; sourceTree = "<group>"; };
 		BBB9E04713874B0000567AD4 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		BBB9E04813874B0000567AD4 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		BBB9E04913874B0000567AD4 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -375,15 +375,15 @@
 				BB9A4A2B138C8BEE00FF23DA /* ArtPieceTableViewCell.h */,
 				BB9A4A2C138C8BEE00FF23DA /* ArtPieceTableViewCell.m */,
 				BB4EC2BC13A2C86E0007DD24 /* ArtPieceImageLoader.h */,
+				BB87F71613E3281000B32663 /* PieceImage.h */,
+				BB87F71713E3281000B32663 /* PieceImage.m */,
+				BB87F71313E3281000B32663 /* ArtPiece.h */,
+				BB87F71413E3281000B32663 /* ArtPiece.m */,
 				BB4EC2BD13A2C86E0007DD24 /* ArtPieceImageLoader.m */,
 				BBE057FA1386E2D60082D3BE /* OpenDocentAppDelegate.h */,
 				BBE057FB1386E2D60082D3BE /* OpenDocentAppDelegate.m */,
 				BBE057FD1386E2D70082D3BE /* MainWindow.xib */,
-				BB9A4A34138CA0C500FF23DA /* ArtPiece.h */,
-				BB9A4A35138CA0C500FF23DA /* ArtPiece.m */,
 				BBE058001386E2D70082D3BE /* OpenDocent.xcdatamodeld */,
-				BBB9E0361387484B00567AD4 /* PieceImage.h */,
-				BBB9E0371387484B00567AD4 /* PieceImage.m */,
 				BBE057F21386E2D60082D3BE /* Supporting Files */,
 			);
 			path = OpenDocent;
@@ -553,7 +553,6 @@
 				BBE058021386E2D70082D3BE /* OpenDocent.xcdatamodeld in Sources */,
 				BBC6EA511386E76D005ABA45 /* ArtPiecesViewController.m in Sources */,
 				BBC6EA541386E78F005ABA45 /* ArtPieceDetailController.m in Sources */,
-				BBB9E0381387484B00567AD4 /* PieceImage.m in Sources */,
 				BBB9E05B13874B0000567AD4 /* ASIAuthenticationDialog.m in Sources */,
 				BBB9E05C13874B0000567AD4 /* ASIDataCompressor.m in Sources */,
 				BBB9E05D13874B0000567AD4 /* ASIDataDecompressor.m in Sources */,
@@ -574,13 +573,14 @@
 				BBB9E08313874B3500567AD4 /* SBJsonWriter.m in Sources */,
 				BB9A4A2A138C8B3500FF23DA /* SSTableViewCell.m in Sources */,
 				BB9A4A2D138C8BEF00FF23DA /* ArtPieceTableViewCell.m in Sources */,
-				BB9A4A36138CA0C600FF23DA /* ArtPiece.m in Sources */,
 				BB3ACD0C138DCA8E00F238A3 /* OpenDocentCameraController.m in Sources */,
 				BB4EC2BE13A2C86E0007DD24 /* ArtPieceImageLoader.m in Sources */,
 				BBCDA82013D9F81100E98F00 /* SDImageCache.m in Sources */,
 				BBCDA82113D9F81100E98F00 /* SDWebImageDownloader.m in Sources */,
 				BBCDA82213D9F81100E98F00 /* SDWebImageManager.m in Sources */,
 				BBCDA82313D9F81100E98F00 /* UIImageView+WebCache.m in Sources */,
+				BB87F71513E3281000B32663 /* ArtPiece.m in Sources */,
+				BB87F71813E3281000B32663 /* PieceImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
