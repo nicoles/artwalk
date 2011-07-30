@@ -19,8 +19,9 @@
 
 @property (nonatomic, retain) IBOutlet ArtPieceDetailController *artPieceDetailController;
 
-@property (nonatomic, retain) NSArray *artPieces;
+@property (nonatomic, assign) NSArray *artPieces;
 @property (nonatomic, retain) NSManagedObjectContext *artPiecesContext;
 
+- (id) initWithArtPieces:(NSArray *)listArtPieces;
 
 @end

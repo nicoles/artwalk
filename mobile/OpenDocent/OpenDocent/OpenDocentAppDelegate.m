@@ -9,7 +9,6 @@
 #import "OpenDocentAppDelegate.h"
 #import "ArtPieceDetailController.h"
 #import "ArtPiecesViewController.h"
-#import "MapViewController.h"
 #import "OpenDocentCameraController.h"
 
 @implementation OpenDocentAppDelegate
@@ -17,7 +16,6 @@
 @synthesize docentTabBarController=docentTabBarController_;
 @synthesize browseNavController=browseNavController_;
 @synthesize createNavController=createNavController_;
-@synthesize spatialNavController=spatialNavController_;
 
 @synthesize window=_window;
 
@@ -33,22 +31,18 @@
     
     self.docentTabBarController = [[UITabBarController alloc] init];
     self.browseNavController = [[UINavigationController alloc] init];
-    self.spatialNavController = [[UINavigationController alloc] init];
     self.createNavController = [[UINavigationController alloc] init];
     
-    self.docentTabBarController.viewControllers = [NSArray arrayWithObjects:self.browseNavController, self.spatialNavController, self.createNavController, nil];
+    self.docentTabBarController.viewControllers = [NSArray arrayWithObjects:self.browseNavController, self.createNavController, nil];
     [_window addSubview:self.docentTabBarController.view];
     
     ArtPiecesViewController *artPiecesViewController = [[ArtPiecesViewController alloc] initWithStyle:UITableViewStylePlain];
-    artPiecesViewController.title = @"Art. Nearby";
+    artPiecesViewController.title = @"Latest Pieces";
     [self.browseNavController pushViewController:artPiecesViewController animated:YES];
     [artPiecesViewController release];
     
-    MapViewController *mapViewController = [[MapViewController alloc] init];
-    [self.spatialNavController pushViewController:mapViewController animated:YES];
-    [mapViewController release];
-    
     OpenDocentCameraController *newArtPiece = [[OpenDocentCameraController alloc] init];
+        newArtPiece.title = @"New (BROKEN)";
     [self.createNavController pushViewController:newArtPiece animated:YES];
     [newArtPiece release];
     
@@ -107,7 +101,6 @@
     [__persistentStoreCoordinator release];
     [docentTabBarController_ release];
     [browseNavController_ release];
-    [spatialNavController_ release];
     [createNavController_ release];
     [super dealloc];
 }

@@ -28,25 +28,18 @@
     return self;
 }
 
+- (id) initWithArtPieces:(NSArray *)listArtPieces{
+  
+    [super init];
+    
+    self.artPieces = listArtPieces;
+    return self;
+    
+}
+
 - (void) viewDidLoad {
 
-    //coredata setup
-    OpenDocentAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate] ;
-    NSManagedObjectContext *context = [appDelegate managedObjectContext] ;
-    self.artPiecesContext = context;
-    
-    //get the art pieces, put em in the array. seems like this shouldn't have to happen in every class, but whatever.
-    NSEntityDescription *allArtPieces = [[NSEntityDescription entityForName:@"ArtPiece" inManagedObjectContext:self.artPiecesContext] autorelease];
-    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-    [request setEntity:allArtPieces];
-    NSError *error;
-    NSArray *objects = [[self.artPiecesContext executeFetchRequest:request error:&error]autorelease];
-    if (objects == nil) {
-        NSLog(@"There was an error!");
-        //might want some error handling here...
-    }
-    self.artPieces = objects;
-    
+     
     //drop pins for artpieces in the coredata store.
     for (int i = 0; i <self.artPieces.count; i++) {
         ArtPiece *theArt = [[self.artPieces objectAtIndex:i] autorelease];
@@ -81,7 +74,6 @@
 
 - (void)dealloc {
     [mapView_ release];
-    [artPieces release];
     [super dealloc];
 }
 

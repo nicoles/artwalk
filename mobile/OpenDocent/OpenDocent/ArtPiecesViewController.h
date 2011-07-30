@@ -11,12 +11,12 @@
 
 @interface ArtPiecesViewController : UITableViewController 
 
-//the parade in this case, is the list of art pieces that are currently being displayed in the tableview.
-@property (nonatomic, retain) NSArray *artPiecesOnParade;
+@property (nonatomic, retain) NSArray *artPieces;
 @property (nonatomic, retain) NSManagedObjectContext *artPiecesContext;
 @property (nonatomic, retain) NSOperationQueue *imageLoadingQueue;
 
 - (void)syncDatabase;
-- (void)refreshParade;
+- (void)refreshPieces;
+- (void)switchToMap;
 
 @end

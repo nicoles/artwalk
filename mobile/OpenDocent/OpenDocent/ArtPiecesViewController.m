@@ -16,9 +16,10 @@
 #import "ArtPieceTableViewCell.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImageView+WebCache.h"
+#import "MapViewController.h"
 
 @implementation ArtPiecesViewController
-@synthesize artPiecesOnParade = artPiecesOnParade_;
+@synthesize artPieces = artPieces_;
 @synthesize artPiecesContext = artPiecesContext_;
 @synthesize imageLoadingQueue = imageLoadingQueue_;
 
@@ -36,10 +37,12 @@
     self.imageLoadingQueue = [[NSOperationQueue alloc] init] ;
     
     
-    //make, add to the view, and then destroy a refresh button
-    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(syncDatabase)];
-    self.navigationItem.rightBarButtonItem = refreshButton;
-    [refreshButton release];
+    
+    //make, add to the view, and then destroy a map button 
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"103-map.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(switchToMap)];
+    self.navigationItem.rightBarButtonItem = mapButton;
+    [mapButton release];
+    
     
     //now that the screen is all set up, bug the network dealio for new data.
     [self syncDatabase];
@@ -50,6 +53,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //now that the screen is all set up, bug the network dealio for new data.
+    [self syncDatabase];
+    
     [self.tableView reloadData];
     [self.tableView setRowHeight:60];
     
@@ -63,7 +69,7 @@
     [request startAsynchronous];
 }
 
-- (void)refreshParade{
+- (void)refreshPieces{
     //this checks out the coredata dealiebob and figures out how many things exist in it. then, it puts that into artpieces on parade, and refreshes the table (parade!)
 
     NSEntityDescription *allArtPieces = [NSEntityDescription entityForName:@"ArtPiece" inManagedObjectContext:self.artPiecesContext];
@@ -78,17 +84,24 @@
         //might want some error handling here...
     }
     NSLog(@"objects count: %u", [objects count]);
-    self.artPiecesOnParade = objects;
-    NSLog(@"objects count: %u", [self.artPiecesOnParade count]);
+    self.artPieces = objects;
+    NSLog(@"objects count: %u", [self.artPieces count]);
     
     [self.tableView reloadData];
 
 }
 
+- (void)switchToMap{
+    MapViewController *mapViewController = [[MapViewController alloc] initWithArtPieces:self.artPieces];
+    [self.navigationController pushViewController:mapViewController animated:YES];
+    [mapViewController release];
+    
+}
+
 - (void)dealloc
 {
     [artPiecesContext_ release];
-    [artPiecesOnParade_ release];
+    [artPieces_ release];
     [imageLoadingQueue_ release];
     [super dealloc];
 }
@@ -98,7 +111,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //count the number of objects in the array. 
-    return [self.artPiecesOnParade count];  
+    return [self.artPieces count];  
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,7 +128,7 @@
     
     NSUInteger row = [indexPath row];
     //pull an art matching the indexpath #
-    ArtPiece *theArt = [self.artPiecesOnParade objectAtIndex:row];
+    ArtPiece *theArt = [self.artPieces objectAtIndex:row];
     
     //display the proper stuff in the cell
     cell.textLabel.text = theArt.title;
@@ -167,7 +180,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger row = [indexPath row];
-    ArtPiece *theArt = [self.artPiecesOnParade objectAtIndex:row];
+    ArtPiece *theArt = [self.artPieces objectAtIndex:row];
     
     ArtPieceDetailController *childController = [[ArtPieceDetailController alloc] initWithStyle:UITableViewStyleGrouped];
     childController.title = theArt.title;
@@ -243,7 +256,7 @@
     
     [self.artPiecesContext save:&error];
 
-    [self refreshParade];
+    [self refreshPieces];
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
