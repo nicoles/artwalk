@@ -139,9 +139,12 @@
         
     }
     //getting a reference to the coredata context. i use it in the future. i promise.
-    OpenDocentAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    self.thisArtPieceContext = context;
+    //coredata setup
+    //pick up a reference to the app delegate, pull the context from the app delegate, pull the entity description from that context, make a request, tell the request to look for that entity. prep an error and an array, then figure out if there's objects. Soon following... do some stuff with those objects!
+    // while we're at it, lets hang on to that context for later.
+    OpenDocentAppDelegate *appDelegate =[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *newContext = [appDelegate managedObjectContext];   
+    self.thisArtPieceContext = newContext;
     
     //you would think that since i've set this to no, it wouldn't let me edit the table. you'd be wrong.
     self.tableView.editing = NO;

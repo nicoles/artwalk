@@ -9,13 +9,15 @@
 #import "OpenDocentAppDelegate.h"
 #import "ArtPieceDetailController.h"
 #import "ArtPiecesViewController.h"
+#import "MapViewController.h"
 #import "OpenDocentCameraController.h"
 
 @implementation OpenDocentAppDelegate
 
-@synthesize docentTabBarController;
-@synthesize browseNavController;
-@synthesize createNavController;
+@synthesize docentTabBarController=docentTabBarController_;
+@synthesize browseNavController=browseNavController_;
+@synthesize createNavController=createNavController_;
+@synthesize spatialNavController=spatialNavController_;
 
 @synthesize window=_window;
 
@@ -29,20 +31,25 @@
 {
     // Override point for customization after application launch.
     
-    docentTabBarController = [[UITabBarController alloc] init];
-    browseNavController = [[UINavigationController alloc] init];
-    createNavController = [[UINavigationController alloc] init];
+    self.docentTabBarController = [[UITabBarController alloc] init];
+    self.browseNavController = [[UINavigationController alloc] init];
+    self.spatialNavController = [[UINavigationController alloc] init];
+    self.createNavController = [[UINavigationController alloc] init];
     
-    docentTabBarController.viewControllers = [NSArray arrayWithObjects:browseNavController, createNavController, nil];
-    [_window addSubview:docentTabBarController.view];
+    self.docentTabBarController.viewControllers = [NSArray arrayWithObjects:self.browseNavController, self.spatialNavController, self.createNavController, nil];
+    [_window addSubview:self.docentTabBarController.view];
     
     ArtPiecesViewController *artPiecesViewController = [[ArtPiecesViewController alloc] initWithStyle:UITableViewStylePlain];
     artPiecesViewController.title = @"Art. Nearby";
-    [browseNavController pushViewController:artPiecesViewController animated:YES];
+    [self.browseNavController pushViewController:artPiecesViewController animated:YES];
     [artPiecesViewController release];
     
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    [self.spatialNavController pushViewController:mapViewController animated:YES];
+    [mapViewController release];
+    
     OpenDocentCameraController *newArtPiece = [[OpenDocentCameraController alloc] init];
-    [createNavController pushViewController:newArtPiece animated:YES];
+    [self.createNavController pushViewController:newArtPiece animated:YES];
     [newArtPiece release];
     
     /*ArtPieceDetailController *createArtPiece = [[ArtPieceDetailController alloc] initWithStyle:UITableViewStyleGrouped];
@@ -98,9 +105,10 @@
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
-    [docentTabBarController release];
-    [browseNavController release];
-    [createNavController release];
+    [docentTabBarController_ release];
+    [browseNavController_ release];
+    [spatialNavController_ release];
+    [createNavController_ release];
     [super dealloc];
 }
 

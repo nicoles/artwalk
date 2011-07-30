@@ -29,7 +29,7 @@
     //pick up a reference to the app delegate, pull the context from the app delegate, pull the entity description from that context, make a request, tell the request to look for that entity. prep an error and an array, then figure out if there's objects. Soon following... do some stuff with those objects!
     // while we're at it, lets hang on to that context for later.
     OpenDocentAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext] ;
     self.artPiecesContext = context;
     
     //setup the image loading nsoperationqueue
